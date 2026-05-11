@@ -88,17 +88,6 @@
     ]
   },
   {
-    "id": "PASTEL 208",
-    "name": "Pastel 208",
-    "category": "john special",
-    "price": 50,
-    "featured": false,
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": [
-      "assets/cards/LI-2.gif"
-    ]
-  },
-  {
     "id": "PASTEL 207",
     "name": "Pastel 207",
     "category": "Heritage",
