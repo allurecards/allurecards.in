@@ -152,16 +152,5 @@
     "images": [
       "assets/cards/PU-5.gif"
     ]
-  },
-  {
-    "id": "0002",
-    "name": "julyy",
-    "category": "john special",
-    "price": 100,
-    "featured": true,
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": [
-      "assets/cards/0002-1.png"
-    ]
   }
 ]
