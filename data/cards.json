@@ -6,7 +6,9 @@
     "price": 55,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/1141.gif"]
+    "images": [
+      "assets/cards/1141.gif"
+    ]
   },
   {
     "id": "VELLUM 106",
@@ -15,7 +17,9 @@
     "price": 48,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/gree.gif"]
+    "images": [
+      "assets/cards/gree.gif"
+    ]
   },
   {
     "id": "VELLUM 105",
@@ -24,7 +28,9 @@
     "price": 50,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/merrr.gif"]
+    "images": [
+      "assets/cards/merrr.gif"
+    ]
   },
   {
     "id": "VELLUM 104",
@@ -33,7 +39,9 @@
     "price": 48,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/vio.gif"]
+    "images": [
+      "assets/cards/vio.gif"
+    ]
   },
   {
     "id": "VELLUM 103",
@@ -42,7 +50,9 @@
     "price": 45,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/GREY4.gif"]
+    "images": [
+      "assets/cards/GREY4.gif"
+    ]
   },
   {
     "id": "VELLUM 102",
@@ -51,7 +61,9 @@
     "price": 47,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/blue3.gif"]
+    "images": [
+      "assets/cards/blue3.gif"
+    ]
   },
   {
     "id": "VELLUM 101",
@@ -60,7 +72,9 @@
     "price": 55,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/coffeee.gif"]
+    "images": [
+      "assets/cards/coffeee.gif"
+    ]
   },
   {
     "id": "PASTEL 209",
@@ -69,7 +83,9 @@
     "price": 50,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/PI-3.gif"]
+    "images": [
+      "assets/cards/PI-3.gif"
+    ]
   },
   {
     "id": "PASTEL 208",
@@ -78,7 +94,9 @@
     "price": 50,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/LI-2.gif"]
+    "images": [
+      "assets/cards/LI-2.gif"
+    ]
   },
   {
     "id": "PASTEL 207",
@@ -87,7 +105,9 @@
     "price": 50,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/GR-2.gif"]
+    "images": [
+      "assets/cards/GR-2.gif"
+    ]
   },
   {
     "id": "PASTEL 206",
@@ -96,7 +116,9 @@
     "price": 50,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/123.gif"]
+    "images": [
+      "assets/cards/123.gif"
+    ]
   },
   {
     "id": "PASTEL 205",
@@ -105,7 +127,9 @@
     "price": 50,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/CREA-3.gif"]
+    "images": [
+      "assets/cards/CREA-3.gif"
+    ]
   },
   {
     "id": "PASTEL 204",
@@ -114,7 +138,9 @@
     "price": 50,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/GREY-2.gif"]
+    "images": [
+      "assets/cards/GREY-2.gif"
+    ]
   },
   {
     "id": "PASTEL 203",
@@ -123,6 +149,19 @@
     "price": 50,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": ["assets/cards/PU-5.gif"]
+    "images": [
+      "assets/cards/PU-5.gif"
+    ]
+  },
+  {
+    "id": "card-12",
+    "name": "dale",
+    "category": "Heritage",
+    "price": 50,
+    "featured": true,
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "images": [
+      "assets/cards/card-12-1.jpg"
+    ]
   }
 ]
