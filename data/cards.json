@@ -152,16 +152,5 @@
     "images": [
       "assets/cards/PU-5.gif"
     ]
-  },
-  {
-    "id": "card-12",
-    "name": "dale",
-    "category": "Heritage",
-    "price": 50,
-    "featured": true,
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": [
-      "assets/cards/card-12-1.jpg"
-    ]
   }
 ]
