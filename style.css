@@ -268,7 +268,15 @@ nav a:hover::after { width: 100%; }
 
 /* REMOVED OVERLAY – no white smoke */
 .overlay-gradient {
-    display: none;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0.05) 40%,
+        transparent 100%
+    );
+    z-index: 0;
 }
 
 /* Hero body – left aligned, centred vertically */
