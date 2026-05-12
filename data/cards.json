@@ -144,18 +144,6 @@
     ]
   },
   {
-    "id": "ALLURE 001",
-    "name": "ALLURE 001",
-    "category": "Modern",
-    "price": 40,
-    "featured": true,
-    "minOrder": 100,
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": [
-      "assets/cards/allure-001-1.png"
-    ]
-  },
-  {
     "id": "ALLURE 002",
     "name": "ALLURE 002",
     "category": "",
