@@ -1,8 +1,8 @@
 /**
  * ALLURE — app.js
- * Handles: preloader, header scroll, products, filtering,
+ * Handles: preloader, products, filtering,
  *          quick-view modal, price calculator, lightbox
- *
+ * 
  * NOTE: cards.json is fetched from ./data/cards.json
  *       All backend (Apps Script / code.gs) logic is unchanged.
  */
@@ -82,23 +82,13 @@
     });
 
     /* ============================================================
-       2. STICKY HEADER — add .scrolled class on scroll
-    ============================================================ */
-    const siteHeader = document.querySelector('.site-header');
-    if (siteHeader) {
-        window.addEventListener('scroll', () => {
-            siteHeader.classList.toggle('scrolled', window.scrollY > 40);
-        }, { passive: true });
-    }
-
-    /* ============================================================
-       3. FOOTER YEAR
+       2. FOOTER YEAR
     ============================================================ */
     const yearEl = document.getElementById('currentYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     /* ============================================================
-       4. FETCH CARDS
+       3. FETCH CARDS
     ============================================================ */
     fetch('./data/cards.json')
         .then(res => {
@@ -126,7 +116,7 @@
         });
 
     /* ============================================================
-       5. CATEGORY CARDS
+       4. CATEGORY CARDS
     ============================================================ */
     const CATEGORY_DESCRIPTIONS = {
         Heritage: 'Rich, traditional luxury',
@@ -161,7 +151,7 @@
     }
 
     /* ============================================================
-       6. FILTER BUTTONS
+       5. FILTER BUTTONS
     ============================================================ */
     function buildFilterButtons() {
         // Remove any previously built category buttons (keep "All")
@@ -194,7 +184,7 @@
     }
 
     /* ============================================================
-       7. APPLY FILTER / RENDER GRID
+       6. APPLY FILTER / RENDER GRID
     ============================================================ */
     function applyFilter(filter) {
         currentFilter = filter;
@@ -274,7 +264,7 @@
     }
 
     /* ============================================================
-       8. QUICK VIEW MODAL
+       7. QUICK VIEW MODAL
     ============================================================ */
     function openProductModal(product) {
         currentProductName  = product.id;
@@ -341,7 +331,7 @@
     });
 
     /* ============================================================
-       9. PRICE CALCULATOR
+       8. PRICE CALCULATOR
     ============================================================ */
     function populateQtyDropdown(minOrder) {
         qtySelect.innerHTML = '';
@@ -407,7 +397,7 @@
     }
 
     /* ============================================================
-       10. LIGHTBOX
+       9. LIGHTBOX
     ============================================================ */
     // Click main modal image → open lightbox
     modalImg.addEventListener('click', () => {
@@ -422,7 +412,6 @@
         currentGalleryIndex = index;
         updateGalleryImage();
         galleryOverlay.classList.add('active');
-        // Note: body overflow already locked by modal, no need to re-lock
         galleryClose.focus();
     }
 
