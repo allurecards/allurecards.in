@@ -7,11 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 1. Preloader
     const preloader = document.getElementById('preloader');
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.style.opacity = '0';
-            preloader.style.visibility = 'hidden';
-        }, 800);
+// 1. Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+            document.body.classList.add('loaded');
+        }, 4300);
+});
     });
 
     // 2. Constants
