@@ -1,423 +1,255 @@
-// =============================================
-// ALLURE CARDS – PRELOADER, PRODUCTS, MODALS
-// =============================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allure – Premium Bespoke Wedding Invitation Cards by Impressions</title>
+    <meta name="description" content="Allure by Impressions designs exquisite, handcrafted wedding invitation suites. Explore our premium bespoke collections in Thrissur, Kerala.">
 
-document.addEventListener("DOMContentLoaded", () => {
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Allure – Premium Bespoke Wedding Invitations">
+    <meta property="og:description" content="Timeless, meticulously curated invitation suites for your forever. Crafted by Impressions Wedding Cards.">
+    <meta property="og:image" content="allure_page-0003.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://allurecards.in">
 
-    // 1. Preloader — exits after 4.3s (animated floral reveal)
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            document.body.classList.add('loaded');
-        }, 4300);
-    });
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="allure_page-0003.jpg">
 
-    // 2. Constants
-    const whatsappNumber = "919526577999";
-    const DEFAULT_DESCRIPTION = "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.";
-    const ITEMS_PER_PAGE = 12;
+    <!-- Fonts: Cinzel + Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-    // DOM elements
-    const productContainer = document.getElementById('product-container');
-    const showMoreBtn = document.getElementById('show-more-btn');
-    const filterContainer = document.getElementById('filter-container');
-    const categoryGrid = document.getElementById('category-grid');
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    // Modal elements
-    const modal = document.getElementById('quick-view-modal');
-    const closeModalBtn = document.getElementById('close-modal');
-    const modalImg = document.getElementById('modal-main-img');
-    const thumbnailContainer = document.getElementById('modal-thumbnails');
-    const modalTitle = document.getElementById('modal-title');
-    const modalUnitPrice = document.getElementById('modal-unit-price');
-    const modalCategoryLabel = document.getElementById('modal-category-label');
-    const modalDescText = document.getElementById('modal-desc-text');
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    // Calculator elements
-    const qtySelect = document.getElementById('modal-qty-select');
-    const calcCardCost = document.getElementById('calc-card-cost');
-    const calcPrintingVal = document.getElementById('calc-printing-val');
-    const printingRow = document.getElementById('printing-row');
-    const discountRow = document.getElementById('discount-row');
-    const calcDiscountVal = document.getElementById('calc-discount-val');
-    const savingsRow = document.getElementById('savings-row');
-    const calcSavingsVal = document.getElementById('calc-savings-val');
-    const calcFinalTotal = document.getElementById('calc-final-total');
-    const whatsappBtn = document.getElementById('modal-whatsapp-btn');
-
-    // Full‑screen gallery elements
-    const galleryOverlay = document.getElementById('gallery-overlay');
-    const galleryImg = document.getElementById('gallery-img');
-    const galleryClose = document.getElementById('gallery-close');
-    const galleryPrev = document.getElementById('gallery-prev');
-    const galleryNext = document.getElementById('gallery-next');
-    const galleryCounter = document.getElementById('gallery-counter');
-
-    // Gallery state
-    let currentImages = [];
-    let currentGalleryIndex = 0;
-
-    // State
-    let allProducts = [];
-    let filteredProducts = [];
-    let visibleCount = 0;
-    let currentFilter = 'All';
-
-    // ---------------------------------------------------------------------
-    // 3. Fetch data and initialise
-    // ---------------------------------------------------------------------
-    fetch('./data/cards.json')
-        .then(res => res.json())
-        .then(data => {
-            allProducts = data.map(p => ({
-                ...p,
-                images: (p.images && p.images.length > 0) ? p.images : ['assets/cards/placeholder.jpg'],
-                featured: p.featured || false,
-                minOrder: p.minOrder || 100,
-                description: p.description || DEFAULT_DESCRIPTION
-            }));
-
-            buildCategoryMenu();
-            buildFilterButtons();
-            applyFilter('All');
-            updateShowMoreButton();
-        })
-        .catch(err => {
-            console.error('Failed to load cards.json', err);
-            productContainer.innerHTML = '<p class="no-products" style="grid-column:1/-1; text-align:center; padding:40px; color:var(--text-light);">Unable to load designs. Please try again later.</p>';
-        });
-
-    // ---------------------------------------------------------------------
-    // 4. Build category cards
-    // ---------------------------------------------------------------------
-    function buildCategoryMenu() {
-        const categories = [...new Set(allProducts.map(p => p.category).filter(Boolean))];
-        categoryGrid.innerHTML = categories.map(cat => `
-            <div class="category-card" data-category="${cat}">
-                <h3>${cat}</h3>
-                <p>${cat === 'Heritage' ? 'Rich, traditional luxury' : 
-                     cat === 'Minimal' ? 'Understated elegance' :
-                     cat === 'Floral' ? "Nature's romantic touch" :
-                     cat === 'Modern' ? 'Contemporary & bold' :
-                     'Explore our exclusive collection'}</p>
+    <!-- ========== ANIMATED FLORAL PRELOADER ========== -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-brand-wrapper">
+                <h1 class="preloader-title">ALLURE</h1>
+                <svg class="flower-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path class="path-anim stem"   d="M30,50 C45,70 50,90 35,105" />
+                    <path class="path-anim leaf-1" d="M30,50 C20,25 35,5 35,5 C45,25 40,45 30,50" />
+                    <path class="path-anim leaf-2" d="M30,50 C10,40 -5,25 -5,25 C10,15 25,35 30,50" />
+                    <path class="path-anim leaf-3" d="M30,50 C50,45 70,35 70,35 C65,55 45,60 30,50" />
+                </svg>
             </div>
-        `).join('');
+            <div class="preloader-subtitle">CARDS BY IMPRESSIONS</div>
+        </div>
+    </div>
+    <!-- ========== END PRELOADER ========== -->
 
-        categoryGrid.addEventListener('click', (e) => {
-            const card = e.target.closest('.category-card');
-            if (!card) return;
-            const cat = card.dataset.category;
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.filter === cat) btn.classList.add('active');
-            });
-            applyFilter(cat);
-            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
-        });
-    }
+    <!-- Hero Section (Landing Page) -->
+    <section id="home" class="hero">
+        <div class="overlay-gradient"></div>
+        <div class="container">
+            <!-- Navbar -->
+            <header>
+                <div class="brand">
+                    <h1>ALLURE</h1>
+                    <span>by Impressions</span>
+                    <div class="ornament-small"><i>&#10022;</i></div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#our-story">OUR STORY</a></li>
+                        <li><a href="#collections">COLLECTIONS</a></li>
+                        <li><a href="#shop">PORTFOLIO</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-    // ---------------------------------------------------------------------
-    // 5. Dynamic filter buttons
-    // ---------------------------------------------------------------------
-    function buildFilterButtons() {
-        const categories = [...new Set(allProducts.map(p => p.category).filter(Boolean))];
-        filterContainer.querySelectorAll('.filter-btn:not([data-filter="All"])').forEach(btn => btn.remove());
+            <!-- Hero Copy -->
+            <div class="hero-content">
+                <p class="subheading">BEFORE THE VOWS,</p>
+                <h2 class="main-heading">COMES THE<br>FIRST IMPRESSION</h2>
+                <div class="hero-ornament"><i>&#10022;</i></div>
+                <p class="description">
+                    Timeless. Thoughtful. Uniquely yours.<br>
+                    Bespoke wedding invitations crafted to<br>
+                    tell the beginning of your forever.
+                </p>
+                <div class="cta-group">
+                    <a href="#shop" class="btn btn-primary">EXPLORE THE COLLECTION</a>
+                    <a href="#our-story" class="btn btn-secondary">BEGIN YOUR STORY</a>
+                </div>
+            </div>
 
-        categories.forEach(cat => {
-            const btn = document.createElement('button');
-            btn.className = 'filter-btn';
-            btn.dataset.filter = cat;
-            btn.textContent = cat;
-            filterContainer.appendChild(btn);
-        });
+            <!-- Bottom tagline -->
+            <div class="bottom-tag">
+                <div class="ornament-small"><i>&#10022;</i></div>
+                <span class="tag-text">CRAFTED WITH DEVOTION. DESIGNED FOR MEMORIES.</span>
+            </div>
+        </div>
+    </section>
 
-        filterContainer.addEventListener('click', (e) => {
-            const btn = e.target.closest('.filter-btn');
-            if (!btn) return;
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            applyFilter(btn.dataset.filter);
-        });
-    }
+    <main id="main-content">
 
-    // ---------------------------------------------------------------------
-    // 6. Apply filter & render first batch
-    // ---------------------------------------------------------------------
-    function applyFilter(filterCat) {
-        currentFilter = filterCat;
-        filteredProducts = filterCat === 'All'
-            ? [...allProducts]
-            : allProducts.filter(p => p.category === filterCat);
+        <!-- Our Story Section -->
+        <section id="our-story" class="emotional-hook">
+            <div class="hook-container">
+                <div class="hook-image">
+                    <img src="assets/cards/not_just.jpg" alt="This isn't just an invitation – it's the prologue to your greatest adventure">
+                </div>
+                <div class="hook-text">
+                    <span class="section-tag">The Allure Experience</span>
+                    <h2>This isn't just an invitation.</h2>
+                    <p>It is the prologue to your greatest adventure. A tangible piece of your romance, designed to be held, cherished, and remembered long after the final dance.</p>
+                    <p>From the weight of the premium cardstock to the delicate shimmer of hot-pressed gold, our artisans pour devotion into every detail—ensuring the first glimpse of your wedding is nothing short of breathtaking.</p>
+                </div>
+            </div>
+        </section>
 
-        filteredProducts.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+        <!-- Collections Section (dynamically populated) -->
+        <section id="collections" class="categories">
+            <div class="section-header">
+                <h2>Our Collections</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">Curated categories of timeless artistry.</p>
+            </div>
+            <div class="category-grid" id="category-grid"></div>
+        </section>
 
-        visibleCount = Math.min(ITEMS_PER_PAGE, filteredProducts.length);
-        productContainer.innerHTML = '';
+        <!-- Portfolio / Shop Section -->
+        <section id="shop" class="products-section">
+            <div class="section-header">
+                <h2>The Portfolio</h2>
+                <p>Hover to preview. Click for details. Each piece is a testament to craftsmanship.</p>
+                <div class="divider"></div>
+            </div>
 
-        if (filteredProducts.length === 0) {
-            productContainer.innerHTML = '<p class="no-products" style="grid-column:1/-1; text-align:center; color:var(--text-light); padding:40px;">No designs found in this collection.</p>';
-        } else {
-            const initialItems = filteredProducts.slice(0, visibleCount);
-            productContainer.innerHTML = initialItems.map(product => createCardHTML(product)).join('');
-        }
+            <div class="filter-container" id="filter-container">
+                <button class="filter-btn active" data-filter="All">All Designs</button>
+            </div>
 
-        updateShowMoreButton();
-    }
+            <div class="products-grid" id="product-container"></div>
 
-    // ---------------------------------------------------------------------
-    // 7. Create card HTML
-    // ---------------------------------------------------------------------
-    function createCardHTML(product) {
-        const productJson = encodeURIComponent(JSON.stringify(product));
-        const featuredBadge = product.featured ? '<span class="featured-badge">Featured</span>' : '';
-        return `
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    ${featuredBadge}
-                    <img src="${product.images[0]}" alt="${product.id}" loading="lazy">
-                    <div class="quick-view-overlay">
-                        <button class="quick-view-btn" data-product="${productJson}">Quick View</button>
+            <div class="show-more-container">
+                <button id="show-more-btn" class="show-more-btn">Show More Designs</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer" role="contentinfo">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">ALLURE</div>
+                    <div class="footer-divider"></div>
+                    <p class="footer-tagline">by <strong>Impressions Wedding Cards</strong></p>
+                    <p class="footer-address">
+                        Impressions Castle, Thrissur – Palghat Road,<br>
+                        Priyadarsini Nagar, Paravattani,<br>
+                        Thrissur, Kerala — 680005
+                    </p>
+                    <p class="footer-contact">
+                        <a href="tel:+919526577999">+91 95265 77 999</a> · 
+                        <a href="mailto:allure@impressions.in">allure@impressions.in</a>
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com/impressionsweddingcards" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://facebook.com/impressionsweddingcards" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href="https://www.youtube.com/@impressionsweddingcards" target="_blank" rel="noopener noreferrer">YouTube</a>
                     </div>
                 </div>
-                <h4 class="product-id">${product.id}</h4>
-                <p class="product-price">Rs. ${product.price} / card</p>
+                
+                <div class="footer-map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.5!2d76.22!3d10.52!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDMxJzEyLjAiTiA3NsKwMTMnMTIuMCJF!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Allure by Impressions — Atelier Location"></iframe>
+                    <a href="https://maps.google.com/?q=Impressions+Castle+Paravattani+Thrissur+Kerala" class="map-link" target="_blank" rel="noopener noreferrer">Get Directions to our Atelier</a>
+                </div>
             </div>
-        `;
-    }
 
-    // ---------------------------------------------------------------------
-    // 8. Show more items
-    // ---------------------------------------------------------------------
-    function showMoreItems() {
-        const nextCount = Math.min(visibleCount + ITEMS_PER_PAGE, filteredProducts.length);
-        const newItems = filteredProducts.slice(visibleCount, nextCount);
-        if (newItems.length > 0) {
-            const cardsHTML = newItems.map(product => createCardHTML(product)).join('');
-            productContainer.insertAdjacentHTML('beforeend', cardsHTML);
-        }
-        visibleCount = nextCount;
-        updateShowMoreButton();
-    }
+            <div class="footer-bottom">
+                <p class="footer-copy">© <span id="currentYear"></span> Allure by Impressions Wedding Cards. All rights reserved. Crafted with devotion in Thrissur.</p>
+            </div>
+        </div>
+    </footer>
 
-    function updateShowMoreButton() {
-        showMoreBtn.style.display = (visibleCount < filteredProducts.length) ? 'inline-block' : 'none';
-    }
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919526577999?text=Hello%20Allure%2C%20I%20would%20like%20to%20inquire%20about%20your%20premium%20wedding%20invitations" class="sticky-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
 
-    // ---------------------------------------------------------------------
-    // 9. Quick View event delegation
-    // ---------------------------------------------------------------------
-    productContainer.addEventListener('click', (e) => {
-        const btn = e.target.closest('.quick-view-btn');
-        if (!btn) return;
-        const product = JSON.parse(decodeURIComponent(btn.getAttribute('data-product')));
-        openProductModal(product);
-    });
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal" aria-label="Close modal">×</button>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <div class="main-image-container">
+                        <img id="modal-main-img" src="" alt="Card Design">
+                    </div>
+                    <div class="thumbnail-row" id="modal-thumbnails"></div>
+                </div>
+                <div class="modal-info">
+                    <p class="modal-category" id="modal-category-label">Allure Exclusive</p>
+                    <h3 id="modal-title">Product ID</h3>
+                    <p class="modal-price" id="modal-unit-price">Rs. 0 / card</p>
+                    
+                    <div class="modal-description">
+                        <p id="modal-desc-text">Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.</p>
+                    </div>
 
-    showMoreBtn.addEventListener('click', showMoreItems);
+                    <div class="calculator-box">
+                        <div class="input-group">
+                            <label for="modal-qty-select">Number of Cards</label>
+                            <select id="modal-qty-select"></select>
+                            <p class="discount-banner">Printing free on 200+ · 5% off on 500+ · 10% off on 1000+</p>
+                        </div>
+                        <div class="calc-summary">
+                            <div class="summary-row">
+                                <span>Card Cost</span>
+                                <span id="calc-card-cost">Rs. 0</span>
+                            </div>
+                            <div class="summary-row" id="printing-row">
+                                <span>Printing Charge</span>
+                                <span id="calc-printing-val">Rs. 600</span>
+                            </div>
+                            <div class="summary-row highlight-discount" id="discount-row" style="display:none;">
+                                <span>Volume Discount</span>
+                                <span id="calc-discount-val">—</span>
+                            </div>
+                            <div class="summary-row highlight-save" id="savings-row" style="display:none;">
+                                <span>You Save</span>
+                                <span id="calc-savings-val">Rs. 0</span>
+                            </div>
+                            <div class="divider-sm"></div>
+                            <div class="summary-row total-row">
+                                <span>Final Estimate</span>
+                                <span id="calc-final-total">Rs. 0</span>
+                            </div>
+                        </div>
+                    </div>
 
-    // ---------------------------------------------------------------------
-    // 10. MODAL – Calculator + Full‑screen lightbox
-    // ---------------------------------------------------------------------
-    let currentUnitPrice = 0;
-    let currentProductName = "";
-    let currentProductCategory = "";
-    let currentMinOrder = 100;
+                    <a href="#" id="modal-whatsapp-btn" target="_blank" class="cta-btn modal-btn">Order via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    function openProductModal(product) {
-        currentProductName = product.id;
-        currentProductCategory = product.category;
-        currentUnitPrice = product.price;
-        currentMinOrder = product.minOrder || 100;
+    <!-- Full‑screen Lightbox -->
+    <div id="gallery-overlay" class="gallery-overlay">
+        <button class="gallery-close" id="gallery-close" aria-label="Close full‑screen preview">×</button>
+        <button class="gallery-nav gallery-prev" id="gallery-prev" aria-label="Previous image">‹</button>
+        <button class="gallery-nav gallery-next" id="gallery-next" aria-label="Next image">›</button>
+        <img id="gallery-img" src="" alt="Full screen preview">
+        <p id="gallery-counter" class="gallery-counter"></p>
+    </div>
 
-        currentImages = product.images || [];
-
-        modalTitle.textContent = product.name || product.id;
-        modalCategoryLabel.textContent = `Allure ${product.category} Collection`;
-        modalUnitPrice.textContent = `Rs. ${product.price} / card`;
-        modalDescText.textContent = product.description || DEFAULT_DESCRIPTION;
-
-        modalImg.src = currentImages[0];
-        modalImg.alt = product.name || product.id;
-
-        thumbnailContainer.innerHTML = '';
-        if (currentImages.length > 1) {
-            currentImages.forEach((imgSrc, index) => {
-                const thumbDiv = document.createElement('div');
-                thumbDiv.className = `thumb ${index === 0 ? 'active' : ''}`;
-                thumbDiv.innerHTML = `<img src="${imgSrc}" alt="Thumbnail ${index + 1}">`;
-
-                thumbDiv.addEventListener('click', () => {
-                    modalImg.style.opacity = '0.5';
-                    setTimeout(() => {
-                        modalImg.src = imgSrc;
-                        modalImg.style.opacity = '1';
-                    }, 150);
-                    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-                    thumbDiv.classList.add('active');
-                });
-
-                thumbnailContainer.appendChild(thumbDiv);
-            });
-        }
-
-        populateQtyDropdown(currentMinOrder);
-
-        qtySelect.removeEventListener('change', calculateTotal);
-        qtySelect.addEventListener('change', calculateTotal);
-        calculateTotal();
-
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function populateQtyDropdown(minOrder) {
-        qtySelect.innerHTML = '';
-        for (let qty = minOrder; qty <= 1500; qty += 50) {
-            const option = document.createElement('option');
-            option.value = qty;
-            option.textContent = qty.toLocaleString() + ' cards';
-            if (qty === minOrder) option.selected = true;
-            qtySelect.appendChild(option);
-        }
-    }
-
-    function calculateTotal() {
-        const qty = parseInt(qtySelect.value, 10);
-        const cardCost = qty * currentUnitPrice;
-
-        const printingCharge = qty < 200 ? 600 : 0;
-        const printingWaived = printingCharge === 0 ? 600 : 0;
-
-        let factor = 1.0;
-        let discountPercent = 0;
-        if (qty >= 1000) {
-            factor = 0.90;
-            discountPercent = 10;
-        } else if (qty >= 500) {
-            factor = 0.95;
-            discountPercent = 5;
-        }
-        const discountAmount = Math.round(cardCost * (1 - factor));
-        const finalTotal = Math.round(cardCost * factor) + printingCharge;
-        const totalSavings = printingWaived + discountAmount;
-
-        calcCardCost.textContent = `Rs. ${cardCost.toLocaleString()}`;
-
-        if (printingCharge > 0) {
-            calcPrintingVal.innerHTML = `Rs. 600`;
-        } else {
-            calcPrintingVal.innerHTML = `<span class="waived">Rs. 600</span> <span class="saved-text">FREE</span>`;
-        }
-
-        if (discountPercent > 0) {
-            discountRow.style.display = 'flex';
-            calcDiscountVal.innerHTML = `− Rs. ${discountAmount.toLocaleString()} (${discountPercent}% off)`;
-            calcDiscountVal.style.color = '#2e7d32';
-        } else {
-            discountRow.style.display = 'none';
-        }
-
-        if (totalSavings > 0) {
-            savingsRow.style.display = 'flex';
-            calcSavingsVal.textContent = `Rs. ${totalSavings.toLocaleString()}`;
-        } else {
-            savingsRow.style.display = 'none';
-        }
-
-        calcFinalTotal.textContent = `Rs. ${finalTotal.toLocaleString()}`;
-
-        const message = `Hello Impressions! I would like to inquire about an Allure card design.\n\n` +
-                        `*Design:* ${currentProductName} (${currentProductCategory} Collection)\n` +
-                        `*Quantity:* ${qty}\n` +
-                        `*Estimated Total:* Rs. ${finalTotal.toLocaleString()}\n\n` +
-                        `Please let me know how to proceed.`;
-        whatsappBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    }
-
-    // ---------------------------------------------------------------------
-    // 11. LIGHTBOX – Full screen image viewer
-    // ---------------------------------------------------------------------
-    modalImg.addEventListener('click', () => {
-        if (currentImages.length === 0) return;
-        const src = modalImg.getAttribute('src');
-        const idx = currentImages.indexOf(src);
-        openGallery(idx >= 0 ? idx : 0);
-    });
-
-    function openGallery(index) {
-        if (currentImages.length === 0) return;
-        currentGalleryIndex = index;
-        updateGalleryImage();
-        galleryOverlay.classList.add('active');
-    }
-
-    function updateGalleryImage() {
-        galleryImg.src = currentImages[currentGalleryIndex];
-        if (currentImages.length > 1) {
-            galleryCounter.textContent = `${currentGalleryIndex + 1} / ${currentImages.length}`;
-            galleryPrev.style.display = 'block';
-            galleryNext.style.display = 'block';
-        } else {
-            galleryCounter.textContent = '';
-            galleryPrev.style.display = 'none';
-            galleryNext.style.display = 'none';
-        }
-    }
-
-    function closeGallery() {
-        galleryOverlay.classList.remove('active');
-    }
-
-    galleryClose.addEventListener('click', closeGallery);
-    galleryOverlay.addEventListener('click', (e) => {
-        if (e.target === galleryOverlay) closeGallery();
-    });
-
-    galleryPrev.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (currentImages.length > 0) {
-            currentGalleryIndex = (currentGalleryIndex - 1 + currentImages.length) % currentImages.length;
-            updateGalleryImage();
-        }
-    });
-
-    galleryNext.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (currentImages.length > 0) {
-            currentGalleryIndex = (currentGalleryIndex + 1) % currentImages.length;
-            updateGalleryImage();
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (!galleryOverlay.classList.contains('active')) return;
-        if (e.key === 'Escape') closeGallery();
-        if (e.key === 'ArrowLeft') {
-            currentGalleryIndex = (currentGalleryIndex - 1 + currentImages.length) % currentImages.length;
-            updateGalleryImage();
-        }
-        if (e.key === 'ArrowRight') {
-            currentGalleryIndex = (currentGalleryIndex + 1) % currentImages.length;
-            updateGalleryImage();
-        }
-    });
-
-    // ---------------------------------------------------------------------
-    // 12. Close modal
-    // ---------------------------------------------------------------------
-    closeModalBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    });
-
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-    });
-
-    // ---------------------------------------------------------------------
-    // 13. Footer year
-    // ---------------------------------------------------------------------
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-});
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
