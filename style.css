@@ -1,7 +1,6 @@
 /* ============================================================
    ALLURE – styles.css
-   Fixes: hero layout, missing WhatsApp CTA button,
-          modal scroll, mobile responsiveness
+   Luxury left‑aligned hero · transparent navbar · blue‑gold CTA
    ============================================================ */
 
 /* ---- CSS Variables ---- */
@@ -22,7 +21,7 @@
     --radius-pill:   30px;
     --font-heading:  'Cinzel', serif;
     --font-sans:     'Montserrat', sans-serif;
-    --header-h:      88px;   /* reserved for sticky header */
+    --header-h:      88px;   /* reserved for absolute header */
 }
 
 /* ---- Reset ---- */
@@ -167,7 +166,6 @@ body.loaded #preloader {
     border-bottom: none;
     transition: background 0.3s, box-shadow 0.3s;
 }
-/* Keep the .scrolled rule for possible future use, but it stays transparent as well */
 .site-header.scrolled {
     background: transparent;
     box-shadow: none;
@@ -256,7 +254,7 @@ nav a:hover::after { width: 100%; }
 
 
 /* ============================================================
-   HERO SECTION
+   HERO SECTION (luxury left‑aligned layout)
    ============================================================ */
 .hero {
     position: relative;
@@ -267,28 +265,21 @@ nav a:hover::after { width: 100%; }
     flex-direction: column;
     overflow: hidden;
 }
+
+/* REMOVED OVERLAY – no white smoke */
 .overlay-gradient {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to right,
-        rgba(248, 244, 238, 0.95) 0%,
-        rgba(248, 244, 238, 0.75) 45%,
-        rgba(248, 244, 238, 0.2)  70%,
-        transparent 100%
-    );
-    z-index: 0;
+    display: none;
 }
 
-/* Hero body — centred column, padded for absolute header */
+/* Hero body – left aligned, centred vertically */
 .hero-body {
     position: relative;
     z-index: 1;
     flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;       /* center the text block horizontally */
-    padding-top: 60px;            /* reduced from var(--header-h) to shift content upward */
+    align-items: center;            /* vertical centering */
+    justify-content: flex-start;   /* push content to the left */
+    padding-top: 60px;             /* lift block slightly upward */
     padding-left: clamp(2rem, 8vw, 7rem);
     padding-right: 2rem;
 }
@@ -296,31 +287,37 @@ nav a:hover::after { width: 100%; }
     max-width: 560px;
     display: flex;
     flex-direction: column;
-    align-items: center;          /* keep inner elements centered */
-    text-align: center;          /* center all text */
+    align-items: flex-start;       /* left‑align children */
+    text-align: left;
 }
+
+/* 1. Hook line */
 .subheading {
     font-family: var(--font-sans);
     font-size: 0.72rem;
-    letter-spacing: 4px;
+    letter-spacing: 4px;          /* airy spacing */
     text-transform: uppercase;
     color: var(--text-dark);
     margin-bottom: 1.2rem;
 }
+
+/* 2. Main title – two lines via <br>, prominent */
 .main-heading {
     font-size: clamp(2.4rem, 5vw, 3.8rem);
     font-weight: 400;
     line-height: 1.2;
     color: var(--text-dark);
     letter-spacing: 2px;
-    margin: 0 auto;
+    margin: 0 0 1.6rem 0;
 }
+
+/* 3. Gold star divider – centred within the left column */
 .hero-ornament {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 1.6rem 0;
-    justify-content: center;       /* center the ornament */
+    justify-content: center;
 }
 .hero-ornament::before,
 .hero-ornament::after {
@@ -335,6 +332,8 @@ nav a:hover::after { width: 100%; }
     font-size: 12px;
     font-style: normal;
 }
+
+/* 4. Description – three lines, clean modern font */
 .description {
     font-family: var(--font-sans);
     font-size: 1rem;
@@ -343,11 +342,13 @@ nav a:hover::after { width: 100%; }
     margin-bottom: 2.5rem;
     font-weight: 400;
 }
+
+/* 5. Buttons – side‑by‑side, left‑aligned */
 .cta-group {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;   /* center the buttons */
+    justify-content: flex-start;
 }
 
 /* Buttons */
@@ -388,7 +389,7 @@ nav a:hover::after { width: 100%; }
     transform: translateY(-1px);
 }
 
-/* Bottom tag */
+/* 6. Bottom signature – perfectly centred */
 .bottom-tag {
     position: relative;
     z-index: 1;
@@ -785,7 +786,7 @@ section { padding: 100px 5%; }
     display: flex;
     flex-direction: column;
     gap: 0;
-    overflow-y: auto;  /* ✅ key fix — panel scrolls if content overflows */
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
 .modal-category {
@@ -894,7 +895,7 @@ section { padding: 100px 5%; }
 }
 .highlight-save { color: var(--gold); font-weight: 600; }
 
-/* ✅ RESTYLED: WhatsApp CTA Button (Quick View only) */
+/* ✅ Quick View WhatsApp Button – deep blue, white text, gold hover */
 .whatsapp-cta-btn {
     display: flex;
     align-items: center;
@@ -902,8 +903,8 @@ section { padding: 100px 5%; }
     gap: 10px;
     width: 100%;
     padding: 15px 24px;
-    background-color: var(--text-dark);   /* solid black/brown luxury */
-    color: #fff;
+    background-color: #0a1f3d;      /* deep navy / blue-gold */
+    color: #ffffff;
     font-family: var(--font-sans);
     font-size: 0.82rem;
     font-weight: 600;
@@ -911,28 +912,25 @@ section { padding: 100px 5%; }
     text-transform: uppercase;
     text-decoration: none;
     border-radius: var(--radius-sm);
-    border: none;
+    border: 1px solid rgba(179, 139, 77, 0.3); /* subtle gold rim */
     cursor: pointer;
-    transition: background-color 0.45s ease, color 0.45s ease, transform 0.25s ease, box-shadow 0.35s ease;
-    margin-top: auto; /* push to bottom when space allows */
+    transition: background-color 0.35s ease, transform 0.25s ease, box-shadow 0.35s ease;
+    margin-top: auto;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     flex-shrink: 0;
 }
 .whatsapp-cta-btn svg {
     width: 20px;
     height: 20px;
-    fill: currentColor;      /* will inherit text color */
+    fill: currentColor;            /* white */
     flex-shrink: 0;
-    transition: fill 0.45s ease;
 }
 .whatsapp-cta-btn:hover {
-    background-color: var(--gold);        /* rich gold on hover */
-    color: var(--text-dark);              /* dark icon/text for inversion */
+    background-color: #16325c;     /* brighter blue */
+    color: #ffffff;
+    border-color: var(--gold);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(179, 139, 77, 0.35);
-}
-.whatsapp-cta-btn:active {
-    transform: translateY(0);
+    box-shadow: 0 8px 24px rgba(179, 139, 77, 0.4); /* gold glow */
 }
 
 
@@ -1152,9 +1150,7 @@ section { padding: 100px 5%; }
     nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
 
     .hero-body { padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 60px; }
-    .overlay-gradient { background: rgba(248, 244, 238, 0.9); }
-    .hero-content { max-width: 100%; align-items: center; text-align: center; }
-    .hero-ornament { justify-content: center; }
+    .hero-content { max-width: 100%; }
     .cta-group { flex-direction: column; align-items: stretch; }
     .btn { width: 100%; }
 
