@@ -156,20 +156,5 @@
       "assets/cards/allure-03-2.png",
       "assets/cards/allure-03-3.png"
     ]
-  },
-  {
-    "id": "ALLURE 004",
-    "name": "ALLURE 004",
-    "category": "Modern",
-    "price": 45,
-    "featured": true,
-    "minOrder": 200,
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": [
-      "assets/cards/allure-004-1.png",
-      "assets/cards/allure-004-2.png",
-      "assets/cards/allure-004-3.png",
-      "assets/cards/allure-004-4.png"
-    ]
   }
 ]
