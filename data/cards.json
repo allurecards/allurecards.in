@@ -153,17 +153,5 @@
     "images": [
       "assets/cards/john105-1.png"
     ]
-  },
-  {
-    "id": "WATERMARK-TEST",
-    "name": "Watermark Test",
-    "category": "Modern",
-    "price": 99,
-    "featured": false,
-    "minOrder": 100,
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": [
-      "assets/cards/watermark-test-1.png"
-    ]
   }
 ]
