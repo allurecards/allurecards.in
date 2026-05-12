@@ -1,429 +1,510 @@
-document.addEventListener("DOMContentLoaded", () => {
+/**
+ * ALLURE — app.js
+ * Handles: preloader, header scroll, products, filtering,
+ *          quick-view modal, price calculator, lightbox
+ *
+ * NOTE: cards.json is fetched from ./data/cards.json
+ *       All backend (Apps Script / code.gs) logic is unchanged.
+ */
 
-    // 1. Preloader – animated reveal (4.3s allows SVG draw + text fade to complete)
+(function () {
+    'use strict';
+
+    /* ============================================================
+       CONSTANTS
+    ============================================================ */
+    const WHATSAPP_NUMBER  = '919526577999';
+    const DEFAULT_DESC     = 'Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.';
+    const ITEMS_PER_PAGE   = 12;
+
+    /* ============================================================
+       DOM REFERENCES
+    ============================================================ */
+    const productContainer  = document.getElementById('product-container');
+    const showMoreBtn       = document.getElementById('show-more-btn');
+    const filterContainer   = document.getElementById('filter-container');
+    const categoryGrid      = document.getElementById('category-grid');
+
+    // Modal elements
+    const modal             = document.getElementById('quick-view-modal');
+    const closeModalBtn     = document.getElementById('close-modal');
+    const modalImg          = document.getElementById('modal-main-img');
+    const thumbnailRow      = document.getElementById('modal-thumbnails');
+    const modalTitle        = document.getElementById('modal-title');
+    const modalUnitPrice    = document.getElementById('modal-unit-price');
+    const modalCategoryLbl  = document.getElementById('modal-category-label');
+    const modalDescText     = document.getElementById('modal-desc-text');
+
+    // Calculator elements
+    const qtySelect         = document.getElementById('modal-qty-select');
+    const calcCardCost      = document.getElementById('calc-card-cost');
+    const calcPrintingVal   = document.getElementById('calc-printing-val');
+    const printingRow       = document.getElementById('printing-row');
+    const discountRow       = document.getElementById('discount-row');
+    const calcDiscountVal   = document.getElementById('calc-discount-val');
+    const savingsRow        = document.getElementById('savings-row');
+    const calcSavingsVal    = document.getElementById('calc-savings-val');
+    const calcFinalTotal    = document.getElementById('calc-final-total');
+    const whatsappBtn       = document.getElementById('modal-whatsapp-btn');
+
+    // Lightbox elements
+    const galleryOverlay    = document.getElementById('gallery-overlay');
+    const galleryImg        = document.getElementById('gallery-img');
+    const galleryClose      = document.getElementById('gallery-close');
+    const galleryPrev       = document.getElementById('gallery-prev');
+    const galleryNext       = document.getElementById('gallery-next');
+    const galleryCounter    = document.getElementById('gallery-counter');
+
+    /* ============================================================
+       STATE
+    ============================================================ */
+    let allProducts         = [];
+    let filteredProducts    = [];
+    let visibleCount        = 0;
+    let currentFilter       = 'All';
+
+    let currentImages       = [];
+    let currentGalleryIndex = 0;
+
+    let currentUnitPrice    = 0;
+    let currentProductName  = '';
+    let currentProductCat   = '';
+    let currentMinOrder     = 100;
+
+    /* ============================================================
+       1. PRELOADER
+    ============================================================ */
     window.addEventListener('load', () => {
+        // 4.3s lets the SVG draw + text fade finish gracefully
         setTimeout(() => {
             document.body.classList.add('loaded');
         }, 4300);
     });
 
-    // 2. Constants
-    const whatsappNumber = "919526577999";
-    const DEFAULT_DESCRIPTION = "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.";
-    const ITEMS_PER_PAGE = 12;
+    /* ============================================================
+       2. STICKY HEADER — add .scrolled class on scroll
+    ============================================================ */
+    const siteHeader = document.querySelector('.site-header');
+    if (siteHeader) {
+        window.addEventListener('scroll', () => {
+            siteHeader.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+    }
 
-    // DOM elements
-    const productContainer = document.getElementById('product-container');
-    const showMoreBtn = document.getElementById('show-more-btn');
-    const filterContainer = document.getElementById('filter-container');
-    const categoryGrid = document.getElementById('category-grid');
+    /* ============================================================
+       3. FOOTER YEAR
+    ============================================================ */
+    const yearEl = document.getElementById('currentYear');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Modal elements
-    const modal = document.getElementById('quick-view-modal');
-    const closeModalBtn = document.getElementById('close-modal');
-    const modalImg = document.getElementById('modal-main-img');
-    const thumbnailContainer = document.getElementById('modal-thumbnails');
-    const modalTitle = document.getElementById('modal-title');
-    const modalUnitPrice = document.getElementById('modal-unit-price');
-    const modalCategoryLabel = document.getElementById('modal-category-label');
-    const modalDescText = document.getElementById('modal-desc-text');
-
-    // Calculator elements
-    const qtySelect = document.getElementById('modal-qty-select');
-    const calcCardCost = document.getElementById('calc-card-cost');
-    const calcPrintingVal = document.getElementById('calc-printing-val');
-    const printingRow = document.getElementById('printing-row');
-    const discountRow = document.getElementById('discount-row');
-    const calcDiscountVal = document.getElementById('calc-discount-val');
-    const savingsRow = document.getElementById('savings-row');
-    const calcSavingsVal = document.getElementById('calc-savings-val');
-    const calcFinalTotal = document.getElementById('calc-final-total');
-    const whatsappBtn = document.getElementById('modal-whatsapp-btn');
-
-    // Full-screen gallery elements
-    const galleryOverlay = document.getElementById('gallery-overlay');
-    const galleryImg = document.getElementById('gallery-img');
-    const galleryClose = document.getElementById('gallery-close');
-    const galleryPrev = document.getElementById('gallery-prev');
-    const galleryNext = document.getElementById('gallery-next');
-    const galleryCounter = document.getElementById('gallery-counter');
-
-    // Gallery state
-    let currentImages = [];
-    let currentGalleryIndex = 0;
-
-    // State
-    let allProducts = [];
-    let filteredProducts = [];
-    let visibleCount = 0;
-    let currentFilter = 'All';
-
-    // ---------------------------------------------------------------------
-    // 3. Fetch data and initialise
-    // ---------------------------------------------------------------------
+    /* ============================================================
+       4. FETCH CARDS
+    ============================================================ */
     fetch('./data/cards.json')
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+        })
         .then(data => {
             allProducts = data.map(p => ({
                 ...p,
-                images: (p.images && p.images.length > 0) ? p.images : ['assets/cards/placeholder.jpg'],
-                featured: p.featured || false,
-                minOrder: p.minOrder || 100,
-                description: p.description || DEFAULT_DESCRIPTION
+                images:      (p.images && p.images.length > 0) ? p.images : ['assets/cards/placeholder.jpg'],
+                featured:    p.featured  || false,
+                minOrder:    p.minOrder  || 100,
+                description: p.description || DEFAULT_DESC
             }));
 
             buildCategoryMenu();
             buildFilterButtons();
             applyFilter('All');
-            updateShowMoreButton();
         })
         .catch(err => {
-            console.error('Failed to load cards.json', err);
-            productContainer.innerHTML = '<p class="no-products" style="grid-column:1/-1; text-align:center; padding:40px; color:var(--text-light);">Unable to load designs. Please try again later.</p>';
+            console.error('Failed to load cards.json:', err);
+            if (productContainer) {
+                productContainer.innerHTML = '<p class="no-products">Unable to load designs. Please try again later.</p>';
+            }
         });
 
-    // ---------------------------------------------------------------------
-    // 4. Build category cards
-    // ---------------------------------------------------------------------
+    /* ============================================================
+       5. CATEGORY CARDS
+    ============================================================ */
+    const CATEGORY_DESCRIPTIONS = {
+        Heritage: 'Rich, traditional luxury',
+        Minimal:  'Understated elegance',
+        Floral:   "Nature's romantic touch",
+        Modern:   'Contemporary & bold'
+    };
+
     function buildCategoryMenu() {
-        const categories = [...new Set(allProducts.map(p => p.category).filter(Boolean))];
-        categoryGrid.innerHTML = categories.map(cat => `
-            <div class="category-card" data-category="${cat}">
-                <h3>${cat}</h3>
-                <p>${cat === 'Heritage' ? 'Rich, traditional luxury' :
-                     cat === 'Minimal' ? 'Understated elegance' :
-                     cat === 'Floral' ? "Nature's romantic touch" :
-                     cat === 'Modern' ? 'Contemporary & bold' :
-                     'Explore our exclusive collection'}</p>
+        const cats = getUniqueCategories();
+        categoryGrid.innerHTML = cats.map(cat => `
+            <div class="category-card" data-category="${escapeHtml(cat)}" role="button" tabindex="0"
+                 aria-label="View ${escapeHtml(cat)} collection">
+                <h3>${escapeHtml(cat)}</h3>
+                <p>${escapeHtml(CATEGORY_DESCRIPTIONS[cat] || 'Explore our exclusive collection')}</p>
             </div>
         `).join('');
 
-        categoryGrid.addEventListener('click', (e) => {
-            const card = e.target.closest('.category-card');
-            if (!card) return;
-            const cat = card.dataset.category;
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.filter === cat) btn.classList.add('active');
-            });
-            applyFilter(cat);
-            document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+        categoryGrid.addEventListener('click', onCategoryClick);
+        categoryGrid.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') onCategoryClick(e);
         });
     }
 
-    // ---------------------------------------------------------------------
-    // 5. Dynamic filter buttons
-    // ---------------------------------------------------------------------
-    function buildFilterButtons() {
-        const categories = [...new Set(allProducts.map(p => p.category).filter(Boolean))];
-        filterContainer.querySelectorAll('.filter-btn:not([data-filter="All"])').forEach(btn => btn.remove());
+    function onCategoryClick(e) {
+        const card = e.target.closest('.category-card');
+        if (!card) return;
+        const cat = card.dataset.category;
+        setActiveFilter(cat);
+        applyFilter(cat);
+        document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+    }
 
-        categories.forEach(cat => {
+    /* ============================================================
+       6. FILTER BUTTONS
+    ============================================================ */
+    function buildFilterButtons() {
+        // Remove any previously built category buttons (keep "All")
+        filterContainer.querySelectorAll('.filter-btn:not([data-filter="All"])').forEach(b => b.remove());
+
+        getUniqueCategories().forEach(cat => {
             const btn = document.createElement('button');
             btn.className = 'filter-btn';
             btn.dataset.filter = cat;
             btn.textContent = cat;
             filterContainer.appendChild(btn);
         });
+    }
 
-        filterContainer.addEventListener('click', (e) => {
-            const btn = e.target.closest('.filter-btn');
-            if (!btn) return;
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            applyFilter(btn.dataset.filter);
+    filterContainer.addEventListener('click', e => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        setActiveFilter(btn.dataset.filter);
+        applyFilter(btn.dataset.filter);
+    });
+
+    function setActiveFilter(filter) {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+            b.classList.toggle('active', b.dataset.filter === filter);
+        });
+        // Sync category cards highlight too
+        document.querySelectorAll('.category-card').forEach(c => {
+            c.classList.toggle('active', c.dataset.category === filter);
         });
     }
 
-    // ---------------------------------------------------------------------
-    // 6. Apply filter & render first batch
-    // ---------------------------------------------------------------------
-    function applyFilter(filterCat) {
-        currentFilter = filterCat;
-        filteredProducts = filterCat === 'All'
+    /* ============================================================
+       7. APPLY FILTER / RENDER GRID
+    ============================================================ */
+    function applyFilter(filter) {
+        currentFilter = filter;
+        filteredProducts = filter === 'All'
             ? [...allProducts]
-            : allProducts.filter(p => p.category === filterCat);
+            : allProducts.filter(p => p.category === filter);
 
+        // Featured items first
         filteredProducts.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
 
         visibleCount = Math.min(ITEMS_PER_PAGE, filteredProducts.length);
         productContainer.innerHTML = '';
 
         if (filteredProducts.length === 0) {
-            productContainer.innerHTML = '<p class="no-products" style="grid-column:1/-1; text-align:center; color:var(--text-light); padding:40px;">No designs found in this collection.</p>';
+            productContainer.innerHTML = '<p class="no-products">No designs found in this collection.</p>';
         } else {
-            const initialItems = filteredProducts.slice(0, visibleCount);
-            productContainer.innerHTML = initialItems.map(product => createCardHTML(product)).join('');
+            productContainer.innerHTML = filteredProducts
+                .slice(0, visibleCount)
+                .map(createCardHTML)
+                .join('');
         }
-
-        updateShowMoreButton();
+        updateShowMoreBtn();
     }
 
-    // ---------------------------------------------------------------------
-    // 7. Create card HTML
-    // ---------------------------------------------------------------------
     function createCardHTML(product) {
-        const productJson = encodeURIComponent(JSON.stringify(product));
-        const featuredBadge = product.featured ? '<span class="featured-badge">Featured</span>' : '';
+        const productJson  = encodeURIComponent(JSON.stringify(product));
+        const featuredBadge = product.featured
+            ? '<span class="featured-badge">Featured</span>'
+            : '';
         return `
             <div class="product-card">
                 <div class="product-img-wrapper">
                     ${featuredBadge}
-                    <img src="${product.images[0]}" alt="${product.id}" loading="lazy">
+                    <img src="${escapeHtml(product.images[0])}"
+                         alt="${escapeHtml(product.id)} card design"
+                         loading="lazy">
                     <div class="quick-view-overlay">
-                        <button class="quick-view-btn" data-product="${productJson}">Quick View</button>
+                        <button class="quick-view-btn"
+                                data-product="${productJson}"
+                                aria-label="Quick view ${escapeHtml(product.id)}">
+                            Quick View
+                        </button>
                     </div>
                 </div>
-                <h4 class="product-id">${product.id}</h4>
+                <h4 class="product-id">${escapeHtml(product.id)}</h4>
                 <p class="product-price">Rs. ${product.price} / card</p>
             </div>
         `;
     }
 
-    // ---------------------------------------------------------------------
-    // 8. Show more items
-    // ---------------------------------------------------------------------
-    function showMoreItems() {
-        const nextCount = Math.min(visibleCount + ITEMS_PER_PAGE, filteredProducts.length);
-        const newItems = filteredProducts.slice(visibleCount, nextCount);
-        if (newItems.length > 0) {
-            const cardsHTML = newItems.map(product => createCardHTML(product)).join('');
-            productContainer.insertAdjacentHTML('beforeend', cardsHTML);
-        }
-        visibleCount = nextCount;
-        updateShowMoreButton();
-    }
-
-    function updateShowMoreButton() {
-        showMoreBtn.style.display = (visibleCount < filteredProducts.length) ? 'inline-block' : 'none';
-    }
-
-    // ---------------------------------------------------------------------
-    // 9. Quick View event delegation
-    // ---------------------------------------------------------------------
-    productContainer.addEventListener('click', (e) => {
+    // Event delegation for quick-view buttons
+    productContainer.addEventListener('click', e => {
         const btn = e.target.closest('.quick-view-btn');
         if (!btn) return;
-        const product = JSON.parse(decodeURIComponent(btn.getAttribute('data-product')));
-        openProductModal(product);
+        try {
+            const product = JSON.parse(decodeURIComponent(btn.getAttribute('data-product')));
+            openProductModal(product);
+        } catch (err) {
+            console.error('Could not parse product data:', err);
+        }
     });
 
-    showMoreBtn.addEventListener('click', showMoreItems);
+    // Show more
+    showMoreBtn.addEventListener('click', () => {
+        const nextCount = Math.min(visibleCount + ITEMS_PER_PAGE, filteredProducts.length);
+        const newHTML = filteredProducts
+            .slice(visibleCount, nextCount)
+            .map(createCardHTML)
+            .join('');
+        productContainer.insertAdjacentHTML('beforeend', newHTML);
+        visibleCount = nextCount;
+        updateShowMoreBtn();
+    });
 
-    // ---------------------------------------------------------------------
-    // 10. MODAL – Clean discount banner + full-screen lightbox
-    // ---------------------------------------------------------------------
-    let currentUnitPrice = 0;
-    let currentProductName = "";
-    let currentProductCategory = "";
-    let currentMinOrder = 100;
+    function updateShowMoreBtn() {
+        showMoreBtn.style.display = visibleCount < filteredProducts.length ? 'inline-block' : 'none';
+    }
 
+    /* ============================================================
+       8. QUICK VIEW MODAL
+    ============================================================ */
     function openProductModal(product) {
-        currentProductName = product.id;
-        currentProductCategory = product.category;
-        currentUnitPrice = product.price;
-        currentMinOrder = product.minOrder || 100;
+        currentProductName  = product.id;
+        currentProductCat   = product.category;
+        currentUnitPrice    = product.price;
+        currentMinOrder     = product.minOrder || 100;
+        currentImages       = product.images || [];
 
-        // Store images for lightbox
-        currentImages = product.images || [];
-
-        modalTitle.textContent = product.name || product.id;
-        modalCategoryLabel.textContent = `Allure ${product.category} Collection`;
-        modalUnitPrice.textContent = `Rs. ${product.price} / card`;
-        modalDescText.textContent = product.description || DEFAULT_DESCRIPTION;
+        // Populate header info
+        modalTitle.textContent       = product.name || product.id;
+        modalCategoryLbl.textContent = `Allure ${product.category} Collection`;
+        modalUnitPrice.textContent   = `Rs. ${product.price} / card`;
+        modalDescText.textContent    = product.description || DEFAULT_DESC;
 
         // Main image
-        modalImg.src = currentImages[0];
+        modalImg.src = currentImages[0] || '';
         modalImg.alt = product.name || product.id;
 
-        // Thumbnails
-        thumbnailContainer.innerHTML = '';
+        // Thumbnails — only show if there are multiple images
+        thumbnailRow.innerHTML = '';
         if (currentImages.length > 1) {
-            currentImages.forEach((imgSrc, index) => {
+            currentImages.forEach((src, idx) => {
                 const thumbDiv = document.createElement('div');
-                thumbDiv.className = `thumb ${index === 0 ? 'active' : ''}`;
-                thumbDiv.innerHTML = `<img src="${imgSrc}" alt="Thumbnail ${index + 1}">`;
-
+                thumbDiv.className = `thumb${idx === 0 ? ' active' : ''}`;
+                thumbDiv.innerHTML = `<img src="${escapeHtml(src)}" alt="Thumbnail ${idx + 1}">`;
                 thumbDiv.addEventListener('click', () => {
                     modalImg.style.opacity = '0.5';
                     setTimeout(() => {
-                        modalImg.src = imgSrc;
+                        modalImg.src = src;
                         modalImg.style.opacity = '1';
-                    }, 150);
+                    }, 160);
                     document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
                     thumbDiv.classList.add('active');
                 });
-
-                thumbnailContainer.appendChild(thumbDiv);
+                thumbnailRow.appendChild(thumbDiv);
             });
         }
 
-        // Populate dropdown
+        // Calculator
         populateQtyDropdown(currentMinOrder);
-
-        // Bind change event
         qtySelect.removeEventListener('change', calculateTotal);
         qtySelect.addEventListener('change', calculateTotal);
         calculateTotal();
 
+        // Open
         modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        closeModalBtn.focus();
     }
 
+    /* ---- Close modal ---- */
+    function closeModal() {
+        closeGallery(/* fromModal= */ true);
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = 'auto';
+    }
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+
+    /* ============================================================
+       9. PRICE CALCULATOR
+    ============================================================ */
     function populateQtyDropdown(minOrder) {
         qtySelect.innerHTML = '';
         for (let qty = minOrder; qty <= 1500; qty += 50) {
-            const option = document.createElement('option');
-            option.value = qty;
-            option.textContent = qty.toLocaleString() + ' cards';
-            if (qty === minOrder) option.selected = true;
-            qtySelect.appendChild(option);
+            const opt = document.createElement('option');
+            opt.value = qty;
+            opt.textContent = qty.toLocaleString() + ' cards';
+            if (qty === minOrder) opt.selected = true;
+            qtySelect.appendChild(opt);
         }
     }
 
     function calculateTotal() {
-        const qty = parseInt(qtySelect.value, 10);
-        const cardCost = qty * currentUnitPrice;
-
-        const printingCharge = qty < 200 ? 600 : 0;
-        const printingWaived = printingCharge === 0 ? 600 : 0;
+        const qty           = parseInt(qtySelect.value, 10);
+        const cardCost      = qty * currentUnitPrice;
+        const printingFee   = qty < 200 ? 600 : 0;
+        const printingWaived = printingFee === 0 ? 600 : 0;
 
         let factor = 1.0;
-        let discountPercent = 0;
-        if (qty >= 1000) {
-            factor = 0.90;
-            discountPercent = 10;
-        } else if (qty >= 500) {
-            factor = 0.95;
-            discountPercent = 5;
-        }
-        const discountAmount = Math.round(cardCost * (1 - factor));
-        const finalTotal = Math.round(cardCost * factor) + printingCharge;
-        const totalSavings = printingWaived + discountAmount;
+        let discountPct = 0;
+        if      (qty >= 1000) { factor = 0.90; discountPct = 10; }
+        else if (qty >= 500)  { factor = 0.95; discountPct = 5;  }
 
-        // Update DOM
+        const discountAmt = Math.round(cardCost * (1 - factor));
+        const finalTotal  = Math.round(cardCost * factor) + printingFee;
+        const totalSavings = printingWaived + discountAmt;
+
+        // Card cost
         calcCardCost.textContent = `Rs. ${cardCost.toLocaleString()}`;
 
-        if (printingCharge > 0) {
-            calcPrintingVal.innerHTML = `Rs. 600`;
+        // Printing
+        if (printingFee > 0) {
+            calcPrintingVal.innerHTML = 'Rs. 600';
         } else {
-            calcPrintingVal.innerHTML = `<span class="waived">Rs. 600</span> <span class="saved-text">FREE</span>`;
+            calcPrintingVal.innerHTML = '<span class="waived">Rs. 600</span> <span class="saved-text">FREE</span>';
         }
 
-        if (discountPercent > 0) {
-            discountRow.style.display = 'flex';
-            calcDiscountVal.innerHTML = `− Rs. ${discountAmount.toLocaleString()} (${discountPercent}% off)`;
+        // Discount row
+        discountRow.style.display = discountPct > 0 ? 'flex' : 'none';
+        if (discountPct > 0) {
+            calcDiscountVal.innerHTML = `− Rs. ${discountAmt.toLocaleString()} (${discountPct}% off)`;
             calcDiscountVal.style.color = '#2e7d32';
-        } else {
-            discountRow.style.display = 'none';
         }
 
+        // Savings row
+        savingsRow.style.display = totalSavings > 0 ? 'flex' : 'none';
         if (totalSavings > 0) {
-            savingsRow.style.display = 'flex';
             calcSavingsVal.textContent = `Rs. ${totalSavings.toLocaleString()}`;
-        } else {
-            savingsRow.style.display = 'none';
         }
 
+        // Final total
         calcFinalTotal.textContent = `Rs. ${finalTotal.toLocaleString()}`;
 
-        const message = `Hello Impressions! I would like to inquire about an Allure card design.\n\n` +
-                        `*Design:* ${currentProductName} (${currentProductCategory} Collection)\n` +
-                        `*Quantity:* ${qty}\n` +
-                        `*Estimated Total:* Rs. ${finalTotal.toLocaleString()}\n\n` +
-                        `Please let me know how to proceed.`;
-        whatsappBtn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        // WhatsApp message
+        const message =
+            `Hello Impressions! I would like to inquire about an Allure card design.\n\n` +
+            `*Design:* ${currentProductName} (${currentProductCat} Collection)\n` +
+            `*Quantity:* ${qty}\n` +
+            `*Estimated Total:* Rs. ${finalTotal.toLocaleString()}\n\n` +
+            `Please let me know how to proceed.`;
+
+        whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     }
 
-    // ---------------------------------------------------------------------
-    // 11. LIGHTBOX – Full screen image viewer with arrow navigation
-    // ---------------------------------------------------------------------
-    modalImg.addEventListener('click', (e) => {
-        if (currentImages.length === 0) return;
-        const src = modalImg.getAttribute('src');
-        const idx = currentImages.indexOf(src);
+    /* ============================================================
+       10. LIGHTBOX
+    ============================================================ */
+    // Click main modal image → open lightbox
+    modalImg.addEventListener('click', () => {
+        if (!currentImages.length) return;
+        const activeSrc = modalImg.getAttribute('src');
+        const idx = currentImages.indexOf(activeSrc);
         openGallery(idx >= 0 ? idx : 0);
     });
 
     function openGallery(index) {
-        if (currentImages.length === 0) return;
+        if (!currentImages.length) return;
         currentGalleryIndex = index;
         updateGalleryImage();
         galleryOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        // Note: body overflow already locked by modal, no need to re-lock
+        galleryClose.focus();
     }
 
     function updateGalleryImage() {
         galleryImg.src = currentImages[currentGalleryIndex];
-        if (currentImages.length > 1) {
-            galleryCounter.textContent = `${currentGalleryIndex + 1} / ${currentImages.length}`;
-            galleryPrev.style.display = 'block';
-            galleryNext.style.display = 'block';
-        } else {
-            galleryCounter.textContent = '';
-            galleryPrev.style.display = 'none';
-            galleryNext.style.display = 'none';
+        galleryImg.alt = `Image ${currentGalleryIndex + 1} of ${currentImages.length}`;
+        const multiple = currentImages.length > 1;
+        galleryCounter.textContent = multiple
+            ? `${currentGalleryIndex + 1} / ${currentImages.length}`
+            : '';
+        galleryPrev.style.display = multiple ? 'block' : 'none';
+        galleryNext.style.display = multiple ? 'block' : 'none';
+    }
+
+    /**
+     * Close the lightbox.
+     * @param {boolean} fromModal - if true, modal is still open, don't restore body scroll
+     */
+    function closeGallery(fromModal = false) {
+        galleryOverlay.classList.remove('active');
+        if (!fromModal && !modal.classList.contains('active')) {
+            document.body.style.overflow = 'auto';
         }
     }
 
-    function closeGallery() {
-        galleryOverlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-
-    galleryClose.addEventListener('click', closeGallery);
-    galleryOverlay.addEventListener('click', (e) => {
+    galleryClose.addEventListener('click', () => closeGallery());
+    galleryOverlay.addEventListener('click', e => {
         if (e.target === galleryOverlay) closeGallery();
     });
 
-    galleryPrev.addEventListener('click', (e) => {
+    galleryPrev.addEventListener('click', e => {
         e.stopPropagation();
-        if (currentImages.length > 0) {
-            currentGalleryIndex = (currentGalleryIndex - 1 + currentImages.length) % currentImages.length;
-            updateGalleryImage();
-        }
+        if (!currentImages.length) return;
+        currentGalleryIndex = (currentGalleryIndex - 1 + currentImages.length) % currentImages.length;
+        updateGalleryImage();
     });
 
-    galleryNext.addEventListener('click', (e) => {
+    galleryNext.addEventListener('click', e => {
         e.stopPropagation();
-        if (currentImages.length > 0) {
-            currentGalleryIndex = (currentGalleryIndex + 1) % currentImages.length;
-            updateGalleryImage();
-        }
+        if (!currentImages.length) return;
+        currentGalleryIndex = (currentGalleryIndex + 1) % currentImages.length;
+        updateGalleryImage();
     });
 
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', e => {
         if (!galleryOverlay.classList.contains('active')) return;
-        if (e.key === 'Escape') closeGallery();
-        if (e.key === 'ArrowLeft') {
-            currentGalleryIndex = (currentGalleryIndex - 1 + currentImages.length) % currentImages.length;
-            updateGalleryImage();
-        }
-        if (e.key === 'ArrowRight') {
-            currentGalleryIndex = (currentGalleryIndex + 1) % currentImages.length;
-            updateGalleryImage();
-        }
-    });
-
-    // ---------------------------------------------------------------------
-    // 12. Close modal (includes resetting body scroll)
-    // ---------------------------------------------------------------------
-    closeModalBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    });
-
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+        switch (e.key) {
+            case 'Escape':
+                closeGallery();
+                break;
+            case 'ArrowLeft':
+                if (currentImages.length > 1) {
+                    currentGalleryIndex = (currentGalleryIndex - 1 + currentImages.length) % currentImages.length;
+                    updateGalleryImage();
+                }
+                break;
+            case 'ArrowRight':
+                if (currentImages.length > 1) {
+                    currentGalleryIndex = (currentGalleryIndex + 1) % currentImages.length;
+                    updateGalleryImage();
+                }
+                break;
         }
     });
 
-    // ---------------------------------------------------------------------
-    // 13. Footer year
-    // ---------------------------------------------------------------------
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    /* ============================================================
+       UTILS
+    ============================================================ */
+    function getUniqueCategories() {
+        return [...new Set(allProducts.map(p => p.category).filter(Boolean))];
+    }
 
-});
+    /** Basic HTML escape to prevent XSS when inserting untrusted strings into innerHTML */
+    function escapeHtml(str) {
+        if (str == null) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+})();
