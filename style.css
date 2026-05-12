@@ -802,4 +802,211 @@ section {
     .hero-logo {
         width: 150px;
     }
+   
+   .product-starting-price {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    margin-top: 10px;
+}
+}
+/* -- Quick View Select -- */
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='%237a7a7a'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+.input-group select:focus {
+    border-color: var(--primary-gold);
+}
+/* ---------- Quick View Calculator Hints ---------- */
+.calc-hint {
+    font-size: 0.72rem;
+    color: var(--primary-gold);
+    text-align: center;
+    margin: -5px 0 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+.highlight-save {
+    color: var(--primary-gold);
+    font-weight: 600;
+}
+
+.highlight-save span:last-child {
+    color: var(--primary-gold);
+}
+
+/* Animation for printing charge when waived */
+#printing-row .waived {
+    color: #2e7d32;
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+#printing-row .saved-text {
+    font-size: 0.75rem;
+    color: #2e7d32;
+    margin-left: 6px;
+}
+/* Subtle inline hint next to the dropdown */
+.info-hint {
+    font-size: 0.65rem;
+    color: var(--primary-gold);
+    opacity: 0.75;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    margin-left: 2px;
+    display: inline-block;
+}
+
+/* Printing waived styling */
+#printing-row .waived {
+    color: #2e7d32;
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+#printing-row .saved-text {
+    font-size: 0.75rem;
+    color: #2e7d32;
+    margin-left: 6px;
+    font-weight: 500;
+}
+
+/* Volume discount row (already present) */
+.highlight-discount {
+    color: #2e7d32;
+}
+
+/* You save row */
+.highlight-save {
+    color: var(--primary-gold);
+    font-weight: 600;
+}
+/* ---------- Discount banner (moved below dropdown) ---------- */
+.discount-banner {
+    font-size: 0.68rem;
+    color: var(--primary-gold);
+    opacity: 0.8;
+    margin-top: 8px;
+    margin-bottom: 0;
+    text-align: center;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+}
+
+/* ---------- Full‑screen image viewer (lightbox) ---------- */
+.gallery-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.gallery-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 10;
+    transition: opacity 0.2s;
+    opacity: 0.7;
+}
+
+.gallery-nav:hover {
+    opacity: 1;
+}
+
+.gallery-prev {
+    left: 20px;
+}
+
+.gallery-next {
+    right: 20px;
+}
+
+.gallery-counter {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+.gallery-overlay img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    cursor: default;
+}
+
+/* Printing waived styling (already present, untouched) */
+#printing-row .waived {
+    color: #2e7d32;
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+#printing-row .saved-text {
+    font-size: 0.75rem;
+    color: #2e7d32;
+    margin-left: 6px;
+    font-weight: 500;
+}
+
+/* Savings row */
+.highlight-save {
+    color: var(--primary-gold);
+    font-weight: 600;
 }
