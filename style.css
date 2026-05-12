@@ -905,27 +905,16 @@ section { padding: 100px 5%; }
 
 /* ✅ Quick View WhatsApp Button – deep blue, white text, gold hover */
 .whatsapp-cta-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 15px 24px;
-    background-color: #0a1f3d;      /* deep navy / blue-gold */
+    /* … keep everything else … */
+    background-color: var(--gold);      /* was #0a1f3d */
     color: #ffffff;
-    font-family: var(--font-sans);
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(179, 139, 77, 0.3); /* subtle gold rim */
-    cursor: pointer;
-    transition: background-color 0.35s ease, transform 0.25s ease, box-shadow 0.35s ease;
-    margin-top: auto;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    flex-shrink: 0;
+    border: 1px solid var(--gold-hover);
+}
+.whatsapp-cta-btn:hover {
+    background-color: var(--gold-hover); /* was #16325c */
+    color: #ffffff;
+    border-color: var(--gold);
+    box-shadow: 0 8px 24px rgba(179, 139, 77, 0.5); /* slightly brighter gold glow */
 }
 .whatsapp-cta-btn svg {
     width: 20px;
@@ -933,14 +922,6 @@ section { padding: 100px 5%; }
     fill: currentColor;            /* white */
     flex-shrink: 0;
 }
-.whatsapp-cta-btn:hover {
-    background-color: #16325c;     /* brighter blue */
-    color: #ffffff;
-    border-color: var(--gold);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(179, 139, 77, 0.4); /* gold glow */
-}
-
 
 /* ============================================================
    FULL-SCREEN LIGHTBOX
