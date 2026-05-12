@@ -199,5 +199,18 @@
       "assets/cards/al-004-1.png",
       "assets/cards/al-004-2.png"
     ]
+  },
+  {
+    "id": "AL 005",
+    "name": "AL 005",
+    "category": "Floral",
+    "price": 45,
+    "featured": true,
+    "minOrder": 200,
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "images": [
+      "assets/cards/al-005-1.jpeg",
+      "assets/cards/al-005-2.jpeg"
+    ]
   }
 ]
