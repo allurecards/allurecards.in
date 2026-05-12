@@ -154,5 +154,17 @@
       "assets/cards/card-12-1.png",
       "assets/cards/card-12-2.png"
     ]
+  },
+  {
+    "id": "john105",
+    "name": "007",
+    "category": "Minimal",
+    "price": 100,
+    "featured": true,
+    "minOrder": 200,
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "images": [
+      "assets/cards/john105-1.png"
+    ]
   }
 ]
