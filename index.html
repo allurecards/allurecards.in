@@ -205,11 +205,17 @@
             justify-content: space-between;
         }
         header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             width: 100%;
-            padding-top: 3rem;
+            padding: 1.5rem 2rem;   /* adjust horizontal padding to match container */
+            box-sizing: border-box;
         }
         .brand {
             display: flex;
