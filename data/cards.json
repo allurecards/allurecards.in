@@ -141,19 +141,5 @@
     "images": [
       "assets/cards/PU-5.gif"
     ]
-  },
-  {
-    "id": "john_water",
-    "name": "watermark",
-    "category": "Floral",
-    "price": 500,
-    "featured": false,
-    "minOrder": 100,
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": [
-      "assets/cards/john-water-1.png",
-      "assets/cards/john-water-2.png",
-      "assets/cards/john-water-3.png"
-    ]
   }
 ]
