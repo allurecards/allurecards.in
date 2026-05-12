@@ -1,24 +1,18 @@
 /* =============================================
-   ALLURE – PREMIUM BESPOKE INVITATIONS
-   Complete Gold-Theme Stylesheet
-   Includes Animated Floral Preloader
+   ALLURE - PREMIUM BESPOKE INVITATIONS
+   Complete Stylesheet – Final Polished Version
    ============================================= */
 
 /* ---------- ROOT VARIABLES ---------- */
 :root {
-    --primary-gold: #b38b4d;
-    --primary-gold-alt: #9c7841;
+    --primary-gold: #c5a059;
+    --primary-gold-alt: #b38b4d;
     --bg-color: #faf9f6;
-    --text-dark: #3a332a;
+    --text-dark: #2c2c2c;
     --text-light: #7a7a7a;
     --discount-color: #2e7d32;
     --font-heading: 'Cinzel', serif;
     --font-body: 'Montserrat', sans-serif;
-
-    /* Preloader */
-    --preloader-gold: #b38b4d;
-    --preloader-bg: #FDFBF8;
-    --preloader-font: 'Cinzel', serif;
 }
 
 /* ---------- GLOBAL RESET ---------- */
@@ -30,15 +24,10 @@
 }
 
 body {
-    font-family: var(--font-heading);
-    color: var(--text-dark);
+    font-family: var(--font-body);
     background-color: #f8f4ee;
+    color: var(--text-dark);
     line-height: 1.6;
-    overflow: hidden; /* locked during preloader */
-}
-
-body.loaded {
-    overflow: auto;
 }
 
 /* ---------- SKIP LINK ---------- */
@@ -56,16 +45,23 @@ body.loaded {
     top: 10px;
 }
 
-/* =============================================
-   ANIMATED FLORAL PRELOADER
-   ============================================= */
+/* ---------- PRELOADER ---------- */
+
+/* Prevent scrolling while loading */
+body {
+    overflow: hidden;
+}
+body.loaded {
+    overflow: auto;
+}
+
 #preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    background-color: var(--preloader-bg);
+    height: 100%;
+    background-color: #FDFBF8;
     z-index: 99999;
     display: flex;
     justify-content: center;
@@ -99,11 +95,11 @@ body.loaded #preloader {
 }
 
 .preloader-title {
-    font-family: var(--preloader-font);
+    font-family: var(--font-heading);
     font-size: 4.5rem;
     font-weight: 300;
     letter-spacing: 14px;
-    color: var(--preloader-gold);
+    color: var(--primary-gold-alt);
     margin-right: -14px;
     opacity: 0;
     transform: translateY(20px);
@@ -112,11 +108,11 @@ body.loaded #preloader {
 }
 
 .preloader-subtitle {
-    font-family: var(--preloader-font);
+    font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 400;
     letter-spacing: 6px;
-    color: var(--preloader-gold);
+    color: var(--primary-gold-alt);
     margin-top: 10px;
     margin-right: -6px;
     opacity: 0;
@@ -124,6 +120,7 @@ body.loaded #preloader {
     animation: elegantFadeUp 1.2s 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
+/* SVG Floral Drawing Animation */
 .flower-svg {
     position: absolute;
     top: -25px;
@@ -134,7 +131,7 @@ body.loaded #preloader {
 }
 
 .path-anim {
-    stroke: var(--preloader-gold);
+    stroke: var(--primary-gold-alt);
     stroke-width: 1.2px;
     fill: transparent;
     stroke-dasharray: 200;
@@ -165,9 +162,14 @@ body.loaded #preloader {
     }
 }
 
-/* =============================================
-   HERO SECTION & NAVIGATION
-   ============================================= */
+/* Mobile Adjustments for Preloader */
+@media (max-width: 768px) {
+    .preloader-title    { font-size: 3rem; margin-right: -8px; }
+    .preloader-subtitle { font-size: 0.75rem; }
+    .flower-svg         { right: -30px; width: 50px; height: 50px; top: -15px; }
+}
+
+/* ========== HERO SECTION & NAVIGATION ========== */
 .hero {
     height: 100vh;
     display: flex;
@@ -184,7 +186,7 @@ body.loaded #preloader {
     left: 0;
     width: 55%;
     height: 100%;
-    background: linear-gradient(to right, rgba(248, 244, 238, 0.85) 0%, rgba(248, 244, 238, 0.4) 60%, transparent 100%);
+    background: linear-gradient(to right, rgba(248, 244, 238, 0.9) 0%, rgba(248, 244, 238, 0.5) 60%, transparent 100%);
     z-index: 1;
 }
 
@@ -193,18 +195,21 @@ body.loaded #preloader {
     z-index: 2;
     height: 100%;
     width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
-    padding: 3rem 6rem;
+    justify-content: space-between;
 }
 
-/* ---------- Navbar ---------- */
+/* ---------- Transparent, non-sticky Navbar ---------- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    padding-top: 0;
+    padding-top: 3rem;
 }
 
 .brand {
@@ -213,30 +218,22 @@ header {
     align-items: center;
 }
 
-.brand h1 {
-    font-size: 2.2rem;
-    font-weight: 500;
-    letter-spacing: 6px;
-    color: var(--primary-gold);
-    margin-bottom: 2px;
-    font-family: var(--font-heading);
-}
-
-.brand span {
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: var(--text-dark);
-    font-family: var(--font-body);
+/* Logo image */
+.hero-logo {
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.05));
+    margin-bottom: 8px;
 }
 
 .ornament-small {
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-top: 8px;
+    margin-top: 0;
 }
-
 .ornament-small::before,
 .ornament-small::after {
     content: '';
@@ -245,23 +242,21 @@ header {
     height: 1px;
     background-color: var(--primary-gold);
 }
-
 .ornament-small i {
     color: var(--primary-gold);
     font-size: 10px;
     font-style: normal;
 }
 
+/* Navigation */
 nav {
-    margin-top: 10px;
+    margin-top: 28px;
 }
-
 nav ul {
     display: flex;
     gap: 3rem;
     list-style: none;
 }
-
 nav a {
     text-decoration: none;
     color: var(--text-dark);
@@ -270,9 +265,8 @@ nav a {
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
-
 nav a:hover {
     color: var(--primary-gold);
 }
@@ -310,7 +304,6 @@ nav a:hover {
     gap: 10px;
     margin: 2rem 0;
 }
-
 .hero-ornament::before,
 .hero-ornament::after {
     content: '';
@@ -319,7 +312,6 @@ nav a:hover {
     height: 1px;
     background-color: var(--primary-gold);
 }
-
 .hero-ornament i {
     color: var(--primary-gold);
     font-size: 14px;
@@ -348,21 +340,20 @@ nav a:hover {
     text-transform: uppercase;
     text-decoration: none;
     padding: 14px 32px;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
     cursor: pointer;
     display: inline-block;
     text-align: center;
 }
 
 .btn-primary {
-    background-color: var(--primary-gold);
-    color: #fff;
-    border: 1px solid var(--primary-gold);
-}
-
-.btn-primary:hover {
     background-color: var(--primary-gold-alt);
-    border-color: var(--primary-gold-alt);
+    color: #fff;
+    border: 1px solid var(--primary-gold-alt);
+}
+.btn-primary:hover {
+    background-color: #9c7841;
+    border-color: #9c7841;
 }
 
 .btn-secondary {
@@ -370,22 +361,21 @@ nav a:hover {
     color: var(--text-dark);
     border: 1px solid var(--text-dark);
 }
-
 .btn-secondary:hover {
     background-color: var(--text-dark);
     color: #fff;
 }
 
-/* ---------- Bottom Tagline ---------- */
+/* ---------- Bottom tagline ---------- */
 .bottom-tag {
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    margin-top: auto;
 }
-
 .tag-text {
     font-family: var(--font-heading);
     font-size: 0.85rem;
@@ -394,9 +384,7 @@ nav a:hover {
     text-transform: uppercase;
 }
 
-/* =============================================
-   OUR STORY / EMOTIONAL HOOK
-   ============================================= */
+/* ========== EMOTIONAL HOOK / OUR STORY ========== */
 .emotional-hook {
     background-color: #fff;
     padding: 120px 0;
@@ -412,9 +400,7 @@ nav a:hover {
 }
 
 .hook-image,
-.hook-text {
-    flex: 1;
-}
+.hook-text { flex: 1; }
 
 .hook-image img {
     border-radius: 4px;
@@ -450,9 +436,7 @@ nav a:hover {
     font-weight: 600;
 }
 
-/* =============================================
-   SECTIONS COMMON
-   ============================================= */
+/* ========== SECTIONS COMMON ========== */
 section {
     padding: 100px 5%;
 }
@@ -493,19 +477,16 @@ section {
     transition: all 0.4s ease;
     cursor: pointer;
 }
-
 .category-card:hover {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transform: translateY(-5px);
     border-color: var(--primary-gold);
 }
-
 .category-card h3 {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
-
 .category-card p {
     font-size: 0.9rem;
     color: var(--text-light);
@@ -532,17 +513,15 @@ section {
     color: var(--text-light);
     transition: all 0.3s;
 }
-
 .filter-btn:hover {
     border-color: var(--primary-gold);
     color: var(--primary-gold);
 }
-
 .filter-btn.active {
     background-color: var(--primary-gold);
     color: #fff;
     border-color: var(--primary-gold);
-    box-shadow: 0 4px 10px rgba(179, 139, 77, 0.3);
+    box-shadow: 0 4px 10px rgba(197, 160, 89, 0.3);
 }
 
 /* ---------- Products Grid ---------- */
@@ -564,7 +543,6 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 6px rgba(0,0,0,0.02);
 }
-
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.06);
@@ -581,7 +559,6 @@ section {
     margin-bottom: 20px;
     overflow: hidden;
 }
-
 .product-img-wrapper img {
     max-width: 90%;
     max-height: 90%;
@@ -602,7 +579,6 @@ section {
     opacity: 0;
     transition: opacity 0.3s;
 }
-
 .product-img-wrapper:hover .quick-view-overlay {
     opacity: 1;
 }
@@ -619,7 +595,6 @@ section {
     font-size: 0.8rem;
     transition: 0.3s;
 }
-
 .quick-view-btn:hover {
     background: var(--primary-gold);
 }
@@ -648,7 +623,7 @@ section {
     padding: 4px 12px;
     border-radius: 20px;
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(179, 139, 77, 0.4);
+    box-shadow: 0 2px 8px rgba(197, 160, 89, 0.4);
     z-index: 5;
 }
 
@@ -657,7 +632,6 @@ section {
     text-align: center;
     margin-top: 50px;
 }
-
 .show-more-btn {
     display: none;
     padding: 14px 40px;
@@ -672,15 +646,12 @@ section {
     transition: all 0.3s;
     border-radius: 30px;
 }
-
 .show-more-btn:hover {
     background-color: var(--primary-gold);
     color: #fff;
 }
 
-/* =============================================
-   WHATSAPP FLOATING BUTTON
-   ============================================= */
+/* ========== WHATSAPP FLOATING BUTTON ========== */
 .sticky-whatsapp {
     position: fixed;
     bottom: 30px;
@@ -698,26 +669,21 @@ section {
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-decoration: none;
 }
-
 .sticky-whatsapp:hover {
     transform: scale(1.15);
 }
-
 .sticky-whatsapp svg {
     width: 35px;
     height: 35px;
     fill: currentColor;
 }
 
-/* =============================================
-   FOOTER
-   ============================================= */
+/* ========== FOOTER ========== */
 .footer {
     background-color: #1a1a1a;
     color: #fff;
     padding: 80px 5% 40px;
 }
-
 .footer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -726,7 +692,6 @@ section {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .footer-logo {
     font-family: var(--font-heading);
     font-size: 2.5rem;
@@ -734,42 +699,35 @@ section {
     color: var(--primary-gold);
     margin-bottom: 5px;
 }
-
 .footer-divider {
     width: 40px;
     height: 1px;
     background-color: var(--primary-gold);
     margin: 15px 0 20px;
 }
-
 .footer-tagline {
     font-size: 0.95rem;
     margin-bottom: 20px;
     color: #ccc;
 }
-
 .footer-address {
     font-size: 0.95rem;
     color: #aaa;
     margin-bottom: 15px;
     line-height: 1.8;
 }
-
 .footer-contact a {
     color: var(--primary-gold);
     text-decoration: none;
     transition: 0.3s;
     font-size: 0.95rem;
 }
-
 .footer-contact a:hover {
     color: #fff;
 }
-
 .footer-social {
     margin-top: 25px;
 }
-
 .footer-social a {
     color: #fff;
     text-decoration: none;
@@ -779,11 +737,9 @@ section {
     letter-spacing: 1px;
     transition: 0.3s;
 }
-
 .footer-social a:hover {
     color: var(--primary-gold);
 }
-
 .footer-map-container {
     width: 100%;
     text-align: right;
@@ -791,21 +747,18 @@ section {
     flex-direction: column;
     align-items: flex-end;
 }
-
 .footer-map-container iframe {
-    border: 1px solid rgba(179, 139, 77, 0.3);
+    border: 1px solid rgba(197,160,89,0.3);
     width: 100%;
     height: 220px;
     border-radius: 8px;
     opacity: 0.85;
     transition: opacity 0.3s, border-color 0.3s;
 }
-
 .footer-map-container iframe:hover {
     opacity: 1;
     border-color: var(--primary-gold);
 }
-
 .map-link {
     display: inline-block;
     margin-top: 15px;
@@ -815,32 +768,27 @@ section {
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 8px 20px;
-    border: 1px solid rgba(179, 139, 77, 0.4);
+    border: 1px solid rgba(197,160,89,0.4);
     border-radius: 30px;
     transition: 0.3s;
 }
-
 .map-link:hover {
     background: var(--primary-gold);
     color: #fff;
     border-color: var(--primary-gold);
 }
-
 .footer-bottom {
     text-align: center;
     margin-top: 60px;
     padding-top: 30px;
     border-top: 1px solid #333;
 }
-
 .footer-copy {
     font-size: 0.8rem;
     color: #666;
 }
 
-/* =============================================
-   MODAL (Quick View)
-   ============================================= */
+/* ========== MODAL (Quick View) ========== */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -856,7 +804,6 @@ section {
     visibility: hidden;
     transition: all 0.3s;
 }
-
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
@@ -885,7 +832,6 @@ section {
     cursor: pointer;
     z-index: 10;
 }
-
 .close-modal:hover {
     color: var(--text-dark);
 }
@@ -915,7 +861,6 @@ section {
     margin-bottom: 20px;
     cursor: pointer;
 }
-
 .main-image-container img {
     max-width: 100%;
     max-height: 100%;
@@ -931,7 +876,6 @@ section {
     width: 100%;
     flex-wrap: wrap;
 }
-
 .thumb {
     width: 70px;
     height: 70px;
@@ -942,12 +886,10 @@ section {
     background: #fff;
     transition: border 0.3s;
 }
-
 .thumb.active,
 .thumb:hover {
     border-color: var(--primary-gold);
 }
-
 .thumb img {
     width: 100%;
     height: 100%;
@@ -971,27 +913,24 @@ section {
     margin-bottom: 10px;
     font-weight: 500;
 }
-
 .modal-info h3 {
     font-family: var(--font-heading);
     font-size: 2rem;
     margin-bottom: 10px;
 }
-
 .modal-price {
     font-size: 1.2rem;
     color: var(--text-dark);
     margin-bottom: 20px;
     font-weight: 500;
 }
-
 .modal-description {
     font-size: 0.9rem;
     color: var(--text-light);
     margin-bottom: 30px;
 }
 
-/* ---------- Calculator ---------- */
+/* ---------- Calculator inside Modal ---------- */
 .calculator-box {
     background: var(--bg-color);
     padding: 20px;
@@ -1003,7 +942,6 @@ section {
 .input-group {
     margin-bottom: 15px;
 }
-
 .input-group label {
     display: block;
     font-size: 0.85rem;
@@ -1029,7 +967,6 @@ section {
     background-repeat: no-repeat;
     background-position: right 15px center;
 }
-
 .input-group select:focus {
     border-color: var(--primary-gold);
 }
@@ -1055,17 +992,14 @@ section {
     margin-bottom: 8px;
     color: var(--text-light);
 }
-
 .highlight-discount {
     color: var(--discount-color);
 }
-
 .divider-sm {
     height: 1px;
     background: #ddd;
     margin: 10px 0;
 }
-
 .total-row {
     font-size: 1.2rem;
     font-weight: 600;
@@ -1074,24 +1008,22 @@ section {
     font-family: var(--font-heading);
 }
 
+/* Printing waived / savings text */
 #printing-row .waived {
     color: var(--discount-color);
     text-decoration: line-through;
     opacity: 0.6;
 }
-
 #printing-row .saved-text {
     font-size: 0.75rem;
     color: var(--discount-color);
     margin-left: 6px;
     font-weight: 500;
 }
-
 .highlight-save {
     color: var(--primary-gold);
     font-weight: 600;
 }
-
 .highlight-save span:last-child {
     color: var(--primary-gold);
 }
@@ -1102,9 +1034,7 @@ section {
     border-radius: 4px;
 }
 
-/* =============================================
-   LIGHTBOX (Full‑screen Gallery)
-   ============================================= */
+/* ========== LIGHTBOX (Full-screen Gallery) ========== */
 .gallery-overlay {
     position: fixed;
     top: 0;
@@ -1120,7 +1050,6 @@ section {
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-
 .gallery-overlay.active {
     opacity: 1;
     visibility: visible;
@@ -1153,18 +1082,11 @@ section {
     transition: opacity 0.2s;
     opacity: 0.7;
 }
-
 .gallery-nav:hover {
     opacity: 1;
 }
-
-.gallery-prev {
-    left: 20px;
-}
-
-.gallery-next {
-    right: 20px;
-}
+.gallery-prev { left: 20px; }
+.gallery-next { right: 20px; }
 
 .gallery-counter {
     position: absolute;
@@ -1185,104 +1107,36 @@ section {
     cursor: default;
 }
 
-/* =============================================
-   RESPONSIVE ADJUSTMENTS
-   ============================================= */
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
 @media (max-width: 1024px) {
-    .hero .container {
-        padding: 2rem 3rem;
-    }
-    .main-heading {
-        font-size: 2.8rem;
-    }
-    nav ul {
-        gap: 1.5rem;
-    }
-    .hook-container {
-        gap: 4rem;
-    }
+    .main-heading    { font-size: 2.8rem; }
+    .hook-container  { gap: 4rem; }
 }
 
 @media (max-width: 900px) {
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .modal-body {
-        flex-direction: column;
-    }
-    .modal-gallery {
-        padding: 20px;
-    }
-    .main-image-container {
-        height: 35vh;
-    }
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-    }
-    .footer-map-container {
-        text-align: center;
-        align-items: center;
-    }
-    .footer-divider {
-        margin: 15px auto 20px;
-    }
+    .products-grid          { grid-template-columns: repeat(2, 1fr); }
+    .modal-body             { flex-direction: column; }
+    .modal-gallery          { padding: 20px; }
+    .main-image-container   { height: 35vh; }
+    .footer-grid            { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .footer-map-container   { text-align: center; align-items: center; }
+    .footer-divider         { margin: 15px auto 20px; }
 }
 
 @media (max-width: 768px) {
-    .overlay-gradient {
-        width: 100%;
-        background: rgba(248, 244, 238, 0.85);
-    }
-    header {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: center;
-    }
-    .hero-content {
-        text-align: center;
-        align-items: center;
-        margin-top: 3rem;
-    }
-    .cta-group {
-        flex-direction: column;
-        width: 100%;
-    }
-    .btn {
-        text-align: center;
-    }
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .hook-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .hook-text h2 {
-        font-size: 2.5rem;
-    }
-    .hero .container {
-        padding: 2rem 1.5rem;
-    }
+    header              { flex-direction: column; align-items: center; gap: 1.5rem; }
+    .hero               { background-position: center; }
+    .overlay-gradient   { width: 100%; background: rgba(248, 244, 238, 0.85); }
+    .hero-content       { text-align: center; align-items: center; padding-top: 2rem; }
+    .cta-group          { flex-direction: column; width: 100%; }
+    .btn                { text-align: center; width: 100%; }
+    nav ul              { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+    .hook-container     { flex-direction: column; text-align: center; }
+    .hook-text h2       { font-size: 2.5rem; }
+    .hero-logo          { width: 140px; }
 }
 
 @media (max-width: 600px) {
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-    .preloader-title {
-        font-size: 3rem;
-        margin-right: -8px;
-    }
-    .preloader-subtitle {
-        font-size: 0.75rem;
-    }
-    .flower-svg {
-        right: -30px;
-        width: 50px;
-        height: 50px;
-        top: -15px;
-    }
+    .products-grid { grid-template-columns: 1fr; }
+    .hero-logo     { width: 120px; }
 }
