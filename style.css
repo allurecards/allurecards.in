@@ -266,14 +266,13 @@ nav a:hover::after { width: 100%; }
     overflow: hidden;
 }
 
-/* REMOVED OVERLAY – no white smoke */
 .overlay-gradient {
     position: absolute;
     inset: 0;
     background: linear-gradient(
         to right,
-        rgba(255, 0, 0, 0.25) 0%,
-        rgba(255, 0, 0, 0.05) 40%,
+        rgba(255, 255, 255, 0.60) 0%,   /* was 0.25 – much stronger white on the left */
+        rgba(255, 255, 255, 0.12) 50%,   /* was 0.05 – keeps some softness in the middle */
         transparent 100%
     );
     z-index: 0;
