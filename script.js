@@ -1,13 +1,7 @@
-// =============================================
-// ALLURE CARDS – PRELOADER, PRODUCTS, MODALS
-// (Updated preloader logic, rest unchanged)
-// =============================================
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    // 1. Preloader (NEW – reveals after animation completes)
+    // 1. Preloader – animated reveal (4.3s allows SVG draw + text fade to complete)
     window.addEventListener('load', () => {
-        // 4.3 seconds allows the full SVG drawing + text fade-in
         setTimeout(() => {
             document.body.classList.add('loaded');
         }, 4300);
@@ -46,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const calcFinalTotal = document.getElementById('calc-final-total');
     const whatsappBtn = document.getElementById('modal-whatsapp-btn');
 
-    // Full‑screen gallery elements
+    // Full-screen gallery elements
     const galleryOverlay = document.getElementById('gallery-overlay');
     const galleryImg = document.getElementById('gallery-img');
     const galleryClose = document.getElementById('gallery-close');
@@ -96,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         categoryGrid.innerHTML = categories.map(cat => `
             <div class="category-card" data-category="${cat}">
                 <h3>${cat}</h3>
-                <p>${cat === 'Heritage' ? 'Rich, traditional luxury' : 
+                <p>${cat === 'Heritage' ? 'Rich, traditional luxury' :
                      cat === 'Minimal' ? 'Understated elegance' :
                      cat === 'Floral' ? "Nature's romantic touch" :
                      cat === 'Modern' ? 'Contemporary & bold' :
@@ -217,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showMoreBtn.addEventListener('click', showMoreItems);
 
     // ---------------------------------------------------------------------
-    // 10. MODAL – Clean discount banner + full‑screen lightbox
+    // 10. MODAL – Clean discount banner + full-screen lightbox
     // ---------------------------------------------------------------------
     let currentUnitPrice = 0;
     let currentProductName = "";
@@ -344,10 +338,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // ---------------------------------------------------------------------
     // 11. LIGHTBOX – Full screen image viewer with arrow navigation
     // ---------------------------------------------------------------------
-    // Click on main image in modal opens the lightbox
     modalImg.addEventListener('click', (e) => {
         if (currentImages.length === 0) return;
-        // Start at the currently displayed image (match src)
         const src = modalImg.getAttribute('src');
         const idx = currentImages.indexOf(src);
         openGallery(idx >= 0 ? idx : 0);
@@ -433,4 +425,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // 13. Footer year
     // ---------------------------------------------------------------------
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+
 });
