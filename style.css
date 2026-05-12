@@ -14,7 +14,108 @@
     --font-heading: 'Cinzel', serif;
     --font-body: 'Montserrat', sans-serif;
 }
+/* Preloader Variables (Gold) */
+:root {
+    --preloader-gold: #b38b4d;
+    --preloader-bg: #FDFBF8;
+    --preloader-font: 'Cinzel', serif;
+}
 
+#preloader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: var(--preloader-bg);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1.5s cubic-bezier(0.76, 0, 0.24, 1),
+                visibility 1.5s,
+                filter 1.5s ease,
+                transform 1.5s cubic-bezier(0.76, 0, 0.24, 1);
+    transform-origin: center center;
+}
+body {
+    overflow: hidden;
+}
+body.loaded {
+    overflow: auto;
+}
+body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+    filter: blur(8px);
+    transform: scale(1.03);
+    pointer-events: none;
+}
+.preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform: translateY(-5%);
+}
+.preloader-brand-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.preloader-title {
+    font-family: var(--preloader-font);
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: 14px;
+    color: var(--preloader-gold);
+    margin-right: -14px;
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+    animation: elegantFadeUp 1.4s 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.preloader-subtitle {
+    font-family: var(--preloader-font);
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 6px;
+    color: var(--preloader-gold);
+    margin-top: 10px;
+    margin-right: -6px;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: elegantFadeUp 1.2s 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.flower-svg {
+    position: absolute;
+    top: -25px; right: -45px;
+    width: 65px; height: 65px;
+    overflow: visible;
+}
+.path-anim {
+    stroke: var(--preloader-gold);
+    stroke-width: 1.2px;
+    fill: transparent;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.stem   { animation: drawPath 1.2s 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.leaf-1 { animation: drawPath 1.2s 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.leaf-2 { animation: drawPath 1.2s 1.0s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.leaf-3 { animation: drawPath 1.2s 1.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+
+@keyframes drawPath {
+    to { stroke-dashoffset: 0; }
+}
+@keyframes elegantFadeUp {
+    from { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+    to   { opacity: 1; transform: translateY(0);    filter: blur(0);   }
+}
+@media (max-width: 768px) {
+    .preloader-title    { font-size: 3rem; margin-right: -8px; }
+    .preloader-subtitle { font-size: 0.75rem; }
+    .flower-svg         { right: -30px; width: 50px; height: 50px; top: -15px; }
+}
 /* ---------- GLOBAL RESET ---------- */
 * {
     margin: 0;
@@ -123,13 +224,20 @@ header {
 }
 
 /* Logo image – replaces text */
-.hero-logo {
-    width: 160px;          /* perfectly sized for the landing page */
-    height: auto;
-    object-fit: contain;
-    mix-blend-mode: multiply;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.05));
-    margin-bottom: 8px;
+.brand h1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 6px;
+    color: var(--primary-gold);
+    margin-bottom: 2px;
+    font-family: var(--font-heading);
+}
+.brand span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--text-dark);
+    font-family: var(--font-body);
 }
 
 .ornament-small {
@@ -154,7 +262,7 @@ header {
 
 /* Navigation */
 nav {
-    margin-top: 28px;
+    margin-top: 22px;
 }
 nav ul {
     display: flex;
