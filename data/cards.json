@@ -13,13 +13,14 @@
   {
     "id": "VELLUM 106",
     "name": "Vellum 106",
-    "category": "Floral",
-    "price": 48,
+    "category": "",
+    "price": 150,
     "featured": false,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/gree.gif"
-    ]
+    ],
+    "minOrder": 100
   },
   {
     "id": "VELLUM 105",
