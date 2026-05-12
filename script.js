@@ -1,18 +1,16 @@
 // =============================================
 // ALLURE CARDS – PRELOADER, PRODUCTS, MODALS
-// (No changes – identical to the production version)
+// (Updated preloader logic, rest unchanged)
 // =============================================
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // 1. Preloader
-    const preloader = document.getElementById('preloader');
-// 1. Preloader
-        window.addEventListener('load', () => {
-            setTimeout(() => {
+    // 1. Preloader (NEW – reveals after animation completes)
+    window.addEventListener('load', () => {
+        // 4.3 seconds allows the full SVG drawing + text fade-in
+        setTimeout(() => {
             document.body.classList.add('loaded');
         }, 4300);
-});
     });
 
     // 2. Constants
