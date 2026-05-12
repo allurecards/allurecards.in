@@ -151,10 +151,10 @@ body.loaded #preloader {
 
 
 /* ============================================================
-   SITE HEADER — fixed, above hero
+   SITE HEADER — absolute, transparent, overlays hero
    ============================================================ */
 .site-header {
-    position: fixed;
+    position: absolute;   /* NOT sticky or fixed */
     top: 0;
     left: 0;
     width: 100%;
@@ -163,15 +163,14 @@ body.loaded #preloader {
     height: var(--header-h);
     display: flex;
     align-items: center;
-    background: rgba(248, 244, 238, 0.88);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(179, 139, 77, 0.15);
+    background: transparent;   /* completely transparent */
+    border-bottom: none;
     transition: background 0.3s, box-shadow 0.3s;
 }
+/* Keep the .scrolled rule for possible future use, but it stays transparent as well */
 .site-header.scrolled {
-    background: rgba(248, 244, 238, 0.97);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    background: transparent;
+    box-shadow: none;
 }
 .header-inner {
     display: flex;
@@ -281,14 +280,15 @@ nav a:hover::after { width: 100%; }
     z-index: 0;
 }
 
-/* Hero body — centred column, padded for fixed header */
+/* Hero body — centred column, padded for absolute header */
 .hero-body {
     position: relative;
     z-index: 1;
     flex: 1;
     display: flex;
     align-items: center;
-    padding-top: var(--header-h);
+    justify-content: center;       /* center the text block horizontally */
+    padding-top: 60px;            /* reduced from var(--header-h) to shift content upward */
     padding-left: clamp(2rem, 8vw, 7rem);
     padding-right: 2rem;
 }
@@ -296,6 +296,8 @@ nav a:hover::after { width: 100%; }
     max-width: 560px;
     display: flex;
     flex-direction: column;
+    align-items: center;          /* keep inner elements centered */
+    text-align: center;          /* center all text */
 }
 .subheading {
     font-family: var(--font-sans);
@@ -311,12 +313,14 @@ nav a:hover::after { width: 100%; }
     line-height: 1.2;
     color: var(--text-dark);
     letter-spacing: 2px;
+    margin: 0 auto;
 }
 .hero-ornament {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 1.6rem 0;
+    justify-content: center;       /* center the ornament */
 }
 .hero-ornament::before,
 .hero-ornament::after {
@@ -343,6 +347,7 @@ nav a:hover::after { width: 100%; }
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;   /* center the buttons */
 }
 
 /* Buttons */
@@ -889,7 +894,7 @@ section { padding: 100px 5%; }
 }
 .highlight-save { color: var(--gold); font-weight: 600; }
 
-/* ✅ FIXED: WhatsApp CTA Button inside modal */
+/* ✅ RESTYLED: WhatsApp CTA Button (Quick View only) */
 .whatsapp-cta-btn {
     display: flex;
     align-items: center;
@@ -897,7 +902,7 @@ section { padding: 100px 5%; }
     gap: 10px;
     width: 100%;
     padding: 15px 24px;
-    background-color: #25D366;
+    background-color: var(--text-dark);   /* solid black/brown luxury */
     color: #fff;
     font-family: var(--font-sans);
     font-size: 0.82rem;
@@ -908,21 +913,23 @@ section { padding: 100px 5%; }
     border-radius: var(--radius-sm);
     border: none;
     cursor: pointer;
-    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    transition: background-color 0.45s ease, color 0.45s ease, transform 0.25s ease, box-shadow 0.35s ease;
     margin-top: auto; /* push to bottom when space allows */
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     flex-shrink: 0;
 }
 .whatsapp-cta-btn svg {
     width: 20px;
     height: 20px;
-    fill: #fff;
+    fill: currentColor;      /* will inherit text color */
     flex-shrink: 0;
+    transition: fill 0.45s ease;
 }
 .whatsapp-cta-btn:hover {
-    background-color: #1ebe5d;
+    background-color: var(--gold);        /* rich gold on hover */
+    color: var(--text-dark);              /* dark icon/text for inversion */
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 8px 24px rgba(179, 139, 77, 0.35);
 }
 .whatsapp-cta-btn:active {
     transform: translateY(0);
@@ -1091,7 +1098,7 @@ section { padding: 100px 5%; }
 
 
 /* ============================================================
-   STICKY WHATSAPP BUTTON
+   STICKY WHATSAPP BUTTON (global, untouched)
    ============================================================ */
 .sticky-whatsapp {
     position: fixed;
@@ -1144,7 +1151,7 @@ section { padding: 100px 5%; }
 
     nav ul { flex-wrap: wrap; justify-content: center; gap: 1rem; }
 
-    .hero-body { padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 110px; }
+    .hero-body { padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 60px; }
     .overlay-gradient { background: rgba(248, 244, 238, 0.9); }
     .hero-content { max-width: 100%; align-items: center; text-align: center; }
     .hero-ornament { justify-content: center; }
