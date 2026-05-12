@@ -1,3 +1,8 @@
+// =============================================
+// ALLURE CARDS – PRELOADER, PRODUCTS, MODALS
+// (No changes – identical to the production version)
+// =============================================
+
 document.addEventListener("DOMContentLoaded", () => {
 
     // 1. Preloader
@@ -162,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ---------------------------------------------------------------------
-    // 7. Create card HTML (unchanged)
+    // 7. Create card HTML
     // ---------------------------------------------------------------------
     function createCardHTML(product) {
         const productJson = encodeURIComponent(JSON.stringify(product));
@@ -429,5 +434,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // 13. Footer year
     // ---------------------------------------------------------------------
     document.getElementById('currentYear').textContent = new Date().getFullYear();
-
 });
