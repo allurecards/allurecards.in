@@ -411,5 +411,19 @@
       "assets/cards/al-022-1.jpeg",
       "assets/cards/al-022-2.jpeg"
     ]
+  },
+  {
+    "id": "AL 023",
+    "name": "AL 023",
+    "category": "Minimal",
+    "price": 33,
+    "featured": false,
+    "minOrder": 100,
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "images": [
+      "assets/cards/al-023-1.png",
+      "assets/cards/al-023-2.png",
+      "assets/cards/al-023-3.png"
+    ]
   }
 ]
