@@ -240,5 +240,21 @@
       "assets/cards/al-007-2.png",
       "assets/cards/al-007-3.png"
     ]
+  },
+  {
+    "id": "AL 1001",
+    "name": "AL 1001",
+    "category": "Heritage",
+    "price": 150,
+    "featured": false,
+    "minOrder": 200,
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "images": [
+      "assets/cards/al-1001-1.png",
+      "assets/cards/al-1001-2.png",
+      "assets/cards/al-1001-3.png",
+      "assets/cards/al-1001-4.png",
+      "assets/cards/al-1001-5.png"
+    ]
   }
 ]
