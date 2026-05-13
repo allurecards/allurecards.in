@@ -288,9 +288,9 @@
   {
     "id": "AL 013",
     "name": "AL 013",
-    "category": "Minimal",
+    "category": "",
     "price": 38,
-    "featured": false,
+    "featured": true,
     "minOrder": 100,
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
