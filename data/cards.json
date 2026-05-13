@@ -357,5 +357,20 @@
       "assets/cards/al-017-3.png",
       "assets/cards/al-017-4.png"
     ]
+  },
+  {
+    "id": "AL 018",
+    "name": "AL 018",
+    "category": "Modern",
+    "price": 35,
+    "featured": true,
+    "minOrder": 200,
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "images": [
+      "assets/cards/al-018-1.png",
+      "assets/cards/al-018-2.png",
+      "assets/cards/al-018-3.png",
+      "assets/cards/al-018-4.png"
+    ]
   }
 ]
