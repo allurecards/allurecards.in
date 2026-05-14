@@ -1,40 +1,22 @@
 [
   {
-    "id": "john test 001",
-    "name": "john test 001",
-    "category": "Floral",
-    "price": 100,
-    "featured": false,
-    "minOrder": 100,
-    "size": "210×155 mm",
-    "material": "vibranium",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "extraCharges": [
-      {
-        "name": "Digital Print Setup",
-        "price": 200
-      }
-    ],
-    "images": [
-      "assets/cards/john-test-001-1.png",
-      "assets/cards/john-test-001-2.png",
-      "assets/cards/john-test-001-3.png"
-    ],
-    "originals": [
-      "assets/cards/original/john-test-001-1.png",
-      "assets/cards/original/john-test-001-2.png",
-      "assets/cards/original/john-test-001-3.png"
-    ]
-  },
-  {
     "id": "DIGITAL 140",
     "name": "Digital 140",
     "category": "Modern",
     "price": 55,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Matte Art Card",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "extraCharges": [
+      { "name": "Digital Print Setup", "price": 200 }
+    ],
     "images": [
       "assets/cards/1141.gif"
+    ],
+    "originals": [
+      "assets/cards/original/1141.gif"
     ]
   },
   {
@@ -43,11 +25,19 @@
     "category": "",
     "price": 150,
     "featured": false,
+    "minOrder": 100,
+    "size": "220×160 mm",
+    "material": "Translucent Vellum",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "extraCharges": [
+      { "name": "Envelope Lining", "price": 10 }
+    ],
     "images": [
       "assets/cards/gree.gif"
     ],
-    "minOrder": 100
+    "originals": [
+      "assets/cards/original/gree.gif"
+    ]
   },
   {
     "id": "VELLUM 105",
@@ -55,9 +45,15 @@
     "category": "Heritage",
     "price": 50,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/merrr.gif"
+    ],
+    "originals": [
+      "assets/cards/original/merrr.gif"
     ]
   },
   {
@@ -66,6 +62,9 @@
     "category": "Minimal",
     "price": 48,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/vio.gif"
@@ -77,6 +76,9 @@
     "category": "Heritage",
     "price": 45,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/GREY4.gif"
@@ -88,6 +90,9 @@
     "category": "Floral",
     "price": 47,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/blue3.gif"
@@ -99,6 +104,9 @@
     "category": "Modern",
     "price": 55,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/coffeee.gif"
@@ -110,9 +118,18 @@
     "category": "Minimal",
     "price": 50,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Soft Pastel Card",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "extraCharges": [
+      { "name": "Ribbon Tie", "price": 25 }
+    ],
     "images": [
       "assets/cards/PI-3.gif"
+    ],
+    "originals": [
+      "assets/cards/original/PI-3.gif"
     ]
   },
   {
@@ -121,6 +138,9 @@
     "category": "Heritage",
     "price": 50,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Soft Pastel Card",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/GR-2.gif"
@@ -132,6 +152,9 @@
     "category": "Modern",
     "price": 50,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Soft Pastel Card",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/123.gif"
@@ -143,6 +166,9 @@
     "category": "Minimal",
     "price": 50,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Soft Pastel Card",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/CREA-3.gif"
@@ -154,6 +180,9 @@
     "category": "Floral",
     "price": 50,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Soft Pastel Card",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/GREY-2.gif"
@@ -165,6 +194,9 @@
     "category": "Heritage",
     "price": 50,
     "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Soft Pastel Card",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/PU-5.gif"
@@ -175,22 +207,19 @@
     "name": "Size 22x16 cm  Gold foil print on envelope",
     "category": "",
     "price": 45,
-    "featured": false,
+    "featured": true,
     "minOrder": 200,
-    "description": "johns fav",
+    "size": "220×160 mm",
+    "material": "Pearl Shimmer Cardstock",
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "extraCharges": [
+      { "name": "Gold Foil", "price": 15 }
+    ],
     "images": [
       "assets/cards/al-001-1.png",
       "assets/cards/al-001-2.png",
       "assets/cards/al-001-3.png",
       "assets/cards/al-001-4.png"
-    ],
-    "size": "12*18",
-    "material": "john",
-    "extraCharges": [
-      {
-        "name": "gst",
-        "price": 100
-      }
     ],
     "originals": [
       "assets/cards/original/al-001-1.png",
@@ -206,12 +235,23 @@
     "price": 48,
     "featured": true,
     "minOrder": 200,
+    "size": "200×150 mm",
+    "material": "Textured Cream",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "extraCharges": [
+      { "name": "Wax Seal", "price": 30 }
+    ],
     "images": [
       "assets/cards/al-003-1.png",
       "assets/cards/al-003-2.png",
       "assets/cards/al-003-3.png",
       "assets/cards/al-003-4.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-003-1.png",
+      "assets/cards/original/al-003-2.png",
+      "assets/cards/original/al-003-3.png",
+      "assets/cards/original/al-003-4.png"
     ]
   },
   {
@@ -221,10 +261,16 @@
     "price": 35,
     "featured": true,
     "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-004-1.png",
       "assets/cards/al-004-2.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-004-1.png",
+      "assets/cards/original/al-004-2.png"
     ]
   },
   {
@@ -234,10 +280,16 @@
     "price": 35,
     "featured": true,
     "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-005-1.jpeg",
       "assets/cards/al-005-2.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-005-1.jpeg",
+      "assets/cards/original/al-005-2.jpeg"
     ]
   },
   {
@@ -247,11 +299,18 @@
     "price": 35,
     "featured": true,
     "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-006-1.jpeg",
       "assets/cards/al-006-2.png",
       "assets/cards/al-006-3.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-006-1.jpeg",
+      "assets/cards/original/al-006-2.png",
+      "assets/cards/original/al-006-3.png"
     ]
   },
   {
@@ -261,11 +320,18 @@
     "price": 45,
     "featured": true,
     "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-002-1.png",
       "assets/cards/al-002-2.png",
       "assets/cards/al-002-3.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-002-1.png",
+      "assets/cards/original/al-002-2.png",
+      "assets/cards/original/al-002-3.png"
     ]
   },
   {
@@ -275,11 +341,18 @@
     "price": 34,
     "featured": true,
     "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-007-1.png",
       "assets/cards/al-007-2.png",
       "assets/cards/al-007-3.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-007-1.png",
+      "assets/cards/original/al-007-2.png",
+      "assets/cards/original/al-007-3.png"
     ]
   },
   {
@@ -289,13 +362,26 @@
     "price": 150,
     "featured": false,
     "minOrder": 200,
+    "size": "250×190 mm",
+    "material": "Handmade Cotton Paper",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "extraCharges": [
+      { "name": "Gold Edge Gilding", "price": 40 },
+      { "name": "Velvet Box", "price": 200 }
+    ],
     "images": [
       "assets/cards/al-1001-1.png",
       "assets/cards/al-1001-2.png",
       "assets/cards/al-1001-3.png",
       "assets/cards/al-1001-4.png",
       "assets/cards/al-1001-5.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-1001-1.png",
+      "assets/cards/original/al-1001-2.png",
+      "assets/cards/original/al-1001-3.png",
+      "assets/cards/original/al-1001-4.png",
+      "assets/cards/original/al-1001-5.png"
     ]
   },
   {
@@ -305,11 +391,18 @@
     "price": 34,
     "featured": true,
     "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-011-1.png",
       "assets/cards/al-011-2.png",
       "assets/cards/al-011-3.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-011-1.png",
+      "assets/cards/original/al-011-2.png",
+      "assets/cards/original/al-011-3.png"
     ]
   },
   {
@@ -319,11 +412,18 @@
     "price": 38,
     "featured": true,
     "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-012-1.png",
       "assets/cards/al-012-2.png",
       "assets/cards/al-012-3.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-012-1.png",
+      "assets/cards/original/al-012-2.png",
+      "assets/cards/original/al-012-3.png"
     ]
   },
   {
@@ -333,11 +433,18 @@
     "price": 35,
     "featured": true,
     "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-013-1.png",
       "assets/cards/al-013-2.png",
       "assets/cards/al-013-3.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-013-1.png",
+      "assets/cards/original/al-013-2.png",
+      "assets/cards/original/al-013-3.png"
     ]
   },
   {
@@ -347,12 +454,20 @@
     "price": 35,
     "featured": true,
     "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-014-1.png",
       "assets/cards/al-014-2.png",
       "assets/cards/al-014-3.png",
       "assets/cards/al-014-4.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-014-1.png",
+      "assets/cards/original/al-014-2.png",
+      "assets/cards/original/al-014-3.png",
+      "assets/cards/original/al-014-4.png"
     ]
   },
   {
@@ -362,12 +477,20 @@
     "price": 40,
     "featured": true,
     "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-015-1.jpeg",
       "assets/cards/al-015-2.jpeg",
       "assets/cards/al-015-3.png",
       "assets/cards/al-015-4.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-015-1.jpeg",
+      "assets/cards/original/al-015-2.jpeg",
+      "assets/cards/original/al-015-3.png",
+      "assets/cards/original/al-015-4.png"
     ]
   },
   {
@@ -377,11 +500,18 @@
     "price": 48,
     "featured": true,
     "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-016-1.png",
       "assets/cards/al-016-2.png",
       "assets/cards/al-016-3.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-016-1.png",
+      "assets/cards/original/al-016-2.png",
+      "assets/cards/original/al-016-3.png"
     ]
   },
   {
@@ -391,12 +521,20 @@
     "price": 35,
     "featured": true,
     "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-017-1.png",
       "assets/cards/al-017-2.png",
       "assets/cards/al-017-3.png",
       "assets/cards/al-017-4.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-017-1.png",
+      "assets/cards/original/al-017-2.png",
+      "assets/cards/original/al-017-3.png",
+      "assets/cards/original/al-017-4.png"
     ]
   },
   {
@@ -406,12 +544,20 @@
     "price": 35,
     "featured": true,
     "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-018-1.png",
       "assets/cards/al-018-2.png",
       "assets/cards/al-018-3.png",
       "assets/cards/al-018-4.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-018-1.png",
+      "assets/cards/original/al-018-2.png",
+      "assets/cards/original/al-018-3.png",
+      "assets/cards/original/al-018-4.png"
     ]
   },
   {
@@ -421,10 +567,16 @@
     "price": 35,
     "featured": true,
     "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-020-1.png",
       "assets/cards/al-020-2.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-020-1.png",
+      "assets/cards/original/al-020-2.png"
     ]
   },
   {
@@ -434,10 +586,16 @@
     "price": 42,
     "featured": true,
     "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-021-1.png",
       "assets/cards/al-021-2.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-021-1.png",
+      "assets/cards/original/al-021-2.png"
     ]
   },
   {
@@ -447,10 +605,16 @@
     "price": 35,
     "featured": true,
     "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-022-1.jpeg",
       "assets/cards/al-022-2.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-022-1.jpeg",
+      "assets/cards/original/al-022-2.jpeg"
     ]
   },
   {
@@ -460,11 +624,18 @@
     "price": 33,
     "featured": false,
     "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-023-1.png",
       "assets/cards/al-023-2.png",
       "assets/cards/al-023-3.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-023-1.png",
+      "assets/cards/original/al-023-2.png",
+      "assets/cards/original/al-023-3.png"
     ]
   },
   {
@@ -474,10 +645,16 @@
     "price": 35,
     "featured": true,
     "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-024-1.png",
       "assets/cards/al-024-2.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-024-1.png",
+      "assets/cards/original/al-024-2.png"
     ]
   }
 ]
