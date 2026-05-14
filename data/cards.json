@@ -9,7 +9,7 @@
     "size": "210×155 mm",
     "material": "vibranium",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "extraCharges": [],
+    "extraCharges": [{ "name": "Digital Print Setup", "price": 200 }],
     "images": [
       "assets/cards/john-test-001-1.png",
       "assets/cards/john-test-001-2.png",
