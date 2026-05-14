@@ -1,5 +1,23 @@
 [
   {
+    "id": "DIAG-81d025",
+    "name": "DIAG-81d025",
+    "category": "Minimal",
+    "price": 999,
+    "featured": false,
+    "minOrder": 100,
+    "size": "200×200 mm",
+    "material": "Test Cardstock",
+    "description": "Diagnostic test card.",
+    "extraCharges": [],
+    "images": [
+      "assets/cards/diag-81d025-1.png"
+    ],
+    "originals": [
+      "assets/cards/original/diag-81d025-1.png"
+    ]
+  },
+  {
     "id": "DIGITAL 140",
     "name": "Digital 140",
     "category": "Modern",
