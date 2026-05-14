@@ -1,15 +1,20 @@
 [
   {
     "id": "DIAG-81d025",
-    "name": "DIAG-81d025",
-    "category": "Minimal",
-    "price": 999,
-    "featured": false,
-    "minOrder": 100,
-    "size": "200×200 mm",
-    "material": "Test Cardstock",
-    "description": "Diagnostic test card.",
-    "extraCharges": [],
+    "name": "DIAG-81d025-EDITED",
+    "category": "Floral",
+    "price": 1000,
+    "featured": true,
+    "minOrder": 200,
+    "size": "300×300 mm",
+    "material": "Edited Stock",
+    "description": "Edited description.",
+    "extraCharges": [
+      {
+        "name": "Test Charge",
+        "price": 500
+      }
+    ],
     "images": [
       "assets/cards/diag-81d025-1.png"
     ],
