@@ -1,5 +1,6 @@
 /* ============================================================
    ALLURE – SCRIPTS
+   Preloader + header scroll state + mobile nav + portfolio
    ============================================================ */
 
 window.addEventListener("load", () => {
@@ -116,7 +117,7 @@ if (header) {
     let currentProductName  = '';
     let currentProductCat   = '';
     let currentMinOrder     = 100;
-    let currentExtraCharges = [];   // store extra charges for calculator
+    let currentExtraCharges = [];
 
     const yearEl = document.getElementById('currentYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -240,14 +241,12 @@ if (header) {
         updateShowMoreBtn();
     }
 
+    // Product card: only ID and price (no size/material)
     function createCardHTML(product) {
         const productJson  = encodeURIComponent(JSON.stringify(product));
         const featuredBadge = product.featured
             ? '<span class="featured-badge">Featured</span>'
             : '';
-        const sizeText = product.size ? `<span class="product-size">${escapeHtml(product.size)}</span>` : '';
-        const materialText = product.material ? `<span class="product-material">${escapeHtml(product.material)}</span>` : '';
-        const metaParts = [sizeText, materialText].filter(Boolean).join(' · ');
         return `
             <div class="product-card">
                 <div class="product-img-wrapper">
@@ -265,7 +264,6 @@ if (header) {
                 </div>
                 <h4 class="product-id">${escapeHtml(product.id)}</h4>
                 <p class="product-price">Rs. ${product.price} / card</p>
-                ${metaParts ? `<p class="product-meta">${metaParts}</p>` : ''}
             </div>
         `;
     }
@@ -297,19 +295,22 @@ if (header) {
     }
 
     function openProductModal(product) {
-        currentProductName  = product.id;
+        currentProductName  = product.id;               // used for WhatsApp message
         currentProductCat   = product.category;
         currentUnitPrice    = product.price;
         currentMinOrder     = product.minOrder || 100;
         currentImages       = product.images || [];
         currentExtraCharges = product.extraCharges || [];
 
-        modalTitle.textContent       = product.name || product.id;
-        modalCategoryLbl.textContent = `Allure ${product.category} Collection`;
+        // Modal title is now the card ID
+        modalTitle.textContent       = product.id;
+        modalCategoryLbl.textContent = product.category
+            ? `Allure ${product.category} Collection`
+            : 'Allure Collection';
         modalUnitPrice.textContent   = `Rs. ${product.price} / card`;
         modalDescText.textContent    = product.description || DEFAULT_DESC;
 
-        // Show size & material
+        // Size & material line
         if (modalDetails) {
             const parts = [];
             if (product.size) parts.push(`Size: ${product.size}`);
@@ -317,7 +318,7 @@ if (header) {
             modalDetails.textContent = parts.join(' · ');
         }
 
-        // Show extra charges list
+        // Extra charges list
         if (modalExtraCharges) {
             modalExtraCharges.innerHTML = '';
             if (currentExtraCharges.length > 0) {
@@ -330,7 +331,7 @@ if (header) {
         }
 
         modalImg.src = currentImages[0] || '';
-        modalImg.alt = product.name || product.id;
+        modalImg.alt = product.id;
 
         thumbnailRow.innerHTML = '';
         if (currentImages.length > 1) {
@@ -392,7 +393,6 @@ if (header) {
         const printingFee   = qty < 200 ? 600 : 0;
         const printingWaived = printingFee === 0 ? 600 : 0;
 
-        // Extra charges (one‑time)
         const extraTotal = currentExtraCharges.reduce((sum, ch) => sum + ch.price, 0);
 
         let factor = 1.0;
@@ -418,7 +418,6 @@ if (header) {
             calcDiscountVal.style.color = '#2e7d32';
         }
 
-        // Show/hide extra charges row dynamically
         let extraRow = document.getElementById('extra-charges-row');
         if (!extraRow) {
             extraRow = document.createElement('div');
