@@ -1,28 +1,5 @@
 [
   {
-    "id": "DIAG-847206",
-    "name": "DIAG-847206-EDITED",
-    "category": "Floral",
-    "price": 1000,
-    "featured": true,
-    "minOrder": 200,
-    "size": "300×300 mm",
-    "material": "Edited Stock",
-    "description": "Edited description.",
-    "extraCharges": [
-      {
-        "name": "Test Charge",
-        "price": 500
-      }
-    ],
-    "images": [
-      "assets/cards/diag-847206-1.png"
-    ],
-    "originals": [
-      "assets/cards/original/diag-847206-1.png"
-    ]
-  },
-  {
     "id": "DIGITAL 140",
     "name": "Digital 140",
     "category": "Modern",
