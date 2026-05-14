@@ -404,24 +404,26 @@ function calculateTotal() {
     const finalTotal  = Math.round(cardCost * factor) + printingFee + extraTotal;
     const totalSavings = printingWaived + discountAmt;
 
-    // Card cost
+    // 1. Card Cost
     calcCardCost.textContent = `Rs. ${cardCost.toLocaleString()}`;
 
-    // ---- Hide printing charge line completely ----
-    printingRow.style.display = 'none';
+    // 2. Printing Cost (only when charged)
+    if (printingFee > 0) {
+        printingRow.style.display = 'flex';
+        calcPrintingVal.innerHTML = 'Rs. 600';
+    } else {
+        printingRow.style.display = 'none';   // completely hidden when free
+    }
 
-    // ---- Volume Discount (only if applicable) ----
+    // 3. Volume Discount (if any)
     discountRow.style.display = discountPct > 0 ? 'flex' : 'none';
     if (discountPct > 0) {
         calcDiscountVal.innerHTML = `− Rs. ${discountAmt.toLocaleString()} (${discountPct}% off)`;
-        calcDiscountVal.style.color = '#2e7d32';
-        discountRow.style.background = '#e8f5e9';   // light green
-        discountRow.style.borderRadius = '4px';
-    } else {
-        discountRow.style.background = '';
+        calcDiscountVal.style.color = '#2e7d32';  // professional green
+        // no background, no other highlights
     }
 
-    // ---- Extra Charges Breakdown (by name) ----
+    // 4. Extra Charges Breakdown (by name)
     const calcSummary = document.querySelector('.calc-summary');
     calcSummary.querySelectorAll('.extra-charge-item, .extra-charge-subtotal').forEach(el => el.remove());
 
@@ -434,7 +436,6 @@ function calculateTotal() {
             calcSummary.insertBefore(row, insertBefore);
         });
 
-        // Subtotal only if more than one charge
         if (currentExtraCharges.length > 1) {
             const subtotalRow = document.createElement('div');
             subtotalRow.className = 'summary-row extra-charge-subtotal';
@@ -443,29 +444,53 @@ function calculateTotal() {
         }
     }
 
-    // ---- You Save (printing waiver + discount) ----
+    // 5. You Save
     savingsRow.style.display = totalSavings > 0 ? 'flex' : 'none';
     if (totalSavings > 0) {
         let parts = [];
         if (printingWaived > 0) parts.push(`Printing free (Rs. ${printingWaived})`);
         if (discountAmt > 0) parts.push(`${discountPct}% discount (Rs. ${discountAmt.toLocaleString()})`);
         calcSavingsVal.innerHTML = parts.join('<br>');
-        savingsRow.style.background = '#fdf3e0';       // light gold
-        savingsRow.style.borderRadius = '4px';
-    } else {
-        savingsRow.style.background = '';
+        // keep it clean – no background
     }
 
-    // ---- Final Total ----
+    // 6. Final Estimate
     calcFinalTotal.textContent = `Rs. ${finalTotal.toLocaleString()}`;
 
-    // WhatsApp message
-    const message =
-        `Hello Impressions! I would like to inquire about an Allure card design.\n\n` +
-        `*Design:* ${currentProductName} (${currentProductCat} Collection)\n` +
-        `*Quantity:* ${qty}\n` +
-        `*Estimated Total:* Rs. ${finalTotal.toLocaleString()}\n\n` +
-        `Please let me know how to proceed.`;
+    // 7. WhatsApp message with full breakdown
+    const breakdownLines = [
+        `*Design:* ${currentProductName} (${currentProductCat} Collection)`,
+        `*Quantity:* ${qty}`,
+        ``,
+        `*Price Breakdown:*`,
+        `Card Cost: Rs. ${cardCost.toLocaleString()}`
+    ];
+
+    if (printingFee > 0) {
+        breakdownLines.push(`Printing Charge: Rs. ${printingFee}`);
+    } else {
+        breakdownLines.push(`Printing Charge: FREE (saved Rs. 600)`);
+    }
+
+    if (currentExtraCharges.length > 0) {
+        currentExtraCharges.forEach(ch => {
+            breakdownLines.push(`${ch.name}: Rs. ${ch.price}`);
+        });
+        if (currentExtraCharges.length > 1) {
+            breakdownLines.push(`Total Extra Charges: Rs. ${extraTotal.toLocaleString()}`);
+        }
+    }
+
+    if (discountAmt > 0) {
+        breakdownLines.push(`Volume Discount (${discountPct}%): – Rs. ${discountAmt.toLocaleString()}`);
+    }
+
+    breakdownLines.push(`───`);
+    breakdownLines.push(`*Final Estimate: Rs. ${finalTotal.toLocaleString()}*`);
+    breakdownLines.push(``);
+    breakdownLines.push(`Please let me know how to proceed.`);
+
+    const message = breakdownLines.join('\n');
     whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
