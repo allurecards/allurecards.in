@@ -1,5 +1,27 @@
 [
   {
+    "id": "john test 001",
+    "name": "john test 001",
+    "category": "Floral",
+    "price": 100,
+    "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "vibranium",
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "extraCharges": [],
+    "images": [
+      "assets/cards/john-test-001-1.png",
+      "assets/cards/john-test-001-2.png",
+      "assets/cards/john-test-001-3.png"
+    ],
+    "originals": [
+      "assets/cards/original/john-test-001-1.png",
+      "assets/cards/original/john-test-001-2.png",
+      "assets/cards/original/john-test-001-3.png"
+    ]
+  },
+  {
     "id": "DIGITAL 140",
     "name": "Digital 140",
     "category": "Modern",
