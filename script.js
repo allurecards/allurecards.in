@@ -1,6 +1,5 @@
 /* ============================================================
    ALLURE – SCRIPTS
-   Preloader + header scroll state + mobile nav + portfolio
    ============================================================ */
 
 window.addEventListener("load", () => {
@@ -86,6 +85,9 @@ if (header) {
     const modalCategoryLbl  = document.getElementById('modal-category-label');
     const modalDescText     = document.getElementById('modal-desc-text');
 
+    const modalDetails      = document.getElementById('modal-details');
+    const modalExtraCharges = document.getElementById('modal-extra-charges');
+
     const qtySelect         = document.getElementById('modal-qty-select');
     const calcCardCost      = document.getElementById('calc-card-cost');
     const calcPrintingVal   = document.getElementById('calc-printing-val');
@@ -114,6 +116,7 @@ if (header) {
     let currentProductName  = '';
     let currentProductCat   = '';
     let currentMinOrder     = 100;
+    let currentExtraCharges = [];   // store extra charges for calculator
 
     const yearEl = document.getElementById('currentYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -242,6 +245,9 @@ if (header) {
         const featuredBadge = product.featured
             ? '<span class="featured-badge">Featured</span>'
             : '';
+        const sizeText = product.size ? `<span class="product-size">${escapeHtml(product.size)}</span>` : '';
+        const materialText = product.material ? `<span class="product-material">${escapeHtml(product.material)}</span>` : '';
+        const metaParts = [sizeText, materialText].filter(Boolean).join(' · ');
         return `
             <div class="product-card">
                 <div class="product-img-wrapper">
@@ -259,6 +265,7 @@ if (header) {
                 </div>
                 <h4 class="product-id">${escapeHtml(product.id)}</h4>
                 <p class="product-price">Rs. ${product.price} / card</p>
+                ${metaParts ? `<p class="product-meta">${metaParts}</p>` : ''}
             </div>
         `;
     }
@@ -295,11 +302,32 @@ if (header) {
         currentUnitPrice    = product.price;
         currentMinOrder     = product.minOrder || 100;
         currentImages       = product.images || [];
+        currentExtraCharges = product.extraCharges || [];
 
         modalTitle.textContent       = product.name || product.id;
         modalCategoryLbl.textContent = `Allure ${product.category} Collection`;
         modalUnitPrice.textContent   = `Rs. ${product.price} / card`;
         modalDescText.textContent    = product.description || DEFAULT_DESC;
+
+        // Show size & material
+        if (modalDetails) {
+            const parts = [];
+            if (product.size) parts.push(`Size: ${product.size}`);
+            if (product.material) parts.push(`Material: ${product.material}`);
+            modalDetails.textContent = parts.join(' · ');
+        }
+
+        // Show extra charges list
+        if (modalExtraCharges) {
+            modalExtraCharges.innerHTML = '';
+            if (currentExtraCharges.length > 0) {
+                currentExtraCharges.forEach(ch => {
+                    const li = document.createElement('li');
+                    li.textContent = `${ch.name}: Rs. ${ch.price}`;
+                    modalExtraCharges.appendChild(li);
+                });
+            }
+        }
 
         modalImg.src = currentImages[0] || '';
         modalImg.alt = product.name || product.id;
@@ -364,13 +392,16 @@ if (header) {
         const printingFee   = qty < 200 ? 600 : 0;
         const printingWaived = printingFee === 0 ? 600 : 0;
 
+        // Extra charges (one‑time)
+        const extraTotal = currentExtraCharges.reduce((sum, ch) => sum + ch.price, 0);
+
         let factor = 1.0;
         let discountPct = 0;
         if      (qty >= 1000) { factor = 0.90; discountPct = 10; }
         else if (qty >= 500)  { factor = 0.95; discountPct = 5;  }
 
         const discountAmt = Math.round(cardCost * (1 - factor));
-        const finalTotal  = Math.round(cardCost * factor) + printingFee;
+        const finalTotal  = Math.round(cardCost * factor) + printingFee + extraTotal;
         const totalSavings = printingWaived + discountAmt;
 
         calcCardCost.textContent = `Rs. ${cardCost.toLocaleString()}`;
@@ -385,6 +416,21 @@ if (header) {
         if (discountPct > 0) {
             calcDiscountVal.innerHTML = `− Rs. ${discountAmt.toLocaleString()} (${discountPct}% off)`;
             calcDiscountVal.style.color = '#2e7d32';
+        }
+
+        // Show/hide extra charges row dynamically
+        let extraRow = document.getElementById('extra-charges-row');
+        if (!extraRow) {
+            extraRow = document.createElement('div');
+            extraRow.id = 'extra-charges-row';
+            extraRow.className = 'summary-row';
+            document.querySelector('.calc-summary').insertBefore(extraRow, savingsRow);
+        }
+        if (extraTotal > 0) {
+            extraRow.style.display = 'flex';
+            extraRow.innerHTML = `<span>Extra Charges</span><span>Rs. ${extraTotal.toLocaleString()}</span>`;
+        } else {
+            extraRow.style.display = 'none';
         }
 
         savingsRow.style.display = totalSavings > 0 ? 'flex' : 'none';
