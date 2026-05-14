@@ -387,66 +387,87 @@ if (header) {
         }
     }
 
-    function calculateTotal() {
-        const qty           = parseInt(qtySelect.value, 10);
-        const cardCost      = qty * currentUnitPrice;
-        const printingFee   = qty < 200 ? 600 : 0;
-        const printingWaived = printingFee === 0 ? 600 : 0;
+function calculateTotal() {
+    const qty           = parseInt(qtySelect.value, 10);
+    const cardCost      = qty * currentUnitPrice;
+    const printingFee   = qty < 200 ? 600 : 0;
+    const printingWaived = printingFee === 0 ? 600 : 0;
 
-        const extraTotal = currentExtraCharges.reduce((sum, ch) => sum + ch.price, 0);
+    const extraTotal = currentExtraCharges.reduce((sum, ch) => sum + ch.price, 0);
 
-        let factor = 1.0;
-        let discountPct = 0;
-        if      (qty >= 1000) { factor = 0.90; discountPct = 10; }
-        else if (qty >= 500)  { factor = 0.95; discountPct = 5;  }
+    let factor = 1.0;
+    let discountPct = 0;
+    if      (qty >= 1000) { factor = 0.90; discountPct = 10; }
+    else if (qty >= 500)  { factor = 0.95; discountPct = 5;  }
 
-        const discountAmt = Math.round(cardCost * (1 - factor));
-        const finalTotal  = Math.round(cardCost * factor) + printingFee + extraTotal;
-        const totalSavings = printingWaived + discountAmt;
+    const discountAmt = Math.round(cardCost * (1 - factor));
+    const finalTotal  = Math.round(cardCost * factor) + printingFee + extraTotal;
+    const totalSavings = printingWaived + discountAmt;
 
-        calcCardCost.textContent = `Rs. ${cardCost.toLocaleString()}`;
+    // Card cost
+    calcCardCost.textContent = `Rs. ${cardCost.toLocaleString()}`;
 
-        if (printingFee > 0) {
-            calcPrintingVal.innerHTML = 'Rs. 600';
-        } else {
-            calcPrintingVal.innerHTML = '<span class="waived">Rs. 600</span> <span class="saved-text">FREE</span>';
-        }
+    // ---- Hide printing charge line completely ----
+    printingRow.style.display = 'none';
 
-        discountRow.style.display = discountPct > 0 ? 'flex' : 'none';
-        if (discountPct > 0) {
-            calcDiscountVal.innerHTML = `− Rs. ${discountAmt.toLocaleString()} (${discountPct}% off)`;
-            calcDiscountVal.style.color = '#2e7d32';
-        }
-
-        let extraRow = document.getElementById('extra-charges-row');
-        if (!extraRow) {
-            extraRow = document.createElement('div');
-            extraRow.id = 'extra-charges-row';
-            extraRow.className = 'summary-row';
-            document.querySelector('.calc-summary').insertBefore(extraRow, savingsRow);
-        }
-        if (extraTotal > 0) {
-            extraRow.style.display = 'flex';
-            extraRow.innerHTML = `<span>Extra Charges</span><span>Rs. ${extraTotal.toLocaleString()}</span>`;
-        } else {
-            extraRow.style.display = 'none';
-        }
-
-        savingsRow.style.display = totalSavings > 0 ? 'flex' : 'none';
-        if (totalSavings > 0) {
-            calcSavingsVal.textContent = `Rs. ${totalSavings.toLocaleString()}`;
-        }
-
-        calcFinalTotal.textContent = `Rs. ${finalTotal.toLocaleString()}`;
-
-        const message =
-            `Hello Impressions! I would like to inquire about an Allure card design.\n\n` +
-            `*Design:* ${currentProductName} (${currentProductCat} Collection)\n` +
-            `*Quantity:* ${qty}\n` +
-            `*Estimated Total:* Rs. ${finalTotal.toLocaleString()}\n\n` +
-            `Please let me know how to proceed.`;
-        whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    // ---- Volume Discount (only if applicable) ----
+    discountRow.style.display = discountPct > 0 ? 'flex' : 'none';
+    if (discountPct > 0) {
+        calcDiscountVal.innerHTML = `− Rs. ${discountAmt.toLocaleString()} (${discountPct}% off)`;
+        calcDiscountVal.style.color = '#2e7d32';
+        discountRow.style.background = '#e8f5e9';   // light green
+        discountRow.style.borderRadius = '4px';
+    } else {
+        discountRow.style.background = '';
     }
+
+    // ---- Extra Charges Breakdown (by name) ----
+    const calcSummary = document.querySelector('.calc-summary');
+    calcSummary.querySelectorAll('.extra-charge-item, .extra-charge-subtotal').forEach(el => el.remove());
+
+    if (currentExtraCharges.length > 0) {
+        const insertBefore = savingsRow;
+        currentExtraCharges.forEach(ch => {
+            const row = document.createElement('div');
+            row.className = 'summary-row extra-charge-item';
+            row.innerHTML = `<span>${escapeHtml(ch.name)}</span><span>Rs. ${ch.price.toLocaleString()}</span>`;
+            calcSummary.insertBefore(row, insertBefore);
+        });
+
+        // Subtotal only if more than one charge
+        if (currentExtraCharges.length > 1) {
+            const subtotalRow = document.createElement('div');
+            subtotalRow.className = 'summary-row extra-charge-subtotal';
+            subtotalRow.innerHTML = `<span>Total Extra Charges</span><span>Rs. ${extraTotal.toLocaleString()}</span>`;
+            calcSummary.insertBefore(subtotalRow, insertBefore);
+        }
+    }
+
+    // ---- You Save (printing waiver + discount) ----
+    savingsRow.style.display = totalSavings > 0 ? 'flex' : 'none';
+    if (totalSavings > 0) {
+        let parts = [];
+        if (printingWaived > 0) parts.push(`Printing free (Rs. ${printingWaived})`);
+        if (discountAmt > 0) parts.push(`${discountPct}% discount (Rs. ${discountAmt.toLocaleString()})`);
+        calcSavingsVal.innerHTML = parts.join('<br>');
+        savingsRow.style.background = '#fdf3e0';       // light gold
+        savingsRow.style.borderRadius = '4px';
+    } else {
+        savingsRow.style.background = '';
+    }
+
+    // ---- Final Total ----
+    calcFinalTotal.textContent = `Rs. ${finalTotal.toLocaleString()}`;
+
+    // WhatsApp message
+    const message =
+        `Hello Impressions! I would like to inquire about an Allure card design.\n\n` +
+        `*Design:* ${currentProductName} (${currentProductCat} Collection)\n` +
+        `*Quantity:* ${qty}\n` +
+        `*Estimated Total:* Rs. ${finalTotal.toLocaleString()}\n\n` +
+        `Please let me know how to proceed.`;
+    whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
 
     /* Lightbox */
     modalImg.addEventListener('click', () => {
