@@ -1,7 +1,5 @@
 /* ============================================================
    ALLURE – STYLESHEET
-   Design tokens, preloader, header, hero, WhatsApp FAB
-   (Homepage – locked, do not modify)
    ============================================================ */
 
 /* ---------- CSS VARIABLES ---------- */
@@ -101,7 +99,7 @@ ul { list-style: none; }
 .header-inner a img {
     height: 64px;
     width: auto;
-    transition: none;  /* no shrink */
+    transition: none;
 }
 
 /* Navigation */
@@ -130,7 +128,7 @@ nav a:hover {
 }
 
 /* ============================================================
-   HERO (fixed background syntax)
+   HERO
    ============================================================ */
 .hero {
     position: relative;
@@ -348,20 +346,8 @@ nav a:hover {
 }
 
 /* ============================================================
-   RESPONSIVE (Homepage only – first pass)
+   SECTIONS – OUR STORY, COLLECTIONS, PORTFOLIO, ETC.
    ============================================================ */
-@media (max-width: 768px) {
-    nav ul { display: none; }
-    .hero-body { padding: 100px 6% 50px; }
-    .hero-heading { font-size: clamp(2.4rem, 8vw, 3.2rem); }
-    .hero-actions { flex-direction: column; align-items: flex-start; }
-}
-
-/* ============================================================
-   ADDITIONAL SECTIONS (Our Story, Collections, Portfolio,
-   Footer, Modal, Lightbox)
-   ============================================================ */
-
 section { padding: 100px 5%; }
 
 .section-header {
@@ -617,6 +603,14 @@ section { padding: 100px 5%; }
     font-size: 0.88rem;
 }
 
+/* New: product meta (size / material) */
+.product-meta {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    margin-top: 4px;
+}
+
 .featured-badge {
     position: absolute;
     top: 12px;
@@ -665,7 +659,9 @@ section { padding: 100px 5%; }
     font-size: 1rem;
 }
 
-/* Modal */
+/* ============================================================
+   MODAL (Quick View)
+   ============================================================ */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -812,8 +808,29 @@ section { padding: 100px 5%; }
     font-family: var(--font-ui);
     font-size: 0.88rem;
     color: var(--ink-soft);
-    margin-bottom: 22px;
+    margin-bottom: 12px;
     line-height: 1.75;
+}
+
+/* New: size / material detail line */
+.modal-details {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+}
+
+/* New: extra charges list */
+.modal-extra-charges {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+}
+.modal-extra-charges li {
+    margin-bottom: 4px;
 }
 
 /* Calculator */
@@ -894,21 +911,7 @@ section { padding: 100px 5%; }
     margin-top: 8px;
 }
 
-.printing-row .waived {
-    color: #2e7d32;
-    text-decoration: line-through;
-    opacity: 0.6;
-}
-
-.printing-row .saved-text {
-    font-size: 0.75rem;
-    color: #2e7d32;
-    margin-left: 6px;
-    font-weight: 600;
-}
-
-.highlight-save { color: var(--gold); font-weight: 600; }
-
+/* WhatsApp CTA in modal */
 .whatsapp-cta-btn {
     display: flex;
     align-items: center;
@@ -1234,7 +1237,6 @@ section { padding: 100px 5%; }
     .nav-toggle { display: flex; }
     nav ul { display: none; }
 
-    /* Logo remains at 64px, no shrink */
     .header-inner a img { height: 64px; }
 
     .hero-body {
