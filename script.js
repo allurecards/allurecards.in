@@ -1,31 +1,82 @@
-/**
- * ALLURE — app.js
- * Handles: preloader, products, filtering,
- *          quick-view modal, price calculator, lightbox
- * 
- * NOTE: cards.json is fetched from ./data/cards.json
- *       All backend (Apps Script / code.gs) logic is unchanged.
- */
+/* ============================================================
+   ALLURE – SCRIPTS
+   Preloader + header scroll state + mobile nav + portfolio
+   ============================================================ */
 
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        const preloader = document.getElementById("preloader");
+        if (preloader) {
+            preloader.classList.add("hide");
+        }
+    }, 1600);
+});
+
+const header = document.getElementById("site-header");
+if (header) {
+    window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 60);
+    }, { passive: true });
+}
+
+/* ============================================================
+   MOBILE NAV – HAMBURGER TOGGLE
+   ============================================================ */
+(function () {
+    const navToggle  = document.getElementById('nav-toggle');
+    const mobileNav  = document.getElementById('mobile-nav');
+    const navLinks   = mobileNav ? mobileNav.querySelectorAll('a') : [];
+
+    if (!navToggle || !mobileNav) return;
+
+    function openMenu() {
+        navToggle.classList.add('open');
+        mobileNav.classList.add('open');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        navToggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        navToggle.classList.remove('open');
+        mobileNav.classList.remove('open');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && mobileNav.classList.contains('open')) closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) closeMenu();
+    }, { passive: true });
+})();
+
+/* ============================================================
+   PORTFOLIO & MODAL FUNCTIONALITY
+   ============================================================ */
 (function () {
     'use strict';
 
-    /* ============================================================
-       CONSTANTS
-    ============================================================ */
     const WHATSAPP_NUMBER  = '919526577999';
     const DEFAULT_DESC     = 'Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.';
     const ITEMS_PER_PAGE   = 12;
 
-    /* ============================================================
-       DOM REFERENCES
-    ============================================================ */
     const productContainer  = document.getElementById('product-container');
     const showMoreBtn       = document.getElementById('show-more-btn');
     const filterContainer   = document.getElementById('filter-container');
     const categoryGrid      = document.getElementById('category-grid');
 
-    // Modal elements
     const modal             = document.getElementById('quick-view-modal');
     const closeModalBtn     = document.getElementById('close-modal');
     const modalImg          = document.getElementById('modal-main-img');
@@ -35,7 +86,6 @@
     const modalCategoryLbl  = document.getElementById('modal-category-label');
     const modalDescText     = document.getElementById('modal-desc-text');
 
-    // Calculator elements
     const qtySelect         = document.getElementById('modal-qty-select');
     const calcCardCost      = document.getElementById('calc-card-cost');
     const calcPrintingVal   = document.getElementById('calc-printing-val');
@@ -47,7 +97,6 @@
     const calcFinalTotal    = document.getElementById('calc-final-total');
     const whatsappBtn       = document.getElementById('modal-whatsapp-btn');
 
-    // Lightbox elements
     const galleryOverlay    = document.getElementById('gallery-overlay');
     const galleryImg        = document.getElementById('gallery-img');
     const galleryClose      = document.getElementById('gallery-close');
@@ -55,41 +104,34 @@
     const galleryNext       = document.getElementById('gallery-next');
     const galleryCounter    = document.getElementById('gallery-counter');
 
-    /* ============================================================
-       STATE
-    ============================================================ */
     let allProducts         = [];
     let filteredProducts    = [];
     let visibleCount        = 0;
     let currentFilter       = 'All';
-
     let currentImages       = [];
     let currentGalleryIndex = 0;
-
     let currentUnitPrice    = 0;
     let currentProductName  = '';
     let currentProductCat   = '';
     let currentMinOrder     = 100;
 
-    /* ============================================================
-       1. PRELOADER
-    ============================================================ */
-    window.addEventListener('load', () => {
-        // 4.3s lets the SVG draw + text fade finish gracefully
-        setTimeout(() => {
-            document.body.classList.add('loaded');
-        }, 4300);
-    });
-
-    /* ============================================================
-       2. FOOTER YEAR
-    ============================================================ */
     const yearEl = document.getElementById('currentYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    /* ============================================================
-       3. FETCH CARDS
-    ============================================================ */
+    function getUniqueCategories() {
+        return [...new Set(allProducts.map(p => p.category).filter(Boolean))];
+    }
+
+    function escapeHtml(str) {
+        if (str == null) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
     fetch('./data/cards.json')
         .then(res => {
             if (!res.ok) throw new Error('HTTP ' + res.status);
@@ -115,9 +157,6 @@
             }
         });
 
-    /* ============================================================
-       4. CATEGORY CARDS
-    ============================================================ */
     const CATEGORY_DESCRIPTIONS = {
         Heritage: 'Rich, traditional luxury',
         Minimal:  'Understated elegance',
@@ -147,16 +186,11 @@
         const cat = card.dataset.category;
         setActiveFilter(cat);
         applyFilter(cat);
-        document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
     }
 
-    /* ============================================================
-       5. FILTER BUTTONS
-    ============================================================ */
     function buildFilterButtons() {
-        // Remove any previously built category buttons (keep "All")
         filterContainer.querySelectorAll('.filter-btn:not([data-filter="All"])').forEach(b => b.remove());
-
         getUniqueCategories().forEach(cat => {
             const btn = document.createElement('button');
             btn.className = 'filter-btn';
@@ -177,24 +211,18 @@
         document.querySelectorAll('.filter-btn').forEach(b => {
             b.classList.toggle('active', b.dataset.filter === filter);
         });
-        // Sync category cards highlight too
         document.querySelectorAll('.category-card').forEach(c => {
             c.classList.toggle('active', c.dataset.category === filter);
         });
     }
 
-    /* ============================================================
-       6. APPLY FILTER / RENDER GRID
-    ============================================================ */
     function applyFilter(filter) {
         currentFilter = filter;
         filteredProducts = filter === 'All'
             ? [...allProducts]
             : allProducts.filter(p => p.category === filter);
 
-        // Featured items first
         filteredProducts.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-
         visibleCount = Math.min(ITEMS_PER_PAGE, filteredProducts.length);
         productContainer.innerHTML = '';
 
@@ -235,7 +263,6 @@
         `;
     }
 
-    // Event delegation for quick-view buttons
     productContainer.addEventListener('click', e => {
         const btn = e.target.closest('.quick-view-btn');
         if (!btn) return;
@@ -247,7 +274,6 @@
         }
     });
 
-    // Show more
     showMoreBtn.addEventListener('click', () => {
         const nextCount = Math.min(visibleCount + ITEMS_PER_PAGE, filteredProducts.length);
         const newHTML = filteredProducts
@@ -263,9 +289,6 @@
         showMoreBtn.style.display = visibleCount < filteredProducts.length ? 'inline-block' : 'none';
     }
 
-    /* ============================================================
-       7. QUICK VIEW MODAL
-    ============================================================ */
     function openProductModal(product) {
         currentProductName  = product.id;
         currentProductCat   = product.category;
@@ -273,17 +296,14 @@
         currentMinOrder     = product.minOrder || 100;
         currentImages       = product.images || [];
 
-        // Populate header info
         modalTitle.textContent       = product.name || product.id;
         modalCategoryLbl.textContent = `Allure ${product.category} Collection`;
         modalUnitPrice.textContent   = `Rs. ${product.price} / card`;
         modalDescText.textContent    = product.description || DEFAULT_DESC;
 
-        // Main image
         modalImg.src = currentImages[0] || '';
         modalImg.alt = product.name || product.id;
 
-        // Thumbnails — only show if there are multiple images
         thumbnailRow.innerHTML = '';
         if (currentImages.length > 1) {
             currentImages.forEach((src, idx) => {
@@ -303,22 +323,19 @@
             });
         }
 
-        // Calculator
         populateQtyDropdown(currentMinOrder);
         qtySelect.removeEventListener('change', calculateTotal);
         qtySelect.addEventListener('change', calculateTotal);
         calculateTotal();
 
-        // Open
         modal.classList.add('active');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
         closeModalBtn.focus();
     }
 
-    /* ---- Close modal ---- */
     function closeModal() {
-        closeGallery(/* fromModal= */ true);
+        closeGallery(true);
         modal.classList.remove('active');
         modal.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = 'auto';
@@ -330,9 +347,6 @@
         if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
 
-    /* ============================================================
-       8. PRICE CALCULATOR
-    ============================================================ */
     function populateQtyDropdown(minOrder) {
         qtySelect.innerHTML = '';
         for (let qty = minOrder; qty <= 1500; qty += 50) {
@@ -359,47 +373,37 @@
         const finalTotal  = Math.round(cardCost * factor) + printingFee;
         const totalSavings = printingWaived + discountAmt;
 
-        // Card cost
         calcCardCost.textContent = `Rs. ${cardCost.toLocaleString()}`;
 
-        // Printing
         if (printingFee > 0) {
             calcPrintingVal.innerHTML = 'Rs. 600';
         } else {
             calcPrintingVal.innerHTML = '<span class="waived">Rs. 600</span> <span class="saved-text">FREE</span>';
         }
 
-        // Discount row
         discountRow.style.display = discountPct > 0 ? 'flex' : 'none';
         if (discountPct > 0) {
             calcDiscountVal.innerHTML = `− Rs. ${discountAmt.toLocaleString()} (${discountPct}% off)`;
             calcDiscountVal.style.color = '#2e7d32';
         }
 
-        // Savings row
         savingsRow.style.display = totalSavings > 0 ? 'flex' : 'none';
         if (totalSavings > 0) {
             calcSavingsVal.textContent = `Rs. ${totalSavings.toLocaleString()}`;
         }
 
-        // Final total
         calcFinalTotal.textContent = `Rs. ${finalTotal.toLocaleString()}`;
 
-        // WhatsApp message
         const message =
             `Hello Impressions! I would like to inquire about an Allure card design.\n\n` +
             `*Design:* ${currentProductName} (${currentProductCat} Collection)\n` +
             `*Quantity:* ${qty}\n` +
             `*Estimated Total:* Rs. ${finalTotal.toLocaleString()}\n\n` +
             `Please let me know how to proceed.`;
-
         whatsappBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     }
 
-    /* ============================================================
-       9. LIGHTBOX
-    ============================================================ */
-    // Click main modal image → open lightbox
+    /* Lightbox */
     modalImg.addEventListener('click', () => {
         if (!currentImages.length) return;
         const activeSrc = modalImg.getAttribute('src');
@@ -426,10 +430,6 @@
         galleryNext.style.display = multiple ? 'block' : 'none';
     }
 
-    /**
-     * Close the lightbox.
-     * @param {boolean} fromModal - if true, modal is still open, don't restore body scroll
-     */
     function closeGallery(fromModal = false) {
         galleryOverlay.classList.remove('active');
         if (!fromModal && !modal.classList.contains('active')) {
@@ -456,7 +456,6 @@
         updateGalleryImage();
     });
 
-    // Keyboard navigation for lightbox
     document.addEventListener('keydown', e => {
         if (!galleryOverlay.classList.contains('active')) return;
         switch (e.key) {
@@ -477,23 +476,5 @@
                 break;
         }
     });
-
-    /* ============================================================
-       UTILS
-    ============================================================ */
-    function getUniqueCategories() {
-        return [...new Set(allProducts.map(p => p.category).filter(Boolean))];
-    }
-
-    /** Basic HTML escape to prevent XSS when inserting untrusted strings into innerHTML */
-    function escapeHtml(str) {
-        if (str == null) return '';
-        return String(str)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#39;');
-    }
 
 })();
