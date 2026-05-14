@@ -9,7 +9,12 @@
     "size": "210×155 mm",
     "material": "vibranium",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "extraCharges": [{ "name": "Digital Print Setup", "price": 200 }],
+    "extraCharges": [
+      {
+        "name": "Digital Print Setup",
+        "price": 200
+      }
+    ],
     "images": [
       "assets/cards/john-test-001-1.png",
       "assets/cards/john-test-001-2.png",
@@ -170,14 +175,28 @@
     "name": "Size 22x16 cm  Gold foil print on envelope",
     "category": "",
     "price": 45,
-    "featured": true,
+    "featured": false,
     "minOrder": 200,
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "description": "johns fav",
     "images": [
       "assets/cards/al-001-1.png",
       "assets/cards/al-001-2.png",
       "assets/cards/al-001-3.png",
       "assets/cards/al-001-4.png"
+    ],
+    "size": "12*18",
+    "material": "john",
+    "extraCharges": [
+      {
+        "name": "gst",
+        "price": 100
+      }
+    ],
+    "originals": [
+      "assets/cards/original/al-001-1.png",
+      "assets/cards/original/al-001-2.png",
+      "assets/cards/original/al-001-3.png",
+      "assets/cards/original/al-001-4.png"
     ]
   },
   {
