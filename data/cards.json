@@ -5,10 +5,15 @@
     "price": 100,
     "featured": false,
     "minOrder": 200,
-    "size": "50*100",
-    "material": "Vibranium",
-    "description": "Dale weds Diana",
-    "extraCharges": [],
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "extraCharges": [
+      {
+        "name": "education",
+        "price": 1000
+      }
+    ],
     "images": [
       "assets/cards/john-testinng-1.png"
     ],
