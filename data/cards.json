@@ -6,21 +6,16 @@
     "price": 55,
     "featured": true,
     "minOrder": 200,
-    "size": "10 mm * 10mm",
-    "material": "floral",
-    "description": "floral",
-    "extraCharges": [
-      {
-        "name": "van",
-        "price": 600
-      }
-    ],
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "extraCharges": [],
     "images": [
-      "assets/cards/0900-1.jpeg",
+      "assets/cards/0900-1.png",
       "assets/cards/0900-2.jpeg"
     ],
     "originals": [
-      "assets/cards/original/0900-1.jpeg",
+      "assets/cards/original/0900-1.png",
       "assets/cards/original/0900-2.jpeg"
     ]
   },
