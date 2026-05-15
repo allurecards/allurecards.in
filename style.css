@@ -40,7 +40,7 @@ ul { list-style: none; }
 ::selection { background: rgba(182, 141, 83, 0.18); }
 
 /* ============================================================
-   PRELOADER (logo only)
+   PRELOADER (animated SVG logo)
    ============================================================ */
 #preloader {
     position: fixed;
@@ -59,11 +59,17 @@ ul { list-style: none; }
     pointer-events: none;
 }
 
-.preloader-logo {
-    max-width: 300px;
-    width: auto;
+.preloader-container {
+    width: min(80vw, 320px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-container svg {
+    width: 100%;
     height: auto;
-    transition: transform 0.5s var(--ease-out);
+    vector-effect: non-scaling-stroke;
 }
 
 /* ============================================================
