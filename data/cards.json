@@ -1,5 +1,22 @@
 [
   {
+    "id": "john testinng",
+    "category": "john's fav",
+    "price": 100,
+    "featured": false,
+    "minOrder": 200,
+    "size": "50*100",
+    "material": "Vibranium",
+    "description": "Dale weds Diana",
+    "extraCharges": [],
+    "images": [
+      "assets/cards/john-testinng-1.png"
+    ],
+    "originals": [
+      "assets/cards/original/john-testinng-1.png"
+    ]
+  },
+  {
     "id": "DIGITAL 140",
     "name": "Digital 140",
     "category": "Modern",
