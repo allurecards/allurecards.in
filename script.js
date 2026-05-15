@@ -407,28 +407,12 @@ function calculateTotal() {
     // 1. Card Cost
     calcCardCost.textContent = `Rs. ${cardCost.toLocaleString()}`;
 
-    // 2. Printing Cost (only when charged)
-    if (printingFee > 0) {
-        printingRow.style.display = 'flex';
-        calcPrintingVal.innerHTML = 'Rs. 600';
-    } else {
-        printingRow.style.display = 'none';   // completely hidden when free
-    }
-
-    // 3. Volume Discount (if any)
-    discountRow.style.display = discountPct > 0 ? 'flex' : 'none';
-    if (discountPct > 0) {
-        calcDiscountVal.innerHTML = `− Rs. ${discountAmt.toLocaleString()} (${discountPct}% off)`;
-        calcDiscountVal.style.color = '#2e7d32';  // professional green
-        // no background, no other highlights
-    }
-
-    // 4. Extra Charges Breakdown (by name)
+    // 2. Extra Charges (individual lines)
     const calcSummary = document.querySelector('.calc-summary');
     calcSummary.querySelectorAll('.extra-charge-item, .extra-charge-subtotal').forEach(el => el.remove());
 
     if (currentExtraCharges.length > 0) {
-        const insertBefore = savingsRow;
+        const insertBefore = printingRow;
         currentExtraCharges.forEach(ch => {
             const row = document.createElement('div');
             row.className = 'summary-row extra-charge-item';
@@ -439,25 +423,60 @@ function calculateTotal() {
         if (currentExtraCharges.length > 1) {
             const subtotalRow = document.createElement('div');
             subtotalRow.className = 'summary-row extra-charge-subtotal';
+            subtotalRow.style.fontWeight = '500';
             subtotalRow.innerHTML = `<span>Total Extra Charges</span><span>Rs. ${extraTotal.toLocaleString()}</span>`;
             calcSummary.insertBefore(subtotalRow, insertBefore);
         }
     }
 
-    // 5. You Save
+    // 3. Printing Fee — always visible, struck through when free
+    printingRow.style.display = 'flex';
+    if (printingFee > 0) {
+        calcPrintingVal.innerHTML = 'Rs. 600';
+        calcPrintingVal.style.textDecoration = 'none';
+        calcPrintingVal.style.color = '';
+        printingRow.querySelector('span:first-child').textContent = 'Printing Fee';
+        printingRow.style.background = '';
+    } else {
+        calcPrintingVal.innerHTML = 'Rs. 600';
+        calcPrintingVal.style.textDecoration = 'line-through';
+        calcPrintingVal.style.color = '#999';
+        printingRow.querySelector('span:first-child').textContent = 'Printing Fee';
+        printingRow.style.background = '';
+    }
+
+    // 4. Volume Discount — green, only when applicable
+    discountRow.style.display = discountPct > 0 ? 'flex' : 'none';
+    if (discountPct > 0) {
+        calcDiscountVal.innerHTML = `− Rs. ${discountAmt.toLocaleString()} (${discountPct}%)`;
+        calcDiscountVal.style.color = '#2e7d32';
+        calcDiscountVal.style.fontWeight = '500';
+        discountRow.style.background = '';
+        discountRow.querySelector('span:first-child').textContent = 'Volume Discount';
+    }
+
+    // 5. You Save — bold, single amount, no breakdown
     savingsRow.style.display = totalSavings > 0 ? 'flex' : 'none';
     if (totalSavings > 0) {
-        let parts = [];
-        if (printingWaived > 0) parts.push(`Printing free (Rs. ${printingWaived})`);
-        if (discountAmt > 0) parts.push(`${discountPct}% discount (Rs. ${discountAmt.toLocaleString()})`);
-        calcSavingsVal.innerHTML = parts.join('<br>');
-        // keep it clean – no background
+        calcSavingsVal.textContent = `Rs. ${totalSavings.toLocaleString()}`;
+        calcSavingsVal.style.fontWeight = '700';
+        calcSavingsVal.style.color = '#b68d53';
+        savingsRow.querySelector('span:first-child').textContent = 'You Save';
+        savingsRow.querySelector('span:first-child').style.fontWeight = '600';
+        savingsRow.style.background = '';
+        savingsRow.style.borderTop = '1px solid #e0dcd3';
+        savingsRow.style.paddingTop = '8px';
+        savingsRow.style.marginTop = '4px';
+    } else {
+        savingsRow.style.borderTop = '';
+        savingsRow.style.paddingTop = '';
+        savingsRow.style.marginTop = '';
     }
 
     // 6. Final Estimate
     calcFinalTotal.textContent = `Rs. ${finalTotal.toLocaleString()}`;
 
-    // 7. WhatsApp message with full breakdown
+    // WhatsApp message with breakdown
     const breakdownLines = [
         `*Design:* ${currentProductName} (${currentProductCat} Collection)`,
         `*Quantity:* ${qty}`,
@@ -465,12 +484,6 @@ function calculateTotal() {
         `*Price Breakdown:*`,
         `Card Cost: Rs. ${cardCost.toLocaleString()}`
     ];
-
-    if (printingFee > 0) {
-        breakdownLines.push(`Printing Charge: Rs. ${printingFee}`);
-    } else {
-        breakdownLines.push(`Printing Charge: FREE (saved Rs. 600)`);
-    }
 
     if (currentExtraCharges.length > 0) {
         currentExtraCharges.forEach(ch => {
@@ -481,12 +494,19 @@ function calculateTotal() {
         }
     }
 
+    if (printingFee > 0) {
+        breakdownLines.push(`Printing Fee: Rs. 600`);
+    } else {
+        breakdownLines.push(`Printing Fee: FREE (You save Rs. 600!)`);
+    }
+
     if (discountAmt > 0) {
         breakdownLines.push(`Volume Discount (${discountPct}%): – Rs. ${discountAmt.toLocaleString()}`);
     }
 
     breakdownLines.push(`───`);
     breakdownLines.push(`*Final Estimate: Rs. ${finalTotal.toLocaleString()}*`);
+    breakdownLines.push(`*You Save: Rs. ${totalSavings.toLocaleString()}*`);
     breakdownLines.push(``);
     breakdownLines.push(`Please let me know how to proceed.`);
 
