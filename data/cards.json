@@ -2,19 +2,26 @@
   {
     "id": "0900",
     "name": "0900",
-    "category": "Floral",
-    "price": 50,
-    "featured": false,
+    "category": "Minimal",
+    "price": 55,
+    "featured": true,
     "minOrder": 200,
-    "size": "9mm * 9mm",
-    "material": "craft",
-    "description": "salads",
-    "extraCharges": [],
+    "size": "10 mm * 10mm",
+    "material": "floral",
+    "description": "floral",
+    "extraCharges": [
+      {
+        "name": "van",
+        "price": 600
+      }
+    ],
     "images": [
-      "assets/cards/0900-1.png"
+      "assets/cards/0900-1.jpeg",
+      "assets/cards/0900-2.jpeg"
     ],
     "originals": [
-      "assets/cards/original/0900-1.png"
+      "assets/cards/original/0900-1.jpeg",
+      "assets/cards/original/0900-2.jpeg"
     ]
   },
   {
