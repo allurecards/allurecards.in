@@ -1,27 +1,5 @@
 [
   {
-    "id": "john testinng",
-    "category": "john's fav",
-    "price": 100,
-    "featured": false,
-    "minOrder": 200,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "extraCharges": [
-      {
-        "name": "education",
-        "price": 1000
-      }
-    ],
-    "images": [
-      "assets/cards/john-testinng-1.png"
-    ],
-    "originals": [
-      "assets/cards/original/john-testinng-1.png"
-    ]
-  },
-  {
     "id": "DIGITAL 140",
     "name": "Digital 140",
     "category": "Modern",
