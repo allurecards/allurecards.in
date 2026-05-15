@@ -1,24 +1,5 @@
 [
   {
-    "id": "0900",
-    "name": "two",
-    "category": "",
-    "price": 60,
-    "featured": true,
-    "minOrder": 200,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "extraCharges": [],
-    "images": [
-      "assets/cards/0900-2.jpeg",
-      "assets/cards/0900-3.jpeg"
-    ],
-    "originals": [
-      "assets/cards/original/0900-3.jpeg"
-    ]
-  },
-  {
     "id": "DIGITAL 140",
     "name": "Digital 140",
     "category": "Modern",
