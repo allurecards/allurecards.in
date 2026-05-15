@@ -1,5 +1,23 @@
 [
   {
+    "id": "0900",
+    "name": "0900",
+    "category": "Floral",
+    "price": 50,
+    "featured": false,
+    "minOrder": 200,
+    "size": "9mm * 9mm",
+    "material": "craft",
+    "description": "salads",
+    "extraCharges": [],
+    "images": [
+      "assets/cards/0900-1.png"
+    ],
+    "originals": [
+      "assets/cards/original/0900-1.png"
+    ]
+  },
+  {
     "id": "DIGITAL 140",
     "name": "Digital 140",
     "category": "Modern",
@@ -10,7 +28,10 @@
     "material": "Matte Art Card",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "extraCharges": [
-      { "name": "Digital Print Setup", "price": 200 }
+      {
+        "name": "Digital Print Setup",
+        "price": 200
+      }
     ],
     "images": [
       "assets/cards/1141.gif"
@@ -30,7 +51,10 @@
     "material": "Translucent Vellum",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "extraCharges": [
-      { "name": "Envelope Lining", "price": 10 }
+      {
+        "name": "Envelope Lining",
+        "price": 10
+      }
     ],
     "images": [
       "assets/cards/gree.gif"
@@ -123,7 +147,10 @@
     "material": "Soft Pastel Card",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "extraCharges": [
-      { "name": "Ribbon Tie", "price": 25 }
+      {
+        "name": "Ribbon Tie",
+        "price": 25
+      }
     ],
     "images": [
       "assets/cards/PI-3.gif"
@@ -213,7 +240,10 @@
     "material": "Pearl Shimmer Cardstock",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "extraCharges": [
-      { "name": "Gold Foil", "price": 15 }
+      {
+        "name": "Gold Foil",
+        "price": 15
+      }
     ],
     "images": [
       "assets/cards/al-001-1.png",
@@ -239,7 +269,10 @@
     "material": "Textured Cream",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "extraCharges": [
-      { "name": "Wax Seal", "price": 30 }
+      {
+        "name": "Wax Seal",
+        "price": 30
+      }
     ],
     "images": [
       "assets/cards/al-003-1.png",
@@ -366,8 +399,14 @@
     "material": "Handmade Cotton Paper",
     "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "extraCharges": [
-      { "name": "Gold Edge Gilding", "price": 40 },
-      { "name": "Velvet Box", "price": 200 }
+      {
+        "name": "Gold Edge Gilding",
+        "price": 40
+      },
+      {
+        "name": "Velvet Box",
+        "price": 200
+      }
     ],
     "images": [
       "assets/cards/al-1001-1.png",
