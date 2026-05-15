@@ -60,7 +60,7 @@ ul { list-style: none; }
 }
 
 .preloader-logo {
-    max-width: 220px;
+    max-width: 300px;
     width: auto;
     height: auto;
     transition: transform 0.5s var(--ease-out);
