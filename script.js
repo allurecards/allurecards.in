@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
         if (preloader) {
             preloader.classList.add("hide");
         }
-    }, 2200);
+    }, 2700);
 });
 
 const header = document.getElementById("site-header");
