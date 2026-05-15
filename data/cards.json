@@ -1,22 +1,27 @@
 [
   {
     "id": "0900",
-    "name": "0900",
-    "category": "",
-    "price": 55,
+    "name": "two",
+    "category": "Modern",
+    "price": 60,
     "featured": true,
     "minOrder": 200,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "extraCharges": [],
+    "size": "6mm * 6mm",
+    "material": "acrylic",
+    "description": "fantastic",
+    "extraCharges": [
+      {
+        "name": "extra extra",
+        "price": 900
+      }
+    ],
     "images": [
-      "assets/cards/0900-1.png",
-      "assets/cards/0900-2.jpeg"
+      "assets/cards/0900-2.jpeg",
+      "assets/cards/0900-3.jpeg"
     ],
     "originals": [
-      "assets/cards/original/0900-1.png",
-      "assets/cards/original/0900-2.jpeg"
+      "assets/cards/original/0900-2.jpeg",
+      "assets/cards/original/0900-3.jpeg"
     ]
   },
   {
