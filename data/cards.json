@@ -1,5 +1,22 @@
 [
   {
+    "id": "john",
+    "category": "Modern",
+    "price": 20,
+    "featured": false,
+    "minOrder": 200,
+    "size": "12*18",
+    "material": "plastic",
+    "description": "thumbnail testing",
+    "extraCharges": [],
+    "images": [
+      "assets/cards/john-1.png"
+    ],
+    "originals": [
+      "assets/cards/original/john-1.png"
+    ]
+  },
+  {
     "id": "DIGITAL 140",
     "name": "Digital 140",
     "category": "Modern",
