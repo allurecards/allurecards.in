@@ -1,22 +1,5 @@
 [
   {
-    "id": "john test two",
-    "category": "Heritage",
-    "price": 500,
-    "featured": true,
-    "minOrder": 200,
-    "size": "12*48",
-    "material": "flower",
-    "description": "john's favorite card",
-    "extraCharges": [],
-    "images": [
-      "assets/cards/john-test-two-1.png"
-    ],
-    "originals": [
-      "assets/cards/original/john-test-two-1.png"
-    ]
-  },
-  {
     "id": "DIGITAL 140",
     "name": "Digital 140",
     "category": "Modern",
