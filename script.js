@@ -241,32 +241,40 @@ if (header) {
         updateShowMoreBtn();
     }
 
-    // Product card: only ID and price (no size/material)
-    function createCardHTML(product) {
-        const productJson  = encodeURIComponent(JSON.stringify(product));
-        const featuredBadge = product.featured
-            ? '<span class="featured-badge">Featured</span>'
-            : '';
-        return `
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    ${featuredBadge}
-                    <img src="${escapeHtml(product.images[0])}"
-                         alt="${escapeHtml(product.id)} card design"
-                         loading="lazy">
-                    <div class="quick-view-overlay">
-                        <button class="quick-view-btn"
-                                data-product="${productJson}"
-                                aria-label="Quick view ${escapeHtml(product.id)}">
-                            Quick View
-                        </button>
-                    </div>
+// Product card: only ID and price (no size/material)
+function createCardHTML(product) {
+    const productJson  = encodeURIComponent(JSON.stringify(product));
+    const featuredBadge = product.featured
+        ? '<span class="featured-badge">Featured</span>'
+        : '';
+    
+    // Use thumbnail if available, fall back to full image
+    const mainImage = product.images[0];
+    const thumbSrc = mainImage 
+        ? mainImage.replace('/cards/', '/cards/thumb/') 
+        : 'assets/cards/placeholder.jpg';
+    
+    return `
+        <div class="product-card">
+            <div class="product-img-wrapper">
+                ${featuredBadge}
+                <img src="${escapeHtml(thumbSrc)}"
+                     alt="${escapeHtml(product.id)} card design"
+                     loading="lazy"
+                     onerror="this.onerror=null;this.src='${escapeHtml(mainImage)}';">
+                <div class="quick-view-overlay">
+                    <button class="quick-view-btn"
+                            data-product="${productJson}"
+                            aria-label="Quick view ${escapeHtml(product.id)}">
+                        Quick View
+                    </button>
                 </div>
-                <h4 class="product-id">${escapeHtml(product.id)}</h4>
-                <p class="product-price">Rs. ${product.price} / card</p>
             </div>
-        `;
-    }
+            <h4 class="product-id">${escapeHtml(product.id)}</h4>
+            <p class="product-price">Rs. ${product.price} / card</p>
+        </div>
+    `;
+}
 
     productContainer.addEventListener('click', e => {
         const btn = e.target.closest('.quick-view-btn');
