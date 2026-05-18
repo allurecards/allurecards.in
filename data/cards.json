@@ -327,9 +327,9 @@
     "price": 34,
     "featured": true,
     "minOrder": 200,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "size": "20cm square",
+    "material": "Envelop 300 gsm + Insert 240 gsm Original textured pasted on 300 gsm material",
+    "description": "Coffee brown foil printing on envelope+ Inder digital printing",
     "images": [
       "assets/cards/al-007-1.png",
       "assets/cards/al-007-2.png",
@@ -339,6 +339,12 @@
       "assets/cards/original/al-007-1.png",
       "assets/cards/original/al-007-2.png",
       "assets/cards/original/al-007-3.png"
+    ],
+    "extraCharges": [
+      {
+        "name": "Foiling block",
+        "price": 800
+      }
     ]
   },
   {
