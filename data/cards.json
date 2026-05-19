@@ -243,13 +243,13 @@
   {
     "id": "AL 004",
     "name": "AL 004",
-    "category": "",
+    "category": "Minimal",
     "price": 35,
     "featured": true,
     "minOrder": 200,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "size": "195 mm x195 mm",
+    "material": "Envelop  240 Gsm Imported Premium Textured Envelope  +  Insert  320 Gsm Textured Base + 240 Gsm Imported Premium Textured",
+    "description": "Envelope + Insert Digital Printing Insert pasted on plane white 320 gsm card",
     "images": [
       "assets/cards/al-004-1.png",
       "assets/cards/al-004-2.png"
@@ -257,7 +257,8 @@
     "originals": [
       "assets/cards/original/al-004-1.png",
       "assets/cards/original/al-004-2.png"
-    ]
+    ],
+    "extraCharges": []
   },
   {
     "id": "AL 005",
