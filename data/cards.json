@@ -429,7 +429,7 @@
     "id": "AL 013",
     "name": "AL 013",
     "category": "",
-    "price": 35,
+    "price": 38,
     "featured": true,
     "minOrder": 100,
     "size": "210×155 mm",
@@ -444,7 +444,8 @@
       "assets/cards/original/al-013-1.png",
       "assets/cards/original/al-013-2.png",
       "assets/cards/original/al-013-3.png"
-    ]
+    ],
+    "extraCharges": []
   },
   {
     "id": "AL 014",
