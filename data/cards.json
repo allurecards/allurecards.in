@@ -474,8 +474,8 @@
   {
     "id": "AL 015",
     "name": "AL 015",
-    "category": "Heritage",
-    "price": 40,
+    "category": "",
+    "price": 43,
     "featured": true,
     "minOrder": 100,
     "size": "210×155 mm",
@@ -492,7 +492,8 @@
       "assets/cards/original/al-015-2.jpeg",
       "assets/cards/original/al-015-3.png",
       "assets/cards/original/al-015-4.png"
-    ]
+    ],
+    "extraCharges": []
   },
   {
     "id": "AL 016",
