@@ -450,8 +450,8 @@
   {
     "id": "AL 014",
     "name": "AL 014",
-    "category": "Minimal",
-    "price": 35,
+    "category": "",
+    "price": 38,
     "featured": true,
     "minOrder": 100,
     "size": "210×155 mm",
@@ -468,7 +468,8 @@
       "assets/cards/original/al-014-2.png",
       "assets/cards/original/al-014-3.png",
       "assets/cards/original/al-014-4.png"
-    ]
+    ],
+    "extraCharges": []
   },
   {
     "id": "AL 015",
