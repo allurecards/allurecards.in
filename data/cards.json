@@ -1,5 +1,28 @@
 [
   {
+    "id": "AL 027",
+    "category": "Minimal",
+    "price": 34,
+    "featured": false,
+    "minOrder": 200,
+    "size": "195 mm x 195 mm",
+    "material": "300 gsm Premium Pearl Metalic imported",
+    "description": "Digital Printing & Blind Emboss",
+    "extraCharges": [],
+    "images": [
+      "assets/cards/al-027-1.jpeg",
+      "assets/cards/al-027-2.jpeg",
+      "assets/cards/al-027-3.jpeg",
+      "assets/cards/al-027-4.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-027-1.jpeg",
+      "assets/cards/original/al-027-2.jpeg",
+      "assets/cards/original/al-027-3.jpeg",
+      "assets/cards/original/al-027-4.jpeg"
+    ]
+  },
+  {
     "id": "AL 026",
     "category": "Modern",
     "price": 55,
