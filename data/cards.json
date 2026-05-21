@@ -1,5 +1,28 @@
 [
   {
+    "id": "AL 025",
+    "category": "Modern",
+    "price": 36,
+    "featured": true,
+    "minOrder": 200,
+    "size": "195 mm x 195 mm",
+    "material": "260 gsm Gold metallic + 230 gsm premium textured white card",
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "extraCharges": [],
+    "images": [
+      "assets/cards/al-025-1.jpeg",
+      "assets/cards/al-025-2.jpeg",
+      "assets/cards/al-025-3.jpeg",
+      "assets/cards/al-025-4.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-025-1.jpeg",
+      "assets/cards/original/al-025-2.jpeg",
+      "assets/cards/original/al-025-3.jpeg",
+      "assets/cards/original/al-025-4.jpeg"
+    ]
+  },
+  {
     "id": "DIGITAL 140",
     "name": "Digital 140",
     "category": "Modern",
