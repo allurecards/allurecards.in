@@ -1,5 +1,26 @@
 [
   {
+    "id": "AL 026",
+    "category": "Modern",
+    "price": 55,
+    "featured": true,
+    "minOrder": 200,
+    "size": "195 mm x195 mm",
+    "material": "300 gsm Premium Pearl Metalic Imported + 120 gsm Metalic tracing sheet + wax seal",
+    "description": "Deboss + Foil Printing on Envelope  DIgital printing on Inner sheet",
+    "extraCharges": [],
+    "images": [
+      "assets/cards/al-026-1.jpeg",
+      "assets/cards/al-026-2.jpeg",
+      "assets/cards/al-026-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-026-1.jpeg",
+      "assets/cards/original/al-026-2.jpeg",
+      "assets/cards/original/al-026-3.jpeg"
+    ]
+  },
+  {
     "id": "AL 025",
     "category": "Modern",
     "price": 36,
