@@ -270,9 +270,9 @@
     "price": 35,
     "featured": true,
     "minOrder": 200,
-    "size": "210×155 mm",
-    "material": "240 Gsm Imported Premium Textured  +  Insert   320 Gsm Textured Base",
-    "description": "Premium Digital Printing",
+    "size": "195 mm x195 mm",
+    "material": "240 Gsm Imported Premium Textured  +  320 Gsm Textured Base",
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-004-1.png",
       "assets/cards/al-004-2.png"
