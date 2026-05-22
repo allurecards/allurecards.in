@@ -10,8 +10,8 @@
     "description": "Premium digital printing",
     "extraCharges": [],
     "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "large",
+    "watermarkPos": "bottom-right",
+    "watermarkSize": "medium",
     "watermarkPath": "assets/cards/black_logo_watermark.png",
     "images": [
       "assets/cards/al-030-1.jpeg",
