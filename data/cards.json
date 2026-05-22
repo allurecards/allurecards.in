@@ -1,5 +1,31 @@
 [
   {
+    "id": "john test three",
+    "category": "Modern",
+    "price": 500,
+    "featured": true,
+    "minOrder": 200,
+    "size": "14*45",
+    "material": "dale",
+    "description": "dales and heins cards",
+    "extraCharges": [
+      {
+        "name": "heins",
+        "price": 500
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "center",
+    "watermarkSize": "large",
+    "watermarkPath": "assets/cards/black_logo_watermark.png",
+    "images": [
+      "assets/cards/john-test-three-1.png"
+    ],
+    "originals": [
+      "assets/cards/original/john-test-three-1.png"
+    ]
+  },
+  {
     "id": "JOHN TEST TWO",
     "category": "Minimal",
     "price": 520,
