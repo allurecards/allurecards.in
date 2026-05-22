@@ -1,7 +1,7 @@
 [
   {
     "id": "JOHN TEST TWO",
-    "category": "Modern",
+    "category": "",
     "price": 2585,
     "featured": true,
     "minOrder": 100,
