@@ -299,6 +299,16 @@ if (header) {
     }
 
     function openProductModal(product) {
+
+        // At the very top of openProductModal
+        modalImg.src = '';
+        modalTitle.textContent = 'Loading...';
+        modalCategoryLbl.textContent = '';
+        modalUnitPrice.textContent = '';
+        modalDescText.textContent = '';
+        if (modalDetails) modalDetails.textContent = '';
+        thumbnailRow.innerHTML = '';
+        
         currentProductName  = product.id;
         currentProductCat   = product.category;
         currentUnitPrice    = product.price;
