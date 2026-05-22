@@ -24,14 +24,19 @@
   },
   {
     "id": "AL 026",
-    "category": "Modern",
+    "category": "",
     "price": 55,
     "featured": true,
     "minOrder": 200,
-    "size": "195 mm x195 mm",
-    "material": "300 gsm Premium Pearl Metalic Imported + 120 gsm Metalic tracing sheet + wax seal",
-    "description": "Deboss + Foil Printing on Envelope  DIgital printing on Inner sheet",
-    "extraCharges": [],
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "extraCharges": [
+      {
+        "name": "Foil Block cost",
+        "price": 800
+      }
+    ],
     "images": [
       "assets/cards/al-026-1.jpeg",
       "assets/cards/al-026-2.jpeg",
