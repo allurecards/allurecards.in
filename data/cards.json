@@ -1,12 +1,12 @@
 [
   {
     "id": "JOHN TEST TWO",
-    "category": "",
+    "category": "Floral",
     "price": 2585,
     "featured": true,
     "minOrder": 100,
     "size": "15*17",
-    "material": "JOHNHSSSS",
+    "material": "vibranium",
     "description": "DFADFADDSGFHGHHDFG",
     "extraCharges": [],
     "applyWatermark": true,
