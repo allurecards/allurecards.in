@@ -1,5 +1,26 @@
 [
   {
+    "id": "JOHN TEST TWO",
+    "category": "Modern",
+    "price": 2585,
+    "featured": true,
+    "minOrder": 100,
+    "size": "15*17",
+    "material": "JOHNHSSSS",
+    "description": "DFADFADDSGFHGHHDFG",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "center",
+    "watermarkSize": "large",
+    "watermarkPath": "assets/cards/goldallure.png",
+    "images": [
+      "assets/cards/john-test-two-1.png"
+    ],
+    "originals": [
+      "assets/cards/original/john-test-two-1.png"
+    ]
+  },
+  {
     "id": "dfsfdsa",
     "category": "Minimal",
     "price": 100,
