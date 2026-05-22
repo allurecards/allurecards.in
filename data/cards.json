@@ -1,7 +1,7 @@
 [
   {
     "id": "john test three",
-    "category": "Floral",
+    "category": "Minimal",
     "price": 2000,
     "featured": true,
     "minOrder": 200,
@@ -17,7 +17,7 @@
     "applyWatermark": true,
     "watermarkPos": "center",
     "watermarkSize": "large",
-    "watermarkPath": "assets/cards/watermark_transparent.png",
+    "watermarkPath": "assets/cards/goldallure.png",
     "images": [
       "assets/cards/john-test-three-1.png"
     ],
