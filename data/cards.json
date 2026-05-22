@@ -379,9 +379,9 @@
     "price": 45,
     "featured": true,
     "minOrder": 200,
-    "size": "155*69",
-    "material": "vibranium",
-    "description": "john's fav card",
+    "size": "210×155 mm",
+    "material": "i changed the material only",
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-002-1.png",
       "assets/cards/al-002-2.png",
