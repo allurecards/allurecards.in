@@ -690,7 +690,7 @@ section { padding: 100px 5%; }
 .modal-content {
     background: var(--white);
     width: 100%;
-    max-width: 1060px;
+    max-width: 960px;
     max-height: 92vh;
     position: relative;
     box-shadow: 0 24px 60px rgba(0,0,0,0.22);
@@ -724,7 +724,7 @@ section { padding: 100px 5%; }
 }
 
 .modal-gallery {
-    flex: 1.4;
+    flex: 1.3;
     background: #fdfcf9;
     padding: 28px 24px;
     display: flex;
@@ -736,7 +736,7 @@ section { padding: 100px 5%; }
 
 .main-image-container {
     width: 100%;
-    height: 44vh;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -777,7 +777,7 @@ section { padding: 100px 5%; }
 
 .modal-info {
     flex: 1;
-    padding: 40px 36px;
+    padding: 32px 30px;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -797,14 +797,14 @@ section { padding: 100px 5%; }
 
 .modal-info h3 {
     font-family: var(--font-display);
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 8px;
     line-height: 1.2;
 }
 
 .modal-price {
     font-family: var(--font-ui);
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     color: var(--ink);
     margin-bottom: 16px;
     font-weight: 500;
@@ -870,11 +870,13 @@ section { padding: 100px 5%; }
 
 .discount-banner {
     font-family: var(--font-ui);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: var(--gold);
     opacity: 0.85;
+   font-weight: 500;
     margin-top: 7px;
     text-align: center;
+   color: var(--gold-dark); 
     letter-spacing: 0.2px;
     line-height: 1.5;
 }
