@@ -1,5 +1,32 @@
 [
   {
+    "id": "AL 001",
+    "category": "Modern",
+    "price": 45,
+    "featured": true,
+    "minOrder": 100,
+    "size": "195 mm x 195 mm",
+    "material": "300 gsm  Premium Jet black + 240 gsm Original  textured",
+    "description": "Digital printing",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/goldallure.png",
+    "images": [
+      "assets/cards/al-001-1.jpeg",
+      "assets/cards/al-001-2.jpeg",
+      "assets/cards/al-001-3.jpeg",
+      "assets/cards/al-001-4.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-001-1.jpeg",
+      "assets/cards/original/al-001-2.jpeg",
+      "assets/cards/original/al-001-3.jpeg",
+      "assets/cards/original/al-001-4.jpeg"
+    ]
+  },
+  {
     "id": "john test three",
     "category": "",
     "price": 2000,
