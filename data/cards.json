@@ -1,7 +1,7 @@
 [
   {
     "id": "AL 001",
-    "category": "Modern",
+    "category": "",
     "price": 45,
     "featured": true,
     "minOrder": 100,
@@ -12,7 +12,7 @@
     "applyWatermark": true,
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
-    "watermarkPath": "assets/cards/goldallure.png",
+    "watermarkPath": "assets/cards/black_logo_watermark.png",
     "images": [
       "assets/cards/al-001-1.jpeg",
       "assets/cards/al-001-2.jpeg",
