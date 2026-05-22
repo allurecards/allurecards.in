@@ -1,13 +1,13 @@
 [
   {
     "id": "john test three",
-    "category": "Minimal",
+    "category": "",
     "price": 2000,
     "featured": true,
     "minOrder": 200,
     "size": "17*28",
     "material": "johncodeddddd",
-    "description": "dales and heins cards",
+    "description": "i only changed the description",
     "extraCharges": [
       {
         "name": "heins",
