@@ -17,7 +17,7 @@
     "applyWatermark": true,
     "watermarkPos": "center",
     "watermarkSize": "large",
-    "watermarkPath": "assets/cards/goldallure.png",
+    "watermarkPath": "assets/cards/watermark_transparent.png",
     "images": [
       "assets/cards/john-test-three-1.png"
     ],
