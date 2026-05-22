@@ -1,5 +1,30 @@
 [
   {
+    "id": "AL 030",
+    "category": "Modern",
+    "price": 35,
+    "featured": true,
+    "minOrder": 100,
+    "size": "195 mm x 195 mm",
+    "material": "300 gsm premium smooth red + 240 gsm original textured  white",
+    "description": "Premium digital printing",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "large",
+    "watermarkPath": "assets/cards/black_logo_watermark.png",
+    "images": [
+      "assets/cards/al-030-1.jpeg",
+      "assets/cards/al-030-2.jpeg",
+      "assets/cards/al-030-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-030-1.jpeg",
+      "assets/cards/original/al-030-2.jpeg",
+      "assets/cards/original/al-030-3.jpeg"
+    ]
+  },
+  {
     "id": "AL 001",
     "category": "",
     "price": 45,
