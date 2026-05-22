@@ -1,7 +1,7 @@
 [
   {
     "id": "john test three",
-    "category": "",
+    "category": "Minimal",
     "price": 500,
     "featured": true,
     "minOrder": 200,
