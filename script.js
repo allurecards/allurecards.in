@@ -397,10 +397,17 @@ function createCardHTML(product) {
 function calculateTotal() {
     const qty           = parseInt(qtySelect.value, 10);
     const cardCost      = qty * currentUnitPrice;
-    const printingFee   = qty < 200 ? 600 : 0;
-    const printingWaived = printingFee === 0 ? 600 : 0;
+    const extraTotal    = currentExtraCharges.reduce((sum, ch) => sum + ch.price, 0);
 
-    const extraTotal = currentExtraCharges.reduce((sum, ch) => sum + ch.price, 0);
+    // Printing charge only exists if minOrder is 100
+    let printingFee     = 0;
+    let printingWaived  = 0;
+    const showPrinting  = currentMinOrder === 100;
+
+    if (showPrinting) {
+        printingFee    = qty < 200 ? 600 : 0;
+        printingWaived = printingFee === 0 ? 600 : 0;
+    }
 
     let factor = 1.0;
     let discountPct = 0;
@@ -414,7 +421,7 @@ function calculateTotal() {
     // 1. Card Cost
     calcCardCost.textContent = `Rs. ${cardCost.toLocaleString()}`;
 
-    // 2. Extra Charges (individual lines)
+    // 2. Extra Charges (individual lines) – unchanged
     const calcSummary = document.querySelector('.calc-summary');
     calcSummary.querySelectorAll('.extra-charge-item, .extra-charge-subtotal').forEach(el => el.remove());
 
@@ -436,23 +443,25 @@ function calculateTotal() {
         }
     }
 
-    // 3. Printing Fee — always visible, struck through when free
-    printingRow.style.display = 'flex';
-    if (printingFee > 0) {
-        calcPrintingVal.innerHTML = 'Rs. 600';
-        calcPrintingVal.style.textDecoration = 'none';
-        calcPrintingVal.style.color = '';
-        printingRow.querySelector('span:first-child').textContent = 'Printing Fee';
-        printingRow.style.background = '';
+    // 3. Printing / Extra charge line (only for minOrder 100)
+    if (showPrinting) {
+        printingRow.style.display = 'flex';
+        printingRow.querySelector('span:first-child').textContent = 'Extra charge below 200';
+
+        if (printingFee > 0) {
+            calcPrintingVal.innerHTML = 'Rs. 600';
+            calcPrintingVal.style.textDecoration = 'none';
+            calcPrintingVal.style.color = '';
+            printingRow.style.background = '';
+        } else {
+            calcPrintingVal.innerHTML = '<span class="waived">Rs. 600</span> <span class="saved-text">FREE</span>';
+            printingRow.style.background = '';
+        }
     } else {
-        calcPrintingVal.innerHTML = 'Rs. 600';
-        calcPrintingVal.style.textDecoration = 'line-through';
-        calcPrintingVal.style.color = '#999';
-        printingRow.querySelector('span:first-child').textContent = 'Printing Fee';
-        printingRow.style.background = '';
+        printingRow.style.display = 'none';
     }
 
-    // 4. Volume Discount — green, only when applicable
+    // 4. Volume Discount (green, only when applicable)
     discountRow.style.display = discountPct > 0 ? 'flex' : 'none';
     if (discountPct > 0) {
         calcDiscountVal.innerHTML = `− Rs. ${discountAmt.toLocaleString()} (${discountPct}%)`;
@@ -462,7 +471,7 @@ function calculateTotal() {
         discountRow.querySelector('span:first-child').textContent = 'Volume Discount';
     }
 
-    // 5. You Save — bold, single amount, no breakdown
+    // 5. You Save – bold, single amount, no breakdown
     savingsRow.style.display = totalSavings > 0 ? 'flex' : 'none';
     if (totalSavings > 0) {
         calcSavingsVal.textContent = `Rs. ${totalSavings.toLocaleString()}`;
@@ -483,7 +492,7 @@ function calculateTotal() {
     // 6. Final Estimate
     calcFinalTotal.textContent = `Rs. ${finalTotal.toLocaleString()}`;
 
-    // WhatsApp message with breakdown
+    // 7. WhatsApp message with breakdown
     const breakdownLines = [
         `*Design:* ${currentProductName} (${currentProductCat} Collection)`,
         `*Quantity:* ${qty}`,
@@ -501,10 +510,12 @@ function calculateTotal() {
         }
     }
 
-    if (printingFee > 0) {
-        breakdownLines.push(`Printing Fee: Rs. 600`);
-    } else {
-        breakdownLines.push(`Printing Fee: FREE (You save Rs. 600!)`);
+    if (showPrinting) {
+        if (printingFee > 0) {
+            breakdownLines.push(`Extra charge below 200: Rs. 600`);
+        } else {
+            breakdownLines.push(`Extra charge below 200: FREE (saved Rs. 600)`);
+        }
     }
 
     if (discountAmt > 0) {
