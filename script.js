@@ -87,7 +87,6 @@ if (header) {
     const modalDescText     = document.getElementById('modal-desc-text');
 
     const modalDetails      = document.getElementById('modal-details');
-    const modalExtraCharges = document.getElementById('modal-extra-charges');
 
     const qtySelect         = document.getElementById('modal-qty-select');
     const calcCardCost      = document.getElementById('calc-card-cost');
