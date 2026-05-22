@@ -1,12 +1,12 @@
 [
   {
     "id": "john test three",
-    "category": "Modern",
+    "category": "",
     "price": 500,
     "featured": true,
     "minOrder": 200,
     "size": "14*45",
-    "material": "dale",
+    "material": "heins",
     "description": "dales and heins cards",
     "extraCharges": [
       {
@@ -17,7 +17,7 @@
     "applyWatermark": true,
     "watermarkPos": "center",
     "watermarkSize": "large",
-    "watermarkPath": "assets/cards/black_logo_watermark.png",
+    "watermarkPath": "assets/cards/goldallure.png",
     "images": [
       "assets/cards/john-test-three-1.png"
     ],
