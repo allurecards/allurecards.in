@@ -1,7 +1,7 @@
 [
   {
     "id": "john test three",
-    "category": "Heritage",
+    "category": "",
     "price": 2000,
     "featured": true,
     "minOrder": 200,
@@ -16,7 +16,7 @@
     ],
     "applyWatermark": true,
     "watermarkPos": "bottom-center",
-    "watermarkSize": "large",
+    "watermarkSize": "small",
     "watermarkPath": "assets/cards/goldallure.png",
     "images": [
       "assets/cards/john-test-three-1.png"
