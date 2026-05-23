@@ -75,29 +75,6 @@
     ]
   },
   {
-    "id": "DIGITAL 140",
-    "name": "Digital 140",
-    "category": "Modern",
-    "price": 55,
-    "featured": false,
-    "minOrder": 100,
-    "size": "210×155 mm",
-    "material": "Matte Art Card",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "extraCharges": [
-      {
-        "name": "Digital Print Setup",
-        "price": 200
-      }
-    ],
-    "images": [
-      "assets/cards/1141.gif"
-    ],
-    "originals": [
-      "assets/cards/original/1141.gif"
-    ]
-  },
-  {
     "id": "VELLUM 106",
     "name": "Vellum 106",
     "category": "",
