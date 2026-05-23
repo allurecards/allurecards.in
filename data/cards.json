@@ -96,32 +96,6 @@
     ]
   },
   {
-    "id": "AL 026",
-    "category": "",
-    "price": 55,
-    "featured": true,
-    "minOrder": 200,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "extraCharges": [
-      {
-        "name": "Foil Block cost",
-        "price": 800
-      }
-    ],
-    "images": [
-      "assets/cards/al-026-1.jpeg",
-      "assets/cards/al-026-2.jpeg",
-      "assets/cards/al-026-3.jpeg"
-    ],
-    "originals": [
-      "assets/cards/original/al-026-1.jpeg",
-      "assets/cards/original/al-026-2.jpeg",
-      "assets/cards/original/al-026-3.jpeg"
-    ]
-  },
-  {
     "id": "AL 025",
     "category": "",
     "price": 36,
