@@ -157,20 +157,6 @@
     ]
   },
   {
-    "id": "VELLUM 101",
-    "name": "Vellum 101",
-    "category": "Modern",
-    "price": 55,
-    "featured": false,
-    "minOrder": 100,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": [
-      "assets/cards/coffeee.gif"
-    ]
-  },
-  {
     "id": "PASTEL 209",
     "name": "Pastel 209",
     "category": "Minimal",
