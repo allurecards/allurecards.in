@@ -436,13 +436,13 @@
   {
     "id": "AL 021",
     "name": "AL 021",
-    "category": "Modern",
+    "category": "",
     "price": 42,
     "featured": true,
     "minOrder": 200,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "size": "195 mm x 195 mm",
+    "material": "240 Gsm Imported Premium Textured + 320 Gsm Textured Printed Base",
+    "description": "Premium Digital Printing",
     "images": [
       "assets/cards/al-021-1.png",
       "assets/cards/al-021-2.png"
@@ -450,7 +450,12 @@
     "originals": [
       "assets/cards/original/al-021-1.png",
       "assets/cards/original/al-021-2.png"
-    ]
+    ],
+    "extraCharges": [],
+    "applyWatermark": false,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_transparent.png"
   },
   {
     "id": "AL 022",
@@ -499,8 +504,8 @@
     "price": 35,
     "featured": true,
     "minOrder": 100,
-    "size": "195 mm x 195 mm",
-    "material": "240 Gsm Imported Premium Textured + 320 Gsm Textured Printed Base",
+    "size": "195 mm x195 mm",
+    "material": "240 Gsm Imported Premium Textured + 320 Gsm Textured Base White",
     "description": "Premium Digital Printing",
     "images": [
       "assets/cards/al-024-1.png",
