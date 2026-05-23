@@ -154,20 +154,6 @@
     ]
   },
   {
-    "id": "PASTEL 203",
-    "name": "Pastel 203",
-    "category": "Heritage",
-    "price": 50,
-    "featured": false,
-    "minOrder": 100,
-    "size": "210×155 mm",
-    "material": "Soft Pastel Card",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": [
-      "assets/cards/PU-5.gif"
-    ]
-  },
-  {
     "id": "AL 004",
     "name": "AL 004",
     "category": "",
