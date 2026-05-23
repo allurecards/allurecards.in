@@ -52,27 +52,6 @@
     ]
   },
   {
-    "id": "JOHN TEST TWO",
-    "category": "Minimal",
-    "price": 520,
-    "featured": false,
-    "minOrder": 100,
-    "size": "18*79",
-    "material": "vibranium",
-    "description": "DFADFADDSGFHGHHDFG",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "center",
-    "watermarkSize": "large",
-    "watermarkPath": "assets/cards/black_logo_watermark.png",
-    "images": [
-      "assets/cards/john-test-two-1.png"
-    ],
-    "originals": [
-      "assets/cards/original/john-test-two-1.png"
-    ]
-  },
-  {
     "id": "AL 027",
     "category": "Minimal",
     "price": 34,
