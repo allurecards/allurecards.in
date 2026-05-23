@@ -75,29 +75,6 @@
     ]
   },
   {
-    "id": "VELLUM 106",
-    "name": "Vellum 106",
-    "category": "",
-    "price": 150,
-    "featured": false,
-    "minOrder": 100,
-    "size": "220×160 mm",
-    "material": "Translucent Vellum",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "extraCharges": [
-      {
-        "name": "Envelope Lining",
-        "price": 10
-      }
-    ],
-    "images": [
-      "assets/cards/gree.gif"
-    ],
-    "originals": [
-      "assets/cards/original/gree.gif"
-    ]
-  },
-  {
     "id": "PASTEL 209",
     "name": "Pastel 209",
     "category": "Minimal",
