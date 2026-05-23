@@ -73,27 +73,6 @@
     ]
   },
   {
-    "id": "dfsfdsa",
-    "category": "Minimal",
-    "price": 100,
-    "featured": true,
-    "minOrder": 200,
-    "size": "fdsfads",
-    "material": "fafedsfa",
-    "description": "fdfadsf",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "center",
-    "watermarkSize": "large",
-    "watermarkPath": "assets/cards/goldallure.png",
-    "images": [
-      "assets/cards/dfsfdsa-1.jpeg"
-    ],
-    "originals": [
-      "assets/cards/original/dfsfdsa-1.jpeg"
-    ]
-  },
-  {
     "id": "AL 027",
     "category": "Minimal",
     "price": 34,
