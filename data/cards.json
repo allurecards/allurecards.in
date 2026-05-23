@@ -302,9 +302,9 @@
     "price": 38,
     "featured": true,
     "minOrder": 100,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
+    "size": "195 mm x 195 mm",
+    "material": "240 Gsm Imported Premium Textured + 320 Gsm Textured Printed Base",
+    "description": "Premium Digital Printing",
     "images": [
       "assets/cards/al-014-1.png",
       "assets/cards/al-014-2.png",
@@ -317,7 +317,11 @@
       "assets/cards/original/al-014-3.png",
       "assets/cards/original/al-014-4.png"
     ],
-    "extraCharges": []
+    "extraCharges": [],
+    "applyWatermark": false,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_transparent.png"
   },
   {
     "id": "AL 015",
@@ -326,9 +330,9 @@
     "price": 43,
     "featured": true,
     "minOrder": 100,
-    "size": "195 mm x 195 mm",
-    "material": "240 Gsm Imported Premium Textured + 320 Gsm Textured Printed Base",
-    "description": "Premium Digital Printing",
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
+    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
     "images": [
       "assets/cards/al-015-1.jpeg",
       "assets/cards/al-015-2.jpeg",
@@ -341,11 +345,7 @@
       "assets/cards/original/al-015-3.png",
       "assets/cards/original/al-015-4.png"
     ],
-    "extraCharges": [],
-    "applyWatermark": false,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkPath": "assets/cards/watermark_transparent.png"
+    "extraCharges": []
   },
   {
     "id": "AL 016",
