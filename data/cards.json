@@ -52,32 +52,6 @@
     ]
   },
   {
-    "id": "john test three",
-    "category": "",
-    "price": 2000,
-    "featured": true,
-    "minOrder": 200,
-    "size": "17*28",
-    "material": "johncodeddddd",
-    "description": "i only changed the description",
-    "extraCharges": [
-      {
-        "name": "heins",
-        "price": 500
-      }
-    ],
-    "applyWatermark": true,
-    "watermarkPos": "center",
-    "watermarkSize": "large",
-    "watermarkPath": "assets/cards/goldallure.png",
-    "images": [
-      "assets/cards/john-test-three-1.png"
-    ],
-    "originals": [
-      "assets/cards/original/john-test-three-1.png"
-    ]
-  },
-  {
     "id": "JOHN TEST TWO",
     "category": "Minimal",
     "price": 520,
