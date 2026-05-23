@@ -140,20 +140,6 @@
     ]
   },
   {
-    "id": "PASTEL 204",
-    "name": "Pastel 204",
-    "category": "Floral",
-    "price": 50,
-    "featured": false,
-    "minOrder": 100,
-    "size": "210×155 mm",
-    "material": "Soft Pastel Card",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": [
-      "assets/cards/GREY-2.gif"
-    ]
-  },
-  {
     "id": "AL 004",
     "name": "AL 004",
     "category": "",
