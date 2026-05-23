@@ -308,35 +308,6 @@
     ]
   },
   {
-    "id": "AL 003",
-    "name": "AL 003",
-    "category": "",
-    "price": 48,
-    "featured": true,
-    "minOrder": 200,
-    "size": "200×150 mm",
-    "material": "Textured Cream",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "extraCharges": [
-      {
-        "name": "Wax Seal",
-        "price": 30
-      }
-    ],
-    "images": [
-      "assets/cards/al-003-1.png",
-      "assets/cards/al-003-2.png",
-      "assets/cards/al-003-3.png",
-      "assets/cards/al-003-4.png"
-    ],
-    "originals": [
-      "assets/cards/original/al-003-1.png",
-      "assets/cards/original/al-003-2.png",
-      "assets/cards/original/al-003-3.png",
-      "assets/cards/original/al-003-4.png"
-    ]
-  },
-  {
     "id": "AL 004",
     "name": "AL 004",
     "category": "",
