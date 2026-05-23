@@ -143,20 +143,6 @@
     ]
   },
   {
-    "id": "VELLUM 102",
-    "name": "Vellum 102",
-    "category": "Floral",
-    "price": 47,
-    "featured": false,
-    "minOrder": 100,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "Experience the timeless elegance of this design. Crafted on premium materials with exquisite detailing.",
-    "images": [
-      "assets/cards/blue3.gif"
-    ]
-  },
-  {
     "id": "PASTEL 209",
     "name": "Pastel 209",
     "category": "Minimal",
