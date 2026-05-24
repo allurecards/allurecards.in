@@ -27,28 +27,29 @@
   {
     "id": "AL 001",
     "category": "",
-    "price": 45,
+    "price": 199,
     "featured": true,
     "minOrder": 100,
-    "size": "195 mm x 195 mm",
-    "material": "300 gsm  Premium Jet black + 240 gsm Original  textured",
-    "description": "Digital printing",
-    "extraCharges": [],
+    "size": "ADITH TEST ID",
+    "material": "ADITH TEST ID",
+    "description": "ADITH TEST ID",
+    "extraCharges": [
+      {
+        "name": "ADITH TEST ID",
+        "price": 1000
+      }
+    ],
     "applyWatermark": true,
     "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
+    "watermarkSize": "large",
     "watermarkPath": "assets/cards/black_logo_watermark.png",
     "images": [
       "assets/cards/al-001-1.jpeg",
-      "assets/cards/al-001-2.jpeg",
-      "assets/cards/al-001-3.jpeg",
-      "assets/cards/al-001-4.jpeg"
+      "assets/cards/al-001-2.jpeg"
     ],
     "originals": [
       "assets/cards/original/al-001-1.jpeg",
-      "assets/cards/original/al-001-2.jpeg",
-      "assets/cards/original/al-001-3.jpeg",
-      "assets/cards/original/al-001-4.jpeg"
+      "assets/cards/original/al-001-2.jpeg"
     ]
   },
   {
