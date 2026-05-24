@@ -25,34 +25,6 @@
     ]
   },
   {
-    "id": "AL 001",
-    "category": "",
-    "price": 199,
-    "featured": true,
-    "minOrder": 100,
-    "size": "ADITH TEST ID",
-    "material": "ADITH TEST ID",
-    "description": "ADITH TEST ID",
-    "extraCharges": [
-      {
-        "name": "ADITH TEST ID",
-        "price": 1000
-      }
-    ],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "large",
-    "watermarkPath": "assets/cards/black_logo_watermark.png",
-    "images": [
-      "assets/cards/al-001-1.jpeg",
-      "assets/cards/al-001-2.jpeg"
-    ],
-    "originals": [
-      "assets/cards/original/al-001-1.jpeg",
-      "assets/cards/original/al-001-2.jpeg"
-    ]
-  },
-  {
     "id": "AL 027",
     "category": "Minimal",
     "price": 34,
