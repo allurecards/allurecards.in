@@ -198,37 +198,6 @@
     ]
   },
   {
-    "id": "AL 1001",
-    "name": "AL 1001",
-    "category": "Heritage",
-    "price": null,
-    "featured": true,
-    "minOrder": 200,
-    "size": "ADITH TEST ID",
-    "material": "ADITH TEST ID",
-    "description": "ADITH TEST ID",
-    "extraCharges": [
-      {
-        "name": "ADITH TEST ID",
-        "price": 1000
-      }
-    ],
-    "images": [
-      "assets/cards/al-1001-1.jpeg",
-      "assets/cards/al-1001-1.jpeg",
-      "assets/cards/al-1001-2.jpeg"
-    ],
-    "originals": [
-      "assets/cards/original/al-1001-1.jpeg",
-      "assets/cards/original/al-1001-1.jpeg",
-      "assets/cards/original/al-1001-2.jpeg"
-    ],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "large",
-    "watermarkPath": "assets/cards/goldallure.png"
-  },
-  {
     "id": "AL 011",
     "name": "AL 011",
     "category": "Minimal",
