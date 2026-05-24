@@ -1,5 +1,31 @@
 [
   {
+    "id": "fdfadf",
+    "category": "Modern",
+    "price": 400,
+    "featured": false,
+    "minOrder": 100,
+    "size": "ddfdas",
+    "material": "faffdsf",
+    "description": "adfas",
+    "extraCharges": [
+      {
+        "name": "fsadsfdf",
+        "price": 500
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-center",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_transparent.png",
+    "images": [
+      "assets/cards/fdfadf-1.png"
+    ],
+    "originals": [
+      "assets/cards/original/fdfadf-1.png"
+    ]
+  },
+  {
     "id": "john test",
     "category": "Modern",
     "price": 500,
