@@ -165,10 +165,10 @@
       "assets/cards/original/al-002-3.png"
     ],
     "extraCharges": [],
-    "applyWatermark": false,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkPath": "assets/cards/watermark_transparent.png"
+    "applyWatermark": true,
+    "watermarkPos": "bottom-right",
+    "watermarkSize": "large",
+    "watermarkPath": "assets/cards/black_logo_watermark.png"
   },
   {
     "id": "AL 007",
