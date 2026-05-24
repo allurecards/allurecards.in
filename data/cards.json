@@ -173,8 +173,8 @@
   {
     "id": "AL 002",
     "name": "AL 002",
-    "category": "",
-    "price": 45,
+    "category": "Minimal",
+    "price": 200,
     "featured": true,
     "minOrder": 200,
     "size": "215 mm x 160 mm",
