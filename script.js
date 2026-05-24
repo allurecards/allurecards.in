@@ -15,12 +15,12 @@ window.addEventListener("load", () => {
 const header = document.getElementById("site-header");
 if (header) {
     window.addEventListener("scroll", () => {
-        header.classList.toggle("scrolled", window.scrollY > 60);
+        // No longer needed because header is always fixed, but keep for potential future use
     }, { passive: true });
 }
 
 /* ============================================================
-   MOBILE NAV – HAMBURGER TOGGLE
+   MOBILE NAV – HAMBURGER TOGGLE (WORKING)
    ============================================================ */
 (function () {
     const navToggle  = document.getElementById('nav-toggle');
@@ -57,6 +57,7 @@ if (header) {
         if (e.key === 'Escape' && mobileNav.classList.contains('open')) closeMenu();
     });
 
+    // Ensure menu closes on resize if window becomes wide enough
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) closeMenu();
     }, { passive: true });
@@ -299,8 +300,6 @@ if (header) {
     }
 
     function openProductModal(product) {
-
-        // At the very top of openProductModal
         modalImg.src = '';
         modalTitle.textContent = 'Loading...';
         modalCategoryLbl.textContent = '';
