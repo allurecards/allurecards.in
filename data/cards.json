@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "id": "dale",
+    "category": "Modern",
+    "price": 300,
+    "featured": true,
+    "minOrder": 100,
+    "size": "13*18",
+    "material": "fibre",
+    "description": "descriptiono",
+    "extraCharges": [
+      {
+        "name": "john's",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "center",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_transparent.png",
+    "images": [
+      "assets/cards/dale-1.png"
+    ],
+    "originals": [
+      "assets/cards/original/dale-1.png"
+    ]
+  }
+]
