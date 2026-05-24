@@ -2,12 +2,12 @@
   {
     "id": "johns final test",
     "category": "Minimal",
-    "price": 500,
+    "price": 200,
     "featured": true,
-    "minOrder": 100,
+    "minOrder": 200,
     "size": "15*18",
     "material": "vibranium",
-    "description": "Description",
+    "description": "i changed descrip",
     "extraCharges": [
       {
         "name": "500",
@@ -15,9 +15,9 @@
       }
     ],
     "applyWatermark": true,
-    "watermarkPos": "bottom-left",
+    "watermarkPos": "center",
     "watermarkSize": "large",
-    "watermarkPath": "assets/cards/black_logo_watermark.png",
+    "watermarkPath": "assets/cards/goldallure.png",
     "images": [
       "assets/cards/johns-final-test-1.png",
       "assets/cards/johns-final-test-2.png"
