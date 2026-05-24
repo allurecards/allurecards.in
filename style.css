@@ -76,17 +76,16 @@ ul { list-style: none; }
    HEADER & MOBILE NAV
    ============================================================ */
 .site-header {
-    position: fixed;                /* Sticks to top on all devices */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 500;
+    z-index: 600;                          /* header now above the panel */
     padding: 0.5rem 5%;
     background: rgba(250, 246, 239, 0.92);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     box-shadow: 0 1px 0 rgba(182, 141, 83, 0.14);
-    transition: none;               /* No scroll animation needed */
 }
 
 .header-inner {
@@ -161,14 +160,14 @@ nav a:hover {
 
 .mobile-nav {
     position: fixed;
-    top: 0;
+    top: 56px;                             /* start exactly below the header */
     left: 0;
     width: 100%;
     background: rgba(250, 246, 239, 0.97);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    z-index: 510;                            /* ← now above the header */
-    padding-top: 80px;
+    z-index: 500;                          /* below the header */
+    padding-top: 20px;
     padding-bottom: 32px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
     transform: translateY(-100%);
