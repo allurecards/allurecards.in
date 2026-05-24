@@ -166,7 +166,7 @@
     ],
     "extraCharges": [],
     "applyWatermark": true,
-    "watermarkPos": "bottom-right",
+    "watermarkPos": "center",
     "watermarkSize": "large",
     "watermarkPath": "assets/cards/black_logo_watermark.png"
   },
