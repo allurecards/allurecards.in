@@ -1,5 +1,33 @@
 [
   {
+    "id": "johns final test",
+    "category": "Minimal",
+    "price": 500,
+    "featured": true,
+    "minOrder": 100,
+    "size": "15*18",
+    "material": "vibranium",
+    "description": "Description",
+    "extraCharges": [
+      {
+        "name": "500",
+        "price": 500
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "large",
+    "watermarkPath": "assets/cards/black_logo_watermark.png",
+    "images": [
+      "assets/cards/johns-final-test-1.png",
+      "assets/cards/johns-final-test-2.png"
+    ],
+    "originals": [
+      "assets/cards/original/johns-final-test-1.png",
+      "assets/cards/original/johns-final-test-2.png"
+    ]
+  },
+  {
     "id": "fdfadf",
     "category": "Modern",
     "price": 400,
