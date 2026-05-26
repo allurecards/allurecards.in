@@ -1,26 +1,5 @@
 [
   {
-    "id": "al001",
-    "category": "John",
-    "price": 500,
-    "featured": true,
-    "minOrder": 100,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "Elegant design.",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkPath": "assets/cards/watermark_gold.png",
-    "images": [
-      "assets/cards/al001-1.png"
-    ],
-    "originals": [
-      "assets/cards/original/al001-1.png"
-    ]
-  },
-  {
     "id": "AL 102",
     "category": "Modern",
     "price": 45,
