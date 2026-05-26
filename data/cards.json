@@ -12,7 +12,7 @@
     "applyWatermark": true,
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
-    "watermarkPath": "assets/cards/watermark_white.png",
+    "watermarkPath": "assets/cards/watermark_gold.png",
     "images": [
       "assets/cards/al001-1.png"
     ],
