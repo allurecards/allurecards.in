@@ -21,31 +21,6 @@
     ]
   },
   {
-    "id": "AL 102",
-    "category": "Modern",
-    "price": 45,
-    "featured": true,
-    "minOrder": 100,
-    "size": "195 MM x 195 MM",
-    "material": "300 Gsm Premium Smooth Red +  240 Gsm Mill Textured White",
-    "description": "Digital Printing",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "large",
-    "watermarkPath": "assets/cards/watermark_black.png",
-    "images": [
-      "assets/cards/al-102-1.jpeg",
-      "assets/cards/al-102-2.jpeg",
-      "assets/cards/al-102-3.jpeg"
-    ],
-    "originals": [
-      "assets/cards/original/al-102-1.jpeg",
-      "assets/cards/original/al-102-2.jpeg",
-      "assets/cards/original/al-102-3.jpeg"
-    ]
-  },
-  {
     "id": "AL 101",
     "category": "Modern",
     "price": 42,
