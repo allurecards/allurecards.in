@@ -23,30 +23,5 @@
       "assets/cards/original/al-101-2.jpeg",
       "assets/cards/original/al-101-3.jpeg"
     ]
-  },
-  {
-    "id": "AL 001",
-    "category": "Modern",
-    "price": 45,
-    "featured": true,
-    "minOrder": 100,
-    "size": "195mm x 195mm",
-    "material": "300 gsm premium jet black + 240 gsm original textured white",
-    "description": "Digital printing",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "large",
-    "watermarkPath": "assets/cards/black_logo_watermark.png",
-    "images": [
-      "assets/cards/al-001-1.jpeg",
-      "assets/cards/al-001-2.jpeg",
-      "assets/cards/al-001-3.jpeg"
-    ],
-    "originals": [
-      "assets/cards/original/al-001-1.jpeg",
-      "assets/cards/original/al-001-2.jpeg",
-      "assets/cards/original/al-001-3.jpeg"
-    ]
   }
 ]
