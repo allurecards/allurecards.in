@@ -267,7 +267,7 @@ if (header) {
                         </button>
                     </div>
                 </div>
-                <h4 class="product-id" style="font-family: 'Courier New', monospace; letter-spacing: 0.02em;">${escapeHtml(product.id)}</h4>
+                <h4 class="product-id" style="font-family: 'Montserrat', 'Helvetica Neue', sans-serif; font-weight: 700;">${escapeHtml(product.id)}</h4>
                 <p class="product-price">Rs. ${product.price} / card</p>
             </div>
         `;
