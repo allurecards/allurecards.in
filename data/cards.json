@@ -1,5 +1,26 @@
 [
   {
+    "id": "al001",
+    "category": "Minimal",
+    "price": 197,
+    "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "dvdvsv",
+    "description": "cxvd",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al001-1.jpg"
+    ],
+    "originals": [
+      "assets/cards/original/al001-1.jpg"
+    ]
+  },
+  {
     "id": "al002",
     "category": "john",
     "price": 199,
