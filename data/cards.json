@@ -31,9 +31,9 @@
     "description": "DIGITAL PRINTING",
     "extraCharges": [],
     "applyWatermark": true,
-    "watermarkPos": "bottom-center",
+    "watermarkPos": "bottom-right",
     "watermarkSize": "xlarge",
-    "watermarkPath": "assets/cards/watermark_red.png",
+    "watermarkPath": "assets/cards/watermark_violet.png",
     "images": [
       "assets/cards/al-001-1.jpeg",
       "assets/cards/al-001-2.jpeg",
@@ -43,6 +43,26 @@
       "assets/cards/original/al-001-1.jpeg",
       "assets/cards/original/al-001-2.jpeg",
       "assets/cards/original/al-001-3.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "xlarge",
+        "color": "red"
+      },
+      {
+        "apply": false,
+        "pos": "bottom-center",
+        "size": "xlarge",
+        "color": "red"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "xlarge",
+        "color": "violet"
+      }
     ]
   }
 ]
