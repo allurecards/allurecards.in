@@ -14,12 +14,10 @@
     "watermarkSize": "small",
     "watermarkPath": "assets/cards/watermark_gold.png",
     "images": [
-      "assets/cards/al-001-1.jpeg",
       "assets/cards/al-001-2.jpeg",
       "assets/cards/al-001-3.jpeg"
     ],
     "originals": [
-      "assets/cards/original/al-001-1.jpeg",
       "assets/cards/original/al-001-2.jpeg",
       "assets/cards/original/al-001-3.jpeg"
     ]
