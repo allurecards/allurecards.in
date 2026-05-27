@@ -1,5 +1,39 @@
 [
   {
+    "id": "DEMO",
+    "category": "Minimal",
+    "price": 40,
+    "featured": true,
+    "minOrder": 200,
+    "size": "195×205 mm",
+    "material": "sadasdasd",
+    "description": "asddasdads",
+    "extraCharges": [
+      {
+        "name": "extraaaaa",
+        "price": 79999
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "center",
+    "watermarkSize": "large",
+    "watermarkPath": "assets/cards/watermark_gold.png",
+    "images": [
+      "assets/cards/demo-1.png",
+      "assets/cards/demo-2.png",
+      "assets/cards/demo-3.png",
+      "assets/cards/demo-4.png",
+      "assets/cards/demo-5.png"
+    ],
+    "originals": [
+      "assets/cards/original/demo-1.png",
+      "assets/cards/original/demo-2.png",
+      "assets/cards/original/demo-3.png",
+      "assets/cards/original/demo-4.png",
+      "assets/cards/original/demo-5.png"
+    ]
+  },
+  {
     "id": "john test",
     "category": "Minimal",
     "price": 200,
