@@ -10,9 +10,9 @@
     "description": "DIGITAL PRINTING",
     "extraCharges": [],
     "applyWatermark": true,
-    "watermarkPos": "bottom-center",
-    "watermarkSize": "small",
-    "watermarkPath": "assets/cards/watermark_gold.png",
+    "watermarkPos": "center",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
     "images": [
       "assets/cards/al-001-1.jpeg",
       "assets/cards/al-001-2.jpeg",
