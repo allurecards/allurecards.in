@@ -11,7 +11,7 @@
     "extraCharges": [],
     "applyWatermark": true,
     "watermarkPos": "bottom-left",
-    "watermarkSize": "large",
+    "watermarkSize": "small",
     "watermarkPath": "assets/cards/watermark_black.png",
     "images": [
       "assets/cards/al-001-1.jpeg",
