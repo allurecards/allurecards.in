@@ -1,5 +1,39 @@
 [
   {
+    "id": "sls",
+    "category": "ss",
+    "price": 78,
+    "featured": true,
+    "minOrder": 200,
+    "size": "210×190 mm",
+    "material": "materll",
+    "description": "sdadsad",
+    "extraCharges": [
+      {
+        "name": "dsa",
+        "price": 29998
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-center",
+    "watermarkSize": "large",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/sls-1.png",
+      "assets/cards/sls-2.png",
+      "assets/cards/sls-3.png",
+      "assets/cards/sls-4.png",
+      "assets/cards/sls-5.png"
+    ],
+    "originals": [
+      "assets/cards/original/sls-1.png",
+      "assets/cards/original/sls-2.png",
+      "assets/cards/original/sls-3.png",
+      "assets/cards/original/sls-4.png",
+      "assets/cards/original/sls-5.png"
+    ]
+  },
+  {
     "id": "al001",
     "category": "Minimal",
     "price": 197,
