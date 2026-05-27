@@ -23,7 +23,7 @@
   {
     "id": "john test",
     "category": "Minimal",
-    "price": 100,
+    "price": 200,
     "featured": true,
     "minOrder": 100,
     "size": "210×155 mm",
