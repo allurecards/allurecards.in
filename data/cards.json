@@ -1,5 +1,26 @@
 [
   {
+    "id": "al002",
+    "category": "MODERN",
+    "price": 200,
+    "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer Cardstock",
+    "description": "description",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al002-1.png"
+    ],
+    "originals": [
+      "assets/cards/original/al002-1.png"
+    ]
+  },
+  {
     "id": "AL 001",
     "category": "MODERN",
     "price": 35,
