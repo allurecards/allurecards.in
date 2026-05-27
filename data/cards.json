@@ -1,25 +1,2 @@
 [
-  {
-    "id": "john test",
-    "category": "Minimal",
-    "price": 200,
-    "featured": false,
-    "minOrder": 100,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer Cardstock",
-    "description": "",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkPath": "assets/cards/watermark_white.png",
-    "images": [
-      "assets/cards/john-test-1.png",
-      "assets/cards/john-test-2.png"
-    ],
-    "originals": [
-      "assets/cards/original/john-test-1.png",
-      "assets/cards/original/john-test-2.png"
-    ]
-  }
 ]
