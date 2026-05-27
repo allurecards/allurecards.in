@@ -967,6 +967,17 @@ section { padding: 100px 5%; }
 
 .calc-summary { font-family: var(--font-ui); font-size: 0.88rem; }
 
+/* Make all price numbers in the calculator use the UI font (Montserrat) */
+.summary-row span:last-child {
+    font-family: var(--font-ui);
+    font-weight: 500;
+}
+
+/* Make the Final Estimate number bold (and keep it in the same font) */
+.total-row span:last-child {
+    font-weight: 700;
+}
+
 .summary-row {
     display: flex;
     justify-content: space-between;
