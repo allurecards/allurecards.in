@@ -1,21 +1,21 @@
 [
   {
-    "id": "sls",
-    "category": "ss",
-    "price": 78,
-    "featured": true,
-    "minOrder": 200,
-    "size": "210×190 mm",
-    "material": "materll",
-    "description": "sdadsad",
+    "id": "plppp",
+    "category": "Minimal",
+    "price": 90,
+    "featured": false,
+    "minOrder": 100,
+    "size": "100×90 mm",
+    "material": "lairetam",
+    "description": "uyuyuyy",
     "extraCharges": [
       {
-        "name": "dsa",
-        "price": 29998
+        "name": "soodd",
+        "price": 100
       }
     ],
     "applyWatermark": true,
-    "watermarkPos": "bottom-center",
+    "watermarkPos": "bottom-right",
     "watermarkSize": "large",
     "watermarkPath": "assets/cards/watermark_white.png",
     "images": [
