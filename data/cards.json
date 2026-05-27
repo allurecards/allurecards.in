@@ -10,7 +10,7 @@
     "description": "DIGITAL PRINTING",
     "extraCharges": [],
     "applyWatermark": true,
-    "watermarkPos": "bottom-left",
+    "watermarkPos": "bottom-right",
     "watermarkSize": "small",
     "watermarkPath": "assets/cards/watermark_black.png",
     "images": [
