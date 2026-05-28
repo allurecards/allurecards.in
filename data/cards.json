@@ -1,5 +1,55 @@
 [
   {
+    "id": "AL 016",
+    "category": "MODERN",
+    "price": 53,
+    "featured": false,
+    "minOrder": 200,
+    "size": "218 MM X 158 MM",
+    "material": "240 GSM MILL TEXTURED WHITE",
+    "description": "PREMIUM DIGITAL PRINTING + GOLD FOILING ON ENVELOPE",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-016-1.jpeg",
+      "assets/cards/al-016-2.jpeg",
+      "assets/cards/al-016-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-016-1.jpeg",
+      "assets/cards/original/al-016-2.jpeg",
+      "assets/cards/original/al-016-3.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "green"
+      },
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "green"
+      }
+    ]
+  },
+  {
     "id": "AL 015",
     "category": "MINIMAL",
     "price": 50,
