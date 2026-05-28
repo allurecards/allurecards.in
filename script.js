@@ -322,12 +322,17 @@ if (header) {
         modalUnitPrice.textContent   = `Rs. ${product.price} / card`;
         modalDescText.textContent    = product.description || DEFAULT_DESC;
 
-        if (modalDetails) {
-            const parts = [];
-            if (product.size) parts.push(`Size: ${product.size}`);
-            if (product.material) parts.push(`Material: ${product.material}`);
-            modalDetails.textContent = parts.join(' · ');
-        }
+if (modalDetails) {
+    let detailsHtml = '';
+    if (product.size && product.material) {
+        detailsHtml = `<strong>Size:</strong> ${product.size}<br><strong>Material:</strong> ${product.material}`;
+    } else if (product.size) {
+        detailsHtml = `<strong>Size:</strong> ${product.size}`;
+    } else if (product.material) {
+        detailsHtml = `<strong>Material:</strong> ${product.material}`;
+    }
+    modalDetails.innerHTML = detailsHtml;
+}
 
         modalImg.src = currentImages[0] || '';
         modalImg.alt = product.id;
