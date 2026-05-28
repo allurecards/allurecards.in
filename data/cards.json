@@ -1,5 +1,47 @@
 [
   {
+    "id": "AL 012",
+    "category": "MINIMAL",
+    "price": 39,
+    "featured": false,
+    "minOrder": 200,
+    "size": "195MM X195 MM",
+    "material": "300 GSM PREMIUM PEARL WHITE",
+    "description": "DIGITAL PRINTING+ GOLD FOIL PRINTING",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 1400
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-012-1.jpeg",
+      "assets/cards/al-012-2.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-012-1.jpeg",
+      "assets/cards/original/al-012-2.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "top-right",
+        "size": "medium",
+        "color": "gold"
+      },
+      {
+        "apply": true,
+        "pos": "top-right",
+        "size": "medium",
+        "color": "gold"
+      }
+    ]
+  },
+  {
     "id": "AL 011",
     "category": "MINIMAL",
     "price": 40,
