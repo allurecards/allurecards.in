@@ -31,9 +31,9 @@
     "description": "DIGITAL PRINTING",
     "extraCharges": [],
     "applyWatermark": true,
-    "watermarkPos": "bottom-right",
+    "watermarkPos": "middle-right",
     "watermarkSize": "xlarge",
-    "watermarkPath": "assets/cards/watermark_violet.png",
+    "watermarkPath": "assets/cards/watermark_green.png",
     "images": [
       "assets/cards/al-001-1.jpeg",
       "assets/cards/al-001-2.jpeg",
