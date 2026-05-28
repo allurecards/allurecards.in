@@ -3,7 +3,7 @@
     "id": "AL 003",
     "category": "MODERN",
     "price": 42,
-    "featured": false,
+    "featured": true,
     "minOrder": 100,
     "size": "195MM X195 MM",
     "material": "280 GSM PREMIUM JET BLACK + 240 GSM MILL TEXTURED WHITE",
