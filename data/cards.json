@@ -1,5 +1,50 @@
 [
   {
+    "id": "AL 004",
+    "category": "MODERN",
+    "price": 42,
+    "featured": true,
+    "minOrder": 200,
+    "size": "195MM X195 MM",
+    "material": "270 GSM GOLD METAKIC + 240 GSM MILL TEXTURED WHITE",
+    "description": "DIGITAL PRINTING",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_black.png",
+    "images": [
+      "assets/cards/al-004-1.jpeg",
+      "assets/cards/al-004-2.jpeg",
+      "assets/cards/al-004-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-004-1.jpeg",
+      "assets/cards/original/al-004-2.jpeg",
+      "assets/cards/original/al-004-3.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "middle-left",
+        "size": "large",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "large",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "medium",
+        "color": "black"
+      }
+    ]
+  },
+  {
     "id": "AL 003",
     "category": "MODERN",
     "price": 42,
