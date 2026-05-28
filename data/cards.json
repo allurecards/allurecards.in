@@ -1,5 +1,50 @@
 [
   {
+    "id": "AL 005",
+    "category": "MODERN",
+    "price": 35,
+    "featured": true,
+    "minOrder": 200,
+    "size": "195MM X195 MM",
+    "material": "270 GSM SILVER METALIC + 240 GSM MILL TEXTURED WHITE",
+    "description": "DIGITAL PRINTING",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-005-1.jpeg",
+      "assets/cards/al-005-2.jpeg",
+      "assets/cards/al-005-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-005-1.jpeg",
+      "assets/cards/original/al-005-2.jpeg",
+      "assets/cards/original/al-005-3.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "medium",
+        "color": "black"
+      }
+    ]
+  },
+  {
     "id": "AL 004",
     "category": "MODERN",
     "price": 42,
