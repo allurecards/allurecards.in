@@ -1,5 +1,50 @@
 [
   {
+    "id": "AL 020",
+    "category": "MINIMAL",
+    "price": 37,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195MM X195 MM",
+    "material": "240 GSM ORIGINAL TEXTURED WHITE + 320 GSM ORIGINAL TEXTURED PRINTED  BASE",
+    "description": "DIGITAL PRINTING",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-020-1.jpeg",
+      "assets/cards/al-020-2.jpeg",
+      "assets/cards/al-020-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-020-1.jpeg",
+      "assets/cards/original/al-020-2.jpeg",
+      "assets/cards/original/al-020-3.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "medium",
+        "color": "red"
+      },
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "medium",
+        "color": "red"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "large",
+        "color": "red"
+      }
+    ]
+  },
+  {
     "id": "AL 019",
     "category": "MINIMAL",
     "price": 37,
