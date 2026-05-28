@@ -19,50 +19,5 @@
     "originals": [
       "assets/cards/original/al002-1.png"
     ]
-  },
-  {
-    "id": "AL 001",
-    "category": "MODERN",
-    "price": 35,
-    "featured": false,
-    "minOrder": 100,
-    "size": "195MM X195 MM",
-    "material": "270 GSM METALIC GREEN + 240 GSM MILL TEXTURED WHITE",
-    "description": "DIGITAL PRINTING",
-    "extraCharges": [],
-    "applyWatermark": true,
-    "watermarkPos": "middle-right",
-    "watermarkSize": "xlarge",
-    "watermarkPath": "assets/cards/watermark_green.png",
-    "images": [
-      "assets/cards/al-001-1.jpeg",
-      "assets/cards/al-001-2.jpeg",
-      "assets/cards/al-001-3.jpeg"
-    ],
-    "originals": [
-      "assets/cards/original/al-001-1.jpeg",
-      "assets/cards/original/al-001-2.jpeg",
-      "assets/cards/original/al-001-3.jpeg"
-    ],
-    "imageWatermarks": [
-      {
-        "apply": true,
-        "pos": "middle-right",
-        "size": "xlarge",
-        "color": "red"
-      },
-      {
-        "apply": false,
-        "pos": "bottom-center",
-        "size": "xlarge",
-        "color": "red"
-      },
-      {
-        "apply": true,
-        "pos": "bottom-right",
-        "size": "xlarge",
-        "color": "violet"
-      }
-    ]
   }
 ]
