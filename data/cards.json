@@ -1,5 +1,50 @@
 [
   {
+    "id": "AL 002",
+    "category": "MODERN",
+    "price": 35,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195MM X195 MM",
+    "material": "300 GSM SMOOTH RED + 240 GSM MILL TEXTURED WHITE",
+    "description": "DIGITAL PRINTING",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_red.png",
+    "images": [
+      "assets/cards/al-002-1.jpeg",
+      "assets/cards/al-002-2.jpeg",
+      "assets/cards/al-002-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-002-1.jpeg",
+      "assets/cards/original/al-002-2.jpeg",
+      "assets/cards/original/al-002-3.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "middle-left",
+        "size": "medium",
+        "color": "red"
+      },
+      {
+        "apply": true,
+        "pos": "middle-left",
+        "size": "medium",
+        "color": "orange"
+      },
+      {
+        "apply": true,
+        "pos": "middle-left",
+        "size": "large",
+        "color": "white"
+      }
+    ]
+  },
+  {
     "id": "AL 001",
     "category": "MODERN",
     "price": 35,
