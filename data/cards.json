@@ -153,13 +153,13 @@
     "imageWatermarks": [
       {
         "apply": true,
-        "pos": "middle-right",
-        "size": "medium",
+        "pos": "bottom-right",
+        "size": "large",
         "color": "black"
       },
       {
         "apply": true,
-        "pos": "middle-left",
+        "pos": "top-left",
         "size": "medium",
         "color": "black"
       },
