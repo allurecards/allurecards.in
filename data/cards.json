@@ -24,7 +24,7 @@
     "imageWatermarks": [
       {
         "apply": true,
-        "pos": "center",
+        "pos": "bottom-left",
         "size": "medium",
         "color": "violet"
       },
