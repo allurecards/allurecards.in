@@ -1,5 +1,37 @@
 [
   {
+    "id": "AL 007",
+    "category": "MINIMAL",
+    "price": 30,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195MM X195 MM",
+    "material": "240 GSM MILL TEXTURED WHITE",
+    "description": "DIGITAL PRINTING",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "middle-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_black.png",
+    "images": [
+      "assets/cards/al-007-1.jpeg",
+      "assets/cards/al-007-2.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-007-1.jpeg",
+      "assets/cards/original/al-007-2.jpeg"
+    ],
+    "imageWatermarks": [
+      null,
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "medium",
+        "color": "black"
+      }
+    ]
+  },
+  {
     "id": "AL 006",
     "category": "MINIMAL",
     "price": 44,
