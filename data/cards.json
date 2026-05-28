@@ -1,5 +1,63 @@
 [
   {
+    "id": "AL 011",
+    "category": "MINIMAL",
+    "price": 40,
+    "featured": false,
+    "minOrder": 200,
+    "size": "195MM X195 MM",
+    "material": "280 GSM VIRGIN CRAFT + 270 GSM TEXTURED OFF WHITE",
+    "description": "PREMIUM GOLD FOIL PRINTING",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 2500
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_brown.png",
+    "images": [
+      "assets/cards/al-011-1.jpeg",
+      "assets/cards/al-011-2.jpeg",
+      "assets/cards/al-011-3.jpeg",
+      "assets/cards/al-011-4.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-011-1.jpeg",
+      "assets/cards/original/al-011-2.jpeg",
+      "assets/cards/original/al-011-3.jpeg",
+      "assets/cards/original/al-011-4.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "top-center",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "middle-left",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "medium",
+        "color": "black"
+      }
+    ]
+  },
+  {
     "id": "AL 010",
     "category": "MINIMAL",
     "price": 35,
