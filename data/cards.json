@@ -1,5 +1,53 @@
 [
   {
+    "id": "AL 006",
+    "category": "MINIMAL",
+    "price": 44,
+    "featured": true,
+    "minOrder": 200,
+    "size": "195MM X195 MM",
+    "material": "240 GSM MILL TEXTURED WHITE + 320 GSM BASE",
+    "description": "DIGITAL PRINTING",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "middle-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_green.png",
+    "images": [
+      "assets/cards/al-006-1.jpeg",
+      "assets/cards/al-006-2.jpeg",
+      "assets/cards/al-006-3.jpeg",
+      "assets/cards/al-006-4.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-006-1.jpeg",
+      "assets/cards/original/al-006-2.jpeg",
+      "assets/cards/original/al-006-3.jpeg",
+      "assets/cards/original/al-006-4.jpeg"
+    ],
+    "imageWatermarks": [
+      null,
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "medium",
+        "color": "green"
+      },
+      null,
+      {
+        "apply": true,
+        "pos": "middle-right",
+        "size": "medium",
+        "color": "green"
+      }
+    ]
+  },
+  {
     "id": "AL 005",
     "category": "MODERN",
     "price": 35,
