@@ -118,6 +118,7 @@ if (header) {
     let currentMinOrder     = 100;
     let currentExtraCharges = [];
     let currentSearchQuery  = '';
+    let currentSort = 'featured';
 
     const yearEl = document.getElementById('currentYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -219,6 +220,13 @@ if (searchInput) {
         applyFilter(currentFilter);
     });
 }
+    const sortSelect = document.getElementById('portfolio-sort');
+if (sortSelect) {
+    sortSelect.addEventListener('change', () => {
+        currentSort = sortSelect.value;
+        applyFilter(currentFilter);  // re‑apply current filter with new sort
+    });
+}
 
     function setActiveFilter(filter) {
         document.querySelectorAll('.filter-btn').forEach(b => {
@@ -245,7 +253,18 @@ function applyFilter(filter) {
         );
     }
 
-    filteredProducts.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+    // Apply sorting
+    switch (currentSort) {     
+        case 'price-asc':
+        filteredProducts.sort((a, b) => a.price - b.price);
+        break;     
+        case 'price-desc':  
+        filteredProducts.sort((a, b) => b.price - a.price);   
+        break;
+        case 'featured':
+        default:         filteredProducts.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+        break;
+    }
     visibleCount = Math.min(ITEMS_PER_PAGE, filteredProducts.length);
     productContainer.innerHTML = '';
 
