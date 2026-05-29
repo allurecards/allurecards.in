@@ -1364,3 +1364,26 @@ section { padding: 100px 5%; }
     color: var(--ink-soft);
     opacity: 0.7;
 }
+
+.sort-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+.sort-wrapper select {
+    padding: 11px 36px 11px 20px;
+    border: 1px solid #e0dcd3;
+    border-radius: 30px;
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+    color: var(--ink);
+    background: var(--white) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='%237a7a7a'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 14px center;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+.sort-wrapper select:focus {
+    border-color: var(--lavender);
+    box-shadow: 0 0 0 3px rgba(179, 155, 200, 0.2);
+}
