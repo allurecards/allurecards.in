@@ -117,6 +117,7 @@ if (header) {
     let currentProductCat   = '';
     let currentMinOrder     = 100;
     let currentExtraCharges = [];
+    let currentSearchQuery  = '';
 
     const yearEl = document.getElementById('currentYear');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -188,6 +189,8 @@ if (header) {
         if (!card) return;
         const cat = card.dataset.category;
         setActiveFilter(cat);
+        document.getElementById('portfolio-search').value = '';
+        currentSearchQuery = '';
         applyFilter(cat);
         document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
     }
@@ -209,6 +212,13 @@ if (header) {
         setActiveFilter(btn.dataset.filter);
         applyFilter(btn.dataset.filter);
     });
+    const searchInput = document.getElementById('portfolio-search');
+if (searchInput) {
+    searchInput.addEventListener('input', () => {
+        currentSearchQuery = searchInput.value;
+        applyFilter(currentFilter);
+    });
+}
 
     function setActiveFilter(filter) {
         document.querySelectorAll('.filter-btn').forEach(b => {
@@ -219,26 +229,36 @@ if (header) {
         });
     }
 
-    function applyFilter(filter) {
-        currentFilter = filter;
-        filteredProducts = filter === 'All'
-            ? [...allProducts]
-            : allProducts.filter(p => p.category === filter);
+function applyFilter(filter) {
+    currentFilter = filter;
+    filteredProducts = filter === 'All'
+        ? [...allProducts]
+        : allProducts.filter(p => p.category === filter);
 
-        filteredProducts.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-        visibleCount = Math.min(ITEMS_PER_PAGE, filteredProducts.length);
-        productContainer.innerHTML = '';
-
-        if (filteredProducts.length === 0) {
-            productContainer.innerHTML = '<p class="no-products">No designs found in this collection.</p>';
-        } else {
-            productContainer.innerHTML = filteredProducts
-                .slice(0, visibleCount)
-                .map(createCardHTML)
-                .join('');
-        }
-        updateShowMoreBtn();
+    // Apply search
+    if (currentSearchQuery.trim() !== '') {
+        const q = currentSearchQuery.toLowerCase();
+        filteredProducts = filteredProducts.filter(p =>
+            p.id.toLowerCase().includes(q) ||
+            (p.category && p.category.toLowerCase().includes(q)) ||
+            (p.description && p.description.toLowerCase().includes(q))
+        );
     }
+
+    filteredProducts.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+    visibleCount = Math.min(ITEMS_PER_PAGE, filteredProducts.length);
+    productContainer.innerHTML = '';
+
+    if (filteredProducts.length === 0) {
+        productContainer.innerHTML = '<p class="no-products">No designs found.</p>';
+    } else {
+        productContainer.innerHTML = filteredProducts
+            .slice(0, visibleCount)
+            .map(createCardHTML)
+            .join('');
+    }
+    updateShowMoreBtn();
+}
 
     function createCardHTML(product) {
         const productJson  = encodeURIComponent(JSON.stringify(product));
