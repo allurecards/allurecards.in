@@ -1,5 +1,50 @@
 [
   {
+    "id": "AL 030",
+    "category": "MINIMAL",
+    "price": 30,
+    "featured": true,
+    "minOrder": 200,
+    "size": "200MM X 200 MM",
+    "material": "300 GSM COFFEE BROWN + 240 GSM ORIGINAL TEXTURED WHITE",
+    "description": "COFFEE BROWN FOIL PRINTING + DIGITAL PRINTING",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-right",
+    "watermarkSize": "large",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-030-1.jpeg",
+      "assets/cards/al-030-2.jpeg",
+      "assets/cards/al-030-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-030-1.jpeg",
+      "assets/cards/original/al-030-2.jpeg",
+      "assets/cards/original/al-030-3.jpeg"
+    ],
+    "imageWatermarks": [
+      null,
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "large",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "large",
+        "color": "white"
+      }
+    ]
+  },
+  {
     "id": "AL 029",
     "category": "MINIMAL",
     "price": 30,
