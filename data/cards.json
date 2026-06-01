@@ -56,7 +56,7 @@
     "id": "AL 031",
     "category": "MINIMAL",
     "price": 35,
-    "featured": false,
+    "featured": true,
     "minOrder": 200,
     "size": "195MM X195 MM",
     "material": "300 GSM SAND BROWN + 240 GSM ORIGINAL TEXTURED WHITE",
