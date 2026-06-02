@@ -56,7 +56,7 @@
     "id": "035",
     "category": "MODERN",
     "price": 47,
-    "featured": false,
+    "featured": true,
     "minOrder": 200,
     "size": "195MM X195 MM",
     "material": "270 GSM SILVER METALIC + 240 GSM ORIGINAL TEXTURED",
