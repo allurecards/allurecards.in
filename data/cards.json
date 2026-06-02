@@ -1,5 +1,63 @@
 [
   {
+    "id": "033",
+    "category": "MODERN",
+    "price": 47,
+    "featured": true,
+    "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "270 GSM GREEN METALIC  +  240 GSM ORIGINAL TEXTURED",
+    "description": "BLIND DEBOSS + DOLD FOIL ON ENVELOPE +DIGITAL PRINT ON INNER SHEET",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/033-1.jpeg",
+      "assets/cards/033-2.jpeg",
+      "assets/cards/033-3.jpeg",
+      "assets/cards/033-4.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/033-1.jpeg",
+      "assets/cards/original/033-2.jpeg",
+      "assets/cards/original/033-3.jpeg",
+      "assets/cards/original/033-4.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "top-center",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "top-center",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "top-right",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "black"
+      }
+    ]
+  },
+  {
     "id": "032",
     "category": "MINIMAL",
     "price": 39,
