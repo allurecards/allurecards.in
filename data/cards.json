@@ -1,5 +1,63 @@
 [
   {
+    "id": "037",
+    "category": "MODERN",
+    "price": 48,
+    "featured": true,
+    "minOrder": 200,
+    "size": "195MM X195 MM",
+    "material": "280 GSM PREMIUM JET BLACK  + 240 GSM ORIGINAL TEXTURED",
+    "description": "BLIND DEBOSS + SILVER FOIL ON ENVELOPE +DIGITAL PRINT ON INNER SHEET",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/037-1.jpeg",
+      "assets/cards/037-2.jpeg",
+      "assets/cards/037-3.jpeg",
+      "assets/cards/037-4.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/037-1.jpeg",
+      "assets/cards/original/037-2.jpeg",
+      "assets/cards/original/037-3.jpeg",
+      "assets/cards/original/037-4.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "medium",
+        "color": "black"
+      }
+    ]
+  },
+  {
     "id": "036",
     "category": "MODERN",
     "price": 42,
