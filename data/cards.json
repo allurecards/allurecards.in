@@ -1,5 +1,58 @@
 [
   {
+    "id": "036",
+    "category": "MODERN",
+    "price": 42,
+    "featured": true,
+    "minOrder": 200,
+    "size": "195MM X195 MM",
+    "material": "270 GSM SMOOTH RED + 240 GSM ORIGINAL TEXTURED",
+    "description": "BLIND DEBOSS +GOLD FOIL ON ENVELOPE +DIGITAL PRINT ON INNER SHEET",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "top-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_red.png",
+    "images": [
+      "assets/cards/036-1.jpeg",
+      "assets/cards/036-2.jpeg",
+      "assets/cards/036-3.jpeg",
+      "assets/cards/036-4.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/036-1.jpeg",
+      "assets/cards/original/036-2.jpeg",
+      "assets/cards/original/036-3.jpeg",
+      "assets/cards/original/036-4.jpeg"
+    ],
+    "imageWatermarks": [
+      null,
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "top-left",
+        "size": "medium",
+        "color": "red"
+      }
+    ]
+  },
+  {
     "id": "035",
     "category": "MODERN",
     "price": 47,
