@@ -1435,3 +1435,45 @@ section { padding: 100px 5%; }
     border-color: var(--lavender);
     box-shadow: 0 0 0 3px rgba(179, 155, 200, 0.2);
 }
+/* Share button on the quick‑view main image */
+.main-image-container {
+    position: relative;   /* ensure it is positioned container */
+}
+
+.modal-share-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 12;
+    padding: 0;
+    transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+    color: var(--ink-soft);
+}
+
+.modal-share-btn:hover {
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(182,141,83,0.35);
+}
+
+.modal-share-btn.copied {
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
+    pointer-events: none;
+}
+.modal-share-btn.copied svg {
+    opacity: 0.7;
+}
