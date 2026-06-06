@@ -40,6 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     playAnimation();
     setInterval(playAnimation, 6000);
+
+    // Hide the preloader after the first animation cycle (2.7s)
+    setTimeout(() => {
+        const preloader = document.getElementById("preloader");
+        if (preloader) preloader.classList.add("hide");
+    }, 2700);
 });
 
 /* ---------- HEADER SCROLL ---------- */
