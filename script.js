@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     playAnimation();
     setInterval(playAnimation, 6000);
 
-    // Hide the preloader after the first animation cycle (2.7s)
+    // Hide the preloader after the first animation
     setTimeout(() => {
         const preloader = document.getElementById("preloader");
         if (preloader) preloader.classList.add("hide");
@@ -347,7 +347,7 @@ window.addEventListener("scroll", () => {
         updateShowMoreBtn();
     }
 
-    /* ---------- CARD HTML (includes share button) ---------- */
+    /* ---------- CARD HTML (no share button here) ---------- */
     function createCardHTML(product) {
         const productJson  = encodeURIComponent(JSON.stringify(product));
         const featuredBadge = product.featured
@@ -359,20 +359,12 @@ window.addEventListener("scroll", () => {
             ? mainImage.replace('/cards/', '/cards/thumb/') 
             : 'assets/cards/placeholder.jpg';
 
-        const shareIcon = `
-            <button class="share-card-btn" data-card-id="${escapeHtml(product.id)}" aria-label="Copy shareable link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-                </svg>
-            </button>
-        `;
+        // No share button on product cards – it's now on the modal
 
         return `
             <div class="product-card">
                 <div class="product-img-wrapper">
                     ${featuredBadge}
-                    ${shareIcon}
                     <img src="${escapeHtml(thumbSrc)}"
                          alt="${escapeHtml(product.id)} card design"
                          loading="lazy"
@@ -401,26 +393,6 @@ window.addEventListener("scroll", () => {
         } catch (err) {
             console.error('Could not parse product data:', err);
         }
-    });
-
-    /* ---------- SHARE BUTTON ---------- */
-    productContainer.addEventListener('click', (e) => {
-        const btn = e.target.closest('.share-card-btn');
-        if (!btn) return;
-        e.stopPropagation();
-
-        const cardId = btn.dataset.cardId;
-        const baseUrl = window.location.href.split('#')[0];
-        const shareUrl = `${baseUrl}#card=${encodeURIComponent(cardId)}`;
-
-        navigator.clipboard.writeText(shareUrl).then(() => {
-            btn.classList.add('copied');
-            setTimeout(() => {
-                btn.classList.remove('copied');
-            }, 2000);
-        }).catch(() => {
-            alert('Copy failed. Please manually copy the URL.');
-        });
     });
 
     /* ---------- SHOW MORE ---------- */
@@ -525,6 +497,24 @@ window.addEventListener("scroll", () => {
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
+
+    /* ---------- MODAL SHARE BUTTON ---------- */
+    const modalShareBtn = document.getElementById('modal-share-btn');
+    if (modalShareBtn) {
+        modalShareBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // The URL is already the shareable one with #card=ID
+            const shareUrl = window.location.href;
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                modalShareBtn.classList.add('copied');
+                setTimeout(() => {
+                    modalShareBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(() => {
+                alert('Copy failed. Please manually copy the URL.');
+            });
+        });
+    }
 
     /* ---------- CALCULATOR ---------- */
     function populateQtyDropdown(minOrder) {
