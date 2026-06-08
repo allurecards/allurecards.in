@@ -1,5 +1,50 @@
 [
   {
+    "id": "AL 040",
+    "category": "MODERN",
+    "price": 40,
+    "featured": false,
+    "minOrder": 100,
+    "size": "200MM X 200 MM",
+    "material": "280 GSM PREMIUM SMOOTH RED + 270 GSM ORIGINAL TEXTURED WHITE",
+    "description": "DIGITAL PRINTING",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-040-1.jpeg",
+      "assets/cards/al-040-2.jpeg",
+      "assets/cards/al-040-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-040-1.jpeg",
+      "assets/cards/original/al-040-2.jpeg",
+      "assets/cards/original/al-040-3.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "top-right",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "black"
+      }
+    ]
+  },
+  {
     "id": "AL 039",
     "category": "MINIMAL",
     "price": 34,
