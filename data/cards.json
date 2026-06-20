@@ -35,22 +35,21 @@
       {
         "apply": true,
         "pos": "bottom-right",
-        "size": "large",
+        "size": "medium",
         "color": "black"
       },
       {
         "apply": true,
         "pos": "top-left",
-        "size": "large",
+        "size": "medium",
         "color": "black"
       },
       {
         "apply": true,
         "pos": "bottom-left",
         "size": "medium",
-        "color": "white"
-      },
-      null
+        "color": "black"
+      }
     ]
   },
   {
