@@ -1,5 +1,58 @@
 [
   {
+    "id": "AL 042",
+    "category": "PASTEL",
+    "price": 60,
+    "featured": true,
+    "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "240 GSM MILL TEXTURED PREMIUM WHITE + 320 GSM ORIGINAL TEXTURED WHITE  + 120 GSM PREMIUM TRANSLUCENT VELLUM PAPER+ ANTIQUE GOLD WAX SEAL",
+    "description": "DIGITAL PRINTING",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-042-1.jpeg",
+      "assets/cards/al-042-2.jpeg",
+      "assets/cards/al-042-3.jpeg",
+      "assets/cards/al-042-4.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-042-1.jpeg",
+      "assets/cards/original/al-042-2.jpeg",
+      "assets/cards/original/al-042-3.jpeg",
+      "assets/cards/original/al-042-4.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "top-right",
+        "size": "large",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "top-right",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "top-right",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "large",
+        "color": "white"
+      }
+    ]
+  },
+  {
     "id": "AL 041",
     "category": "PASTEL",
     "price": 60,
