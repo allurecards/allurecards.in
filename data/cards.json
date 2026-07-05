@@ -68,13 +68,13 @@
       {
         "apply": true,
         "pos": "bottom-left",
-        "size": "large",
+        "size": "medium",
         "color": "white"
       },
       {
         "apply": true,
         "pos": "bottom-right",
-        "size": "large",
+        "size": "medium",
         "color": "white"
       },
       {
