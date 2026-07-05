@@ -1,5 +1,46 @@
 [
   {
+    "id": "AL 045",
+    "category": "PASTEL",
+    "price": 44,
+    "featured": true,
+    "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "240 GSM MILL TEXTURED PREMIUM WHITE + 320 GSM ORIGINAL TEXTURED WHITE  + 120 GSM PREMIUM TRANSLUCENT VELLUM PAPER+ ANTIQUE GOLD WAX SEAL",
+    "description": "DIGITAL PRINTING+ GOLD FOILING",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-045-1.jpg",
+      "assets/cards/al-045-2.jpg",
+      "assets/cards/al-045-3.jpeg",
+      "assets/cards/al-045-4.jpg",
+      "assets/cards/al-045-5.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-045-1.jpg",
+      "assets/cards/original/al-045-2.jpg",
+      "assets/cards/original/al-045-3.jpeg",
+      "assets/cards/original/al-045-4.jpg",
+      "assets/cards/original/al-045-5.jpeg"
+    ],
+    "imageWatermarks": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
     "id": "AL 044",
     "category": "PASTEL",
     "price": 35,
