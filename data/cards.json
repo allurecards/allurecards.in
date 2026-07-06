@@ -19,14 +19,12 @@
     "watermarkSize": "medium",
     "watermarkPath": "assets/cards/watermark_white.png",
     "images": [
-      "assets/cards/al-045-1.jpg",
       "assets/cards/al-045-2.jpg",
       "assets/cards/al-045-3.jpeg",
       "assets/cards/al-045-4.jpg",
       "assets/cards/al-045-5.jpeg"
     ],
     "originals": [
-      "assets/cards/original/al-045-1.jpg",
       "assets/cards/original/al-045-2.jpg",
       "assets/cards/original/al-045-3.jpeg",
       "assets/cards/original/al-045-4.jpg",
