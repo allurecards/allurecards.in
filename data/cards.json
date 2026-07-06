@@ -18,12 +18,8 @@
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
     "watermarkPath": "assets/cards/watermark_white.png",
-    "images": [
-      "assets/cards/al-045-2.jpg"
-    ],
-    "originals": [
-      "assets/cards/original/al-045-2.jpg"
-    ],
+    "images": [],
+    "originals": [],
     "imageWatermarks": [
       null,
       null,
