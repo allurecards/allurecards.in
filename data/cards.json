@@ -50,7 +50,14 @@
         "size": "medium",
         "color": "blue"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "210×155 mm",
+        "price": 40
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 045",
@@ -85,7 +92,14 @@
       null,
       null,
       null
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "215×155mm",
+        "price": 44
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 044",
@@ -130,7 +144,14 @@
         "size": "medium",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "215×155mm",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 043",
@@ -183,7 +204,14 @@
         "size": "medium",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "215×155mm",
+        "price": 60
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 042",
@@ -236,7 +264,14 @@
         "size": "large",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "210×155 mm",
+        "price": 60
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 041",
@@ -289,7 +324,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "210×155 mm",
+        "price": 60
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 040",
@@ -334,7 +376,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "200MM X 200 MM",
+        "price": 40
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 039",
@@ -387,7 +436,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 34
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 038",
@@ -445,7 +501,14 @@
         "size": "medium",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 48
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 037",
@@ -503,7 +566,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 48
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 036",
@@ -556,7 +626,14 @@
         "size": "medium",
         "color": "red"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 42
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 035",
@@ -612,7 +689,14 @@
       },
       null,
       null
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 47
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 034",
@@ -670,7 +754,14 @@
         "size": "medium",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 42
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 033",
@@ -728,7 +819,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X 195 MM",
+        "price": 48
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 032",
@@ -781,7 +879,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 39
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 031",
@@ -826,7 +931,14 @@
         "size": "large",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 030",
@@ -871,7 +983,14 @@
         "size": "large",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "200MM X 200 MM",
+        "price": 33
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 029",
@@ -908,7 +1027,14 @@
         "size": "medium",
         "color": "blue"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 30
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 028",
@@ -945,7 +1071,14 @@
         "size": "large",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 30
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 027",
@@ -982,7 +1115,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 026",
@@ -1027,7 +1167,14 @@
         "size": "medium",
         "color": "green"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "218 MM X 158 MM",
+        "price": 50
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 025",
@@ -1080,7 +1227,14 @@
         "size": "medium",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 024",
@@ -1133,7 +1287,14 @@
         "size": "large",
         "color": "violet"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "210×155 mm",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 023",
@@ -1170,7 +1331,14 @@
         "size": "medium",
         "color": "red"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 022",
@@ -1215,7 +1383,14 @@
         "size": "large",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 42
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 021",
@@ -1260,7 +1435,14 @@
         "size": "large",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "210×155 mm",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 020",
@@ -1305,7 +1487,14 @@
         "size": "large",
         "color": "red"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 37
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 019",
@@ -1350,7 +1539,14 @@
         "size": "large",
         "color": "blue"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "210×155 mm",
+        "price": 37
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 018",
@@ -1387,7 +1583,14 @@
         "size": "medium",
         "color": "blue"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 37
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 017",
@@ -1432,7 +1635,14 @@
         "size": "medium",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 42
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 016",
@@ -1482,7 +1692,14 @@
         "size": "medium",
         "color": "green"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "218 MM X 158 MM",
+        "price": 53
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 015",
@@ -1535,7 +1752,14 @@
         "size": "medium",
         "color": "green"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "218 MM X 158 MM",
+        "price": 50
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 014",
@@ -1575,7 +1799,14 @@
         "color": "gold"
       },
       null
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 013",
@@ -1620,7 +1851,14 @@
         "size": "medium",
         "color": "green"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 37
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 012",
@@ -1662,7 +1900,14 @@
         "size": "medium",
         "color": "gold"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 39
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 011",
@@ -1720,7 +1965,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 40
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 010",
@@ -1747,7 +1999,14 @@
     "imageWatermarks": [
       null,
       null
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 009",
@@ -1792,7 +2051,14 @@
         "size": "medium",
         "color": "blue"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 008",
@@ -1829,7 +2095,14 @@
         "size": "medium",
         "color": "violet"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 007",
@@ -1861,7 +2134,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 30
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 006",
@@ -1909,7 +2189,14 @@
         "size": "medium",
         "color": "green"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 44
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 005",
@@ -1954,7 +2241,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 004",
@@ -1999,7 +2293,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 42
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 003",
@@ -2042,7 +2343,14 @@
         "size": "medium",
         "color": "black"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 42
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 002",
@@ -2087,7 +2395,14 @@
         "size": "large",
         "color": "white"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195MM X195 MM",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   },
   {
     "id": "AL 001",
@@ -2140,6 +2455,13 @@
         "size": "large",
         "color": "light_green"
       }
-    ]
+    ],
+    "sizes": [
+      {
+        "label": "195 MMX 195 MM",
+        "price": 35
+      }
+    ],
+    "instagramVideo": ""
   }
 ]
