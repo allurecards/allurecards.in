@@ -1,39 +1,5 @@
 [
   {
-    "id": "Test",
-    "category": "MINIMAL",
-    "price": 69,
-    "featured": true,
-    "minOrder": 200,
-    "size": "210×155 mm",
-    "material": "Pearl Shimmer",
-    "description": "TEST",
-    "extraCharges": [
-      {
-        "name": "Foil stamping test",
-        "price": 5
-      }
-    ],
-    "applyWatermark": true,
-    "watermarkPos": "bottom-left",
-    "watermarkSize": "medium",
-    "watermarkPath": "assets/cards/watermark_white.png",
-    "images": [
-      "assets/cards/test-1.jpeg"
-    ],
-    "originals": [
-      "assets/cards/original/test-1.jpeg"
-    ],
-    "imageWatermarks": [
-      {
-        "apply": true,
-        "pos": "bottom-right",
-        "size": "medium",
-        "color": "blue"
-      }
-    ]
-  },
-  {
     "id": "AL 046",
     "category": "PASTEL",
     "price": 40,
