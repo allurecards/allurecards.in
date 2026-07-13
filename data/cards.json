@@ -1,5 +1,29 @@
 [
   {
+    "id": "IMP test",
+    "category": "MODERN",
+    "price": 1234,
+    "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "dg",
+    "description": "fxgxh",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "xlarge",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/imp-test-1.PNG"
+    ],
+    "originals": [
+      "assets/cards/original/imp-test-1.PNG"
+    ],
+    "imageWatermarks": [
+      null
+    ]
+  },
+  {
     "id": "AL 046",
     "category": "PASTEL",
     "price": 40,
