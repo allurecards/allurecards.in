@@ -1,5 +1,29 @@
 [
   {
+    "id": "test oo5",
+    "category": "MODERN",
+    "price": 125,
+    "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "fdsad",
+    "description": "fsdfdsadsf",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "xlarge",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/test-oo5-1.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/test-oo5-1.jpeg"
+    ],
+    "imageWatermarks": [
+      null
+    ]
+  },
+  {
     "id": "WM test",
     "category": "MINIMAL",
     "price": 99,
