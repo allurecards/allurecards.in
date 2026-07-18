@@ -1,5 +1,29 @@
 [
   {
+    "id": "WM test",
+    "category": "MINIMAL",
+    "price": 99,
+    "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "Pearl Shimmer",
+    "description": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_black.png",
+    "images": [
+      "assets/cards/wm-test-1.jpg"
+    ],
+    "originals": [
+      "assets/cards/original/wm-test-1.jpg"
+    ],
+    "imageWatermarks": [
+      null
+    ]
+  },
+  {
     "id": "AL 048",
     "category": "MODERN",
     "price": 40,
