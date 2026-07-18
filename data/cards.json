@@ -1,5 +1,48 @@
 [
   {
+    "id": "AL 048",
+    "category": "MODERN",
+    "price": 40,
+    "featured": false,
+    "minOrder": 100,
+    "size": "200MM X 200 MM",
+    "material": "280 GSM PREMIUM SMOOTH RED + 260 GSM MILL TEXTURED WHITE",
+    "description": "DIGITALY PRINTED FOLDING CARD",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-048-1.jpeg",
+      "assets/cards/al-048-2.jpeg",
+      "assets/cards/al-048-3.jpeg",
+      "assets/cards/al-048-4.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-048-1.jpeg",
+      "assets/cards/original/al-048-2.jpeg",
+      "assets/cards/original/al-048-3.jpeg",
+      "assets/cards/original/al-048-4.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "white"
+      },
+      null,
+      null
+    ]
+  },
+  {
     "id": "AL 047",
     "category": "MODERN",
     "price": 40,
