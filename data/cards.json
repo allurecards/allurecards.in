@@ -1,5 +1,50 @@
 [
   {
+    "id": "AL 050",
+    "category": "MODERN",
+    "price": 40,
+    "featured": false,
+    "minOrder": 100,
+    "size": "200MM X 200 MM",
+    "material": "280 GSM MEROON  + 260 GSM MILL TEXTURED WHITE",
+    "description": "DIGITALY PRINTED FOLDING CARD",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-050-1.jpeg",
+      "assets/cards/al-050-2.jpeg",
+      "assets/cards/al-050-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-050-1.jpeg",
+      "assets/cards/original/al-050-2.jpeg",
+      "assets/cards/original/al-050-3.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "large",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "black"
+      }
+    ]
+  },
+  {
     "id": "AL 049",
     "category": "MODERN",
     "price": 40,
