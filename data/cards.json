@@ -1,5 +1,50 @@
 [
   {
+    "id": "AL 051",
+    "category": "MODERN",
+    "price": 40,
+    "featured": false,
+    "minOrder": 100,
+    "size": "200MM X 200 MM",
+    "material": "280 GSM BROWN  + 260 GSM MILL TEXTURED WHITE",
+    "description": "DIGITALY PRINTED FOLDING CARD",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_black.png",
+    "images": [
+      "assets/cards/al-051-1.jpeg",
+      "assets/cards/al-051-2.jpeg",
+      "assets/cards/al-051-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-051-1.jpeg",
+      "assets/cards/original/al-051-2.jpeg",
+      "assets/cards/original/al-051-3.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "black"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "white"
+      }
+    ]
+  },
+  {
     "id": "AL 050",
     "category": "MODERN",
     "price": 40,
