@@ -1,5 +1,45 @@
 [
   {
+    "id": "AL 049",
+    "category": "MODERN",
+    "price": 40,
+    "featured": false,
+    "minOrder": 100,
+    "size": "200MM X 200 MM",
+    "material": "280 GSM PURPLE  + 260 GSM MILL TEXTURED WHITE",
+    "description": "DIGITALY PRINTED FOLDING CARD",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-049-1.jpeg",
+      "assets/cards/al-049-2.jpeg",
+      "assets/cards/al-049-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-049-1.jpeg",
+      "assets/cards/original/al-049-2.jpeg",
+      "assets/cards/original/al-049-3.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "bottom-right",
+        "size": "medium",
+        "color": "violet"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "violet"
+      },
+      null
+    ]
+  },
+  {
     "id": "AL 048",
     "category": "MODERN",
     "price": 40,
