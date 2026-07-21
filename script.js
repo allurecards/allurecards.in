@@ -329,7 +329,9 @@ window.addEventListener("scroll", () => {
                 break;
             case 'featured':
             default:         
-                filteredProducts.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+                    if (currentFilter === 'All') {
+                        filteredProducts.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+                    }
                 break;
         }
 
