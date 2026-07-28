@@ -1,5 +1,63 @@
 [
   {
+    "id": "AL 052",
+    "category": "MINIMAL",
+    "price": 38,
+    "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "",
+    "description": "DIGITALPRINTING + GOLD FOILING",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-052-1.jpeg",
+      "assets/cards/al-052-2.jpeg",
+      "assets/cards/al-052-3.jpeg",
+      "assets/cards/al-052-4.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-052-1.jpeg",
+      "assets/cards/original/al-052-2.jpeg",
+      "assets/cards/original/al-052-3.jpeg",
+      "assets/cards/original/al-052-4.jpeg"
+    ],
+    "imageWatermarks": [
+      {
+        "apply": true,
+        "pos": "top-right",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "top-right",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "bottom-left",
+        "size": "medium",
+        "color": "white"
+      },
+      {
+        "apply": true,
+        "pos": "top-right",
+        "size": "medium",
+        "color": "white"
+      }
+    ]
+  },
+  {
     "id": "AL 051",
     "category": "MODERN",
     "price": 40,
