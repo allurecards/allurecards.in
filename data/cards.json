@@ -1,5 +1,46 @@
 [
   {
+    "id": "AL 053",
+    "category": "MODERN",
+    "price": 48,
+    "featured": false,
+    "minOrder": 200,
+    "size": "210×155 mm",
+    "material": "290 GSM SMOOTH RED + 330 GSM ORIGINAL TEXTURED WHITE + 120 GSM PREMIUM TRANSLUCENT VELLUM PAPER",
+    "description": "DIGITAL PRINTING + GOLD FOILING",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_red.png",
+    "images": [
+      "assets/cards/al-053-1.jpeg",
+      "assets/cards/al-053-2.jpeg",
+      "assets/cards/al-053-3.jpeg",
+      "assets/cards/al-053-4.jpeg",
+      "assets/cards/al-053-5.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-053-1.jpeg",
+      "assets/cards/original/al-053-2.jpeg",
+      "assets/cards/original/al-053-3.jpeg",
+      "assets/cards/original/al-053-4.jpeg",
+      "assets/cards/original/al-053-5.jpeg"
+    ],
+    "imageWatermarks": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
     "id": "AL 052",
     "category": "MINIMAL",
     "price": 38,
