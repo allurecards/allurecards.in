@@ -1,5 +1,40 @@
 [
   {
+    "id": "AL 055",
+    "category": "MINIMAL",
+    "price": 35,
+    "featured": false,
+    "minOrder": 200,
+    "size": "195MM X195 MM",
+    "material": "260 GSM TEXTURED",
+    "description": "DIGITAL PRINTING + GOLD FOILING",
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_black.png",
+    "images": [
+      "assets/cards/al-055-1.jpeg",
+      "assets/cards/al-055-2.jpeg",
+      "assets/cards/al-055-3.jpeg"
+    ],
+    "originals": [
+      "assets/cards/original/al-055-1.jpeg",
+      "assets/cards/original/al-055-2.jpeg",
+      "assets/cards/original/al-055-3.jpeg"
+    ],
+    "imageWatermarks": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
     "id": "AL 054",
     "category": "MINIMAL",
     "price": 35,
