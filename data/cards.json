@@ -1,5 +1,29 @@
 [
   {
+    "id": "AL 056",
+    "category": "MODERN",
+    "price": 38,
+    "featured": false,
+    "minOrder": 100,
+    "size": "210×155 mm",
+    "material": "",
+    "description": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-056-1.jpg"
+    ],
+    "originals": [
+      "assets/cards/original/al-056-1.jpg"
+    ],
+    "imageWatermarks": [
+      null
+    ]
+  },
+  {
     "id": "AL 055",
     "category": "MINIMAL",
     "price": 35,
