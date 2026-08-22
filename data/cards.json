@@ -15,13 +15,16 @@
     "watermarkPath": "assets/cards/watermark_white.png",
     "images": [
       "assets/cards/al-056-1.jpg",
-      "assets/cards/al-056-2.jpg"
+      "assets/cards/al-056-2.jpg",
+      "assets/cards/al-056-3.jpg"
     ],
     "originals": [
       "assets/cards/original/al-056-1.jpg",
-      "assets/cards/original/al-056-2.jpg"
+      "assets/cards/original/al-056-2.jpg",
+      "assets/cards/original/al-056-3.jpg"
     ],
     "imageWatermarks": [
+      null,
       null,
       null
     ]
