@@ -521,6 +521,7 @@ window.addEventListener("scroll", () => {
     /* ---------- CALCULATOR ---------- */
     function populateQtyDropdown(minOrder) {
         qtySelect.innerHTML = '';
+        let defaultQty = (200 >= minOrder) ? 200 : minOrder;
         for (let qty = minOrder; qty <= 1500; qty += 50) {
             const opt = document.createElement('option');
             opt.value = qty;
