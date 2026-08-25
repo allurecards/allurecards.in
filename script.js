@@ -519,17 +519,22 @@ window.addEventListener("scroll", () => {
     }
 
     /* ---------- CALCULATOR ---------- */
-    function populateQtyDropdown(minOrder) {
-        qtySelect.innerHTML = '';
-        let defaultQty = (200 >= minOrder) ? 200 : minOrder;
-        for (let qty = minOrder; qty <= 1500; qty += 50) {
-            const opt = document.createElement('option');
-            opt.value = qty;
-            opt.textContent = qty.toLocaleString() + ' cards';
-            if (qty === minOrder) opt.selected = true;
-            qtySelect.appendChild(opt);
-        }
+function populateQtyDropdown(minOrder) {
+    qtySelect.innerHTML = '';
+    // Default to 200 if allowed, otherwise fallback to minOrder
+    let defaultQty = (200 >= minOrder) ? 200 : minOrder;
+
+    for (let qty = minOrder; qty <= 1500; qty += 50) {
+        const opt = document.createElement('option');
+        opt.value = qty;
+        opt.textContent = qty.toLocaleString() + ' cards';
+        if (qty === defaultQty) opt.selected = true;
+        qtySelect.appendChild(opt);
     }
+
+    // Ensure dropdown value matches the default
+    qtySelect.value = defaultQty;
+}
 
     function calculateTotal() {
         const qty           = parseInt(qtySelect.value, 10);
