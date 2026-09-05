@@ -1,5 +1,35 @@
 [
   {
+    "id": "AL 057",
+    "category": "PASTEL",
+    "price": 34,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195MM X 195 MM",
+    "material": "350 GSM ZANDERS (GERMAN MADE) NATURAL HAMMER TEXTURE",
+    "description": "PREMIUM DIGITAL PRINTING",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_brown.png",
+    "images": [
+      "assets/cards/al-057-1.png",
+      "assets/cards/al-057-2.PNG",
+      "assets/cards/al-057-3.PNG"
+    ],
+    "originals": [
+      "assets/cards/original/al-057-1.png",
+      "assets/cards/original/al-057-2.PNG",
+      "assets/cards/original/al-057-3.PNG"
+    ],
+    "imageWatermarks": [
+      null,
+      null,
+      null
+    ]
+  },
+  {
     "id": "AL 056",
     "category": "MODERN",
     "price": 38,
