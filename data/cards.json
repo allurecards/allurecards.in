@@ -1,5 +1,29 @@
 [
   {
+    "id": "AL 059",
+    "category": "MODERN",
+    "price": 35,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195MM X 195 MM",
+    "material": "350 GSM ZANDERS (GERMAN MADE) NATURAL HAMMER TEXTURE",
+    "description": "",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_white.png",
+    "images": [
+      "assets/cards/al-059-1.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-059-1.png"
+    ],
+    "imageWatermarks": [
+      null
+    ]
+  },
+  {
     "id": "AL 057",
     "category": "PASTEL",
     "price": 34,
