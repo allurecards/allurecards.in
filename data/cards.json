@@ -1,5 +1,38 @@
 [
   {
+    "id": "AL 060",
+    "category": "MODERN",
+    "price": 48,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195MM X 195 MM",
+    "material": "350 GSM ZANDERS (GERMAN) NATURAL HAMMER TEXTURE + 110 GSM CTI (USA) GAMMA NATURAL CLEAR TRANSLUCENT PAPER",
+    "description": "PREMIUM PRECISION PRINTING",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_black.png",
+    "images": [
+      "assets/cards/al-060-1.png",
+      "assets/cards/al-060-2.png",
+      "assets/cards/al-060-3.png",
+      "assets/cards/al-060-4.png"
+    ],
+    "originals": [
+      "assets/cards/original/al-060-1.png",
+      "assets/cards/original/al-060-2.png",
+      "assets/cards/original/al-060-3.png",
+      "assets/cards/original/al-060-4.png"
+    ],
+    "imageWatermarks": [
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  {
     "id": "AL 059",
     "category": "MODERN",
     "price": 50,
