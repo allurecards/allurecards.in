@@ -81,13 +81,13 @@
     "watermarkPath": "assets/cards/watermark_brown.png",
     "images": [
       "assets/cards/al-057-1.png",
-      "assets/cards/al-057-2.PNG",
-      "assets/cards/al-057-3.PNG"
+      "assets/cards/al-057-2.png",
+      "assets/cards/al-057-3.png"
     ],
     "originals": [
       "assets/cards/original/al-057-1.png",
-      "assets/cards/original/al-057-2.PNG",
-      "assets/cards/original/al-057-3.PNG"
+      "assets/cards/original/al-057-2.png",
+      "assets/cards/original/al-057-3.png"
     ],
     "imageWatermarks": [
       null,
