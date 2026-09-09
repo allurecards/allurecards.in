@@ -14,12 +14,24 @@
     "watermarkSize": "medium",
     "watermarkPath": "assets/cards/watermark_violet.png",
     "images": [
-      "assets/cards/al-062-1.jpg"
+      "assets/cards/al-062-1.jpg",
+      "assets/cards/al-062-2.jpg",
+      "assets/cards/al-062-3.jpg",
+      "assets/cards/al-062-4.jpg",
+      "assets/cards/al-062-5.jpg"
     ],
     "originals": [
-      "assets/cards/original/al-062-1.jpg"
+      "assets/cards/original/al-062-1.jpg",
+      "assets/cards/original/al-062-2.jpg",
+      "assets/cards/original/al-062-3.jpg",
+      "assets/cards/original/al-062-4.jpg",
+      "assets/cards/original/al-062-5.jpg"
     ],
     "imageWatermarks": [
+      null,
+      null,
+      null,
+      null,
       null
     ]
   },
