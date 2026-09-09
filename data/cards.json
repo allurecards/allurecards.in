@@ -1,5 +1,29 @@
 [
   {
+    "id": "AL 062",
+    "category": "PASTEL",
+    "price": 35,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195MM X 195 MM",
+    "material": "ENVELOPE 230 GSM GOKAN-SHI- PREMIUM PAPANESE TEXTURED CARD + INNER SHEET 350 GMS GERMAN -SANDERS-  NATURAL HAMMERED TEXTUR CARD",
+    "description": "PREMIUM PRECISION PRINTING",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_violet.png",
+    "images": [
+      "assets/cards/al-062-1.jpg"
+    ],
+    "originals": [
+      "assets/cards/original/al-062-1.jpg"
+    ],
+    "imageWatermarks": [
+      null
+    ]
+  },
+  {
     "id": "AL 061",
     "category": "PASTEL",
     "price": 35,
