@@ -716,7 +716,12 @@
     "size": "215×155mm",
     "material": "240 GSM MILL TEXTURED PREMIUM WHITE + 320 GSM ORIGINAL TEXTURED WHITE  + 120 GSM PREMIUM TRANSLUCENT VELLUM PAPER+ ANTIQUE GOLD WAX SEAL",
     "description": "DIGITAL PRINTING",
-    "extraCharges": [],
+    "extraCharges": [
+      {
+        "name": "FOILING BLOCK",
+        "price": 800
+      }
+    ],
     "applyWatermark": true,
     "watermarkPos": "bottom-left",
     "watermarkSize": "medium",
