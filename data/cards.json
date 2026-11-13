@@ -1,5 +1,29 @@
 [
   {
+    "id": "AL 064",
+    "category": "VELVET HUES",
+    "price": 36,
+    "featured": false,
+    "minOrder": 100,
+    "size": "195MM X 195 MM",
+    "material": "300 gsm ULTRA SMOOTH TEXTURED WHITE",
+    "description": "PREMIUM DIGITAL PRINTING",
+    "extraCharges": [],
+    "applyWatermark": true,
+    "watermarkPos": "bottom-left",
+    "watermarkSize": "medium",
+    "watermarkPath": "assets/cards/watermark_black.png",
+    "images": [
+      "assets/cards/al-064-1.jpg"
+    ],
+    "originals": [
+      "assets/cards/original/al-064-1.jpg"
+    ],
+    "imageWatermarks": [
+      null
+    ]
+  },
+  {
     "id": "AL 063",
     "category": "MINIMAL",
     "price": 47,
