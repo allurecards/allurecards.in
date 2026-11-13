@@ -2,7 +2,7 @@
   {
     "id": "AL 064",
     "category": "VELVET HUES",
-    "price": 36,
+    "price": 38,
     "featured": false,
     "minOrder": 100,
     "size": "195MM X 195 MM",
@@ -14,12 +14,21 @@
     "watermarkSize": "medium",
     "watermarkPath": "assets/cards/watermark_black.png",
     "images": [
-      "assets/cards/al-064-1.jpg"
+      "assets/cards/al-064-1.jpg",
+      "assets/cards/al-064-2.jpg",
+      "assets/cards/al-064-3.jpg",
+      "assets/cards/al-064-4.jpg"
     ],
     "originals": [
-      "assets/cards/original/al-064-1.jpg"
+      "assets/cards/original/al-064-1.jpg",
+      "assets/cards/original/al-064-2.jpg",
+      "assets/cards/original/al-064-3.jpg",
+      "assets/cards/original/al-064-4.jpg"
     ],
     "imageWatermarks": [
+      null,
+      null,
+      null,
       null
     ]
   },
